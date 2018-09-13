@@ -1,0 +1,51 @@
+
+    <html>
+    <head>
+      <script type="text/javascript" src="VIS/dist/vis.js"></script>
+      <link href="VIS/dist/vis.css" rel="stylesheet" type="text/css">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+
+    <div id="VIS_draw"></div>
+    <script type="text/javascript">
+      var nodes = [{'group': 'Event', 'id': 4, 'label': '债券价格上涨'}, {'group': 'Event', 'id': 1, 'label': '燃油价格的上涨'}, {'group': 'Event', 'id': 3, 'label': '原燃料价格'}, {'group': 'Event', 'id': 5, 'label': '估值吸引力有所下降以及债券供应阶段性偏多会给市场带来一定压力'}, {'group': 'Event', 'id': 12, 'label': '债券'}, {'group': 'Event', 'id': 16, 'label': '市场诸多问题'}, {'group': 'Event', 'id': 9, 'label': '信托、债券减少'}, {'group': 'Event', 'id': 11, 'label': '万达债券大跌'}, {'group': 'Event', 'id': 34, 'label': '市场风险'}, {'group': 'Event', 'id': 15, 'label': '次级抵押贷款市场问题'}, {'group': 'Event', 'id': 17, 'label': '市场存在的问题'}, {'group': 'Event', 'id': 19, 'label': '损失'}, {'group': 'Event', 'id': 21, 'label': '大幅波动'}, {'group': 'Event', 'id': 23, 'label': '市场风险的积累'}, {'group': 'Event', 'id': 25, 'label': '投资者信用风险'}, {'group': 'Event', 'id': 27, 'label': '市场风险偏好的上升'}, {'group': 'Event', 'id': 29, 'label': '贬值损失'}, {'group': 'Event', 'id': 31, 'label': '分级基金整体溢价的打压'}, {'group': 'Event', 'id': 33, 'label': '英磅与欧元继续下滑'}, {'group': 'Event', 'id': 35, 'label': '公众的密切关注'}];
+      var edges = [{'from': 4, 'label': '因果', 'to': 1}, {'from': 4, 'label': '因果', 'to': 3}, {'from': 4, 'label': '因果', 'to': 5}, {'from': 12, 'label': '因果', 'to': 16}, {'from': 12, 'label': '因果', 'to': 9}, {'from': 12, 'label': '因果', 'to': 11}, {'from': 12, 'label': '因果', 'to': 34}, {'from': 16, 'label': '因果', 'to': 15}, {'from': 16, 'label': '因果', 'to': 17}, {'from': 34, 'label': '因果', 'to': 19}, {'from': 34, 'label': '因果', 'to': 21}, {'from': 34, 'label': '因果', 'to': 23}, {'from': 34, 'label': '因果', 'to': 25}, {'from': 34, 'label': '因果', 'to': 27}, {'from': 34, 'label': '因果', 'to': 29}, {'from': 34, 'label': '因果', 'to': 31}, {'from': 34, 'label': '因果', 'to': 33}, {'from': 34, 'label': '因果', 'to': 35}];
+
+      var container = document.getElementById("VIS_draw");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    
