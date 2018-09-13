@@ -100,7 +100,14 @@ ssh-keygen -t rsa -b 4096 -C "victor.wuv@gmail.com"
 ssh-add ~/.ssh/id_rsa
 sudo apt-get install xclip
 xclip -sel clip < ~/.ssh/id_rsa.pub
+# virtualenvwrapper
+pip install virtualenvwrapper, or sudo pip install virtualenvwrapper
 
+# add to .zshrc
+export WORKON_HOME=$HOME/.virtualenv
+source /usr/local/bin/virtualenvwrapper.sh
+# pip install source
+touch ~/.pip/pip.conf
 # pyenv
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 $ echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
