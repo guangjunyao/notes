@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-09-13 Thu 18:06 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="weiwu" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../styles/demo/css/demo.css"/>
+<link href="https://fonts.proxy.ustclug.org/css?family=Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "left",
+        displayIndent: "5em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "left",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">1. Programming</a></li>
+<li><a href="#orgheadline3">2. Probability</a>
+<ul>
+<li><a href="#orgheadline2">2.1. coin</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline4">3. Option</a></li>
+<li><a href="#orgheadline5">4. Database</a></li>
+<li><a href="#orgheadline9">5. Data Analysis</a>
+<ul>
+<li><a href="#orgheadline6">5.1. handle missing data</a></li>
+<li><a href="#orgheadline7">5.2. groupby</a></li>
+<li><a href="#orgheadline8">5.3. merge, join</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline14">6. Companies</a>
+<ul>
+<li><a href="#orgheadline10">6.1. Akuna Capital</a></li>
+<li><a href="#orgheadline11">6.2. TrexQuant</a></li>
+<li><a href="#orgheadline12">6.3. Goomu Investment</a></li>
+<li><a href="#orgheadline13">6.4. PwC</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> Programming</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>travelling grids, how many paths?</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+</table>
+
+<p>
+f(m, n) = 1 + 1
+</p>
+
+<p>
+f(m, n) = f(m-1, n) + f(m, n-1)
+</p>
+
+<p>
+total number of steps: m + n
+</p>
+
+<p>
+select x Ds and then m + n -x Rs, using binomial coefficient:
+</p>
+
+<p>
+(m + n)! / m! * n!
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3"><span class="section-number-2">2</span> Probability</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">2.1</span> coin</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>expected number of flips for two consecutive heads:</li>
+</ul>
+<p>
+E = 2*0.25 + (1 + E)*0.5 + 0.25*(2 + E)
+</p>
+
+<p>
+E = 6
+</p>
+
+<ul class="org-ul">
+<li>We randomly select 4 numbers from the set of the first 16 prime numbers, without replacement. What is the probability their sum is even? Why?</li>
+</ul>
+<p>
+prime numbers: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,61
+</p>
+
+<p>
+we must exclude 2 in order to get an even sum number.
+</p>
+
+<p>
+solution: 16C4/17C4
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4"><span class="section-number-2">3</span> Option</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>assumption of BL</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-txt">- risk free rate and volatility is constant
+- liquid market
+- no transaction cost
+- no arbitrage opportunity exists
+- European option
+- no dividend payment
+- return on the underlying are normally distributed
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>pricing formula</li>
+</ul>
+<p>
+\[C=SN(d_1)-N(d_2)KE^{-rt}\]
+</p>
+<div class="org-src-container">
+
+<pre class="src src-text">1. underlying asset expected benefit.
+2. current value of paying the exercise price upon expiration.
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>intuition</li>
+</ul>
+<p>
+Bond and stock arbitrage, portfolio is the same value by buying stock and borrow money.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><span class="section-number-2">4</span> Database</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+select *
+from table<sub>a</sub> a
+inner join table<sub>b</sub> b
+where a.key==b.key
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9"><span class="section-number-2">5</span> Data Analysis</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6"><span class="section-number-3">5.1</span> handle missing data</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+<a href="https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4">https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4</a>
+</p>
+
+<ul class="org-ul">
+<li>deletion:
+<ul class="org-ul">
+<li>deleting rows</li>
+<li>pairwise deletion</li>
+<li>deleting columns</li>
+</ul></li>
+<li>imputation:
+<ul class="org-ul">
+<li>general problem
+<ul class="org-ul">
+<li>categorical: make na as level, multiple imputation, logistic regression</li>
+<li>continuous: mean median mode, multiple imputation, linear regression</li>
+</ul></li>
+<li>time series
+<ul class="org-ul">
+<li>data without trend &amp; without seasonality: mean, median, mode, random sample imputation</li>
+<li>data with trend without seasonality: linear interpolation</li>
+<li>data with trend &amp; with seasonal: seasonal adjustment + interpolation</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7"><span class="section-number-3">5.2</span> groupby</h3>
+<div class="outline-text-3" id="text-5-2">
+<div class="org-src-container">
+
+<pre class="src src-python">In <span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">5</span><span style="color: #AE81FF;">]</span>: <span style="color: #F92672;">import</span> pandas <span style="color: #F92672;">as</span> pd
+
+In <span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">6</span><span style="color: #AE81FF;">]</span>: <span style="color: #FD971F;">info</span> = <span style="color: #AE81FF;">{</span><span style="color: #E6DB74;">'sex'</span>:<span style="color: #66D9EF;">[</span><span style="color: #E6DB74;">'F'</span>,<span style="color: #E6DB74;">'F'</span>,<span style="color: #E6DB74;">'M'</span><span style="color: #66D9EF;">]</span>,<span style="color: #E6DB74;">'age'</span>:<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">1</span>,<span style="color: #AE81FF;">2</span>,<span style="color: #AE81FF;">3</span><span style="color: #66D9EF;">]</span><span style="color: #AE81FF;">}</span>
+In <span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">39</span><span style="color: #AE81FF;">]</span>: <span style="color: #FD971F;">df_info</span> = pd.DataFrame<span style="color: #AE81FF;">(</span>data=info,index=<span style="color: #F92672;">range</span><span style="color: #66D9EF;">(</span><span style="color: #AE81FF;">3</span><span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">)</span>
+
+In <span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">48</span><span style="color: #AE81FF;">]</span>: df_info
+Out<span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">49</span><span style="color: #AE81FF;">]</span>:
+   age sex
+<span style="color: #AE81FF;">0</span>    <span style="color: #AE81FF;">1</span>   F
+<span style="color: #AE81FF;">1</span>    <span style="color: #AE81FF;">2</span>   F
+<span style="color: #AE81FF;">2</span>    <span style="color: #AE81FF;">3</span>   M
+
+In <span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">63</span><span style="color: #AE81FF;">]</span>: df_info.groupby<span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">'sex'</span><span style="color: #AE81FF;">)[</span><span style="color: #E6DB74;">'age'</span><span style="color: #AE81FF;">]</span>.mean<span style="color: #AE81FF;">()</span>
+Out<span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">63</span><span style="color: #AE81FF;">]</span>:
+sex
+F    <span style="color: #AE81FF;">1</span>.<span style="color: #AE81FF;">5</span>
+M    <span style="color: #AE81FF;">3</span>.<span style="color: #AE81FF;">0</span>
+Name: age, dtype: float64
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">5.3</span> merge, join</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+inner join, outter join, left join, right join.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-2">
+<h2 id="orgheadline14"><span class="section-number-2">6</span> Companies</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">6.1</span> Akuna Capital</h3>
+<div class="outline-text-3" id="text-6-1">
+<ul class="org-ul">
+<li>statistical learning questions</li>
+
+<li>What are the eigenvalues of the nxn matrix with n in the diagonal and 1 elsewhere</li>
+
+<li>simulating a stock strategy it shows</li>
+
+<li>what is the difference between uncorrelated and independent and give an example of two random variables that are uncorrelated but not independent.</li>
+</ul>
+<p>
+X and Y are uncorrelated iff Cov(X,Y)=E[XY]-E{X]E[Y]=0, and they are independent iff the joint CDF is the product of the marginal CDFs: F(x,y)=F<sub>X</sub>(x)F<sub>Y</sub>(y) for all x,y. For the counterexample, let X be uniformly distributed on [-1,1] and Y=X<sup>2</sup>.
+</p>
+
+<ul class="org-ul">
+<li>Number of numbers with the number zero in 1-10000</li>
+
+<li>DFS</li>
+
+<li>There are stones in two dimension array, and given a known length rope, determine what's the maximum number of stones you can use the rope to surround? (the rope must be enclosed</li>
+
+<li>You have been chosen to play a game involving a 8-sided die. You get to roll the die once, see the result, and then may choose to either stop or roll again. Your payoff is the sum of your rolls, unless this sum is greater than 8, in which case you "bust" and get nothing. What is your strategy for this game? That is, for each possible outcome of the first roll will you choose stop or to roll again?</li>
+
+<li>A bag has three coins in it which are visually indistinguishable, but when flipped, one coin has a 20% chance of coming up heads, another as a 20% chance of coming up heads, and the last has 60% chance of coming up heads. I randomly draw a coin from the bag and flip it, and the result comes up heads. What is the probability that if I reflip this coin, it will come up heads again? Why?</li>
+
+<li>We have two urns. You can't tell them apart from the outside, but one has four $1 chips and six $10 chips, and the other has three $1 chips and seven $10 chips. You randomly draw a chip from one of the urns and it happens to be a $1 chip. Without replacing this draw, I offer you a chance to draw and keep a chip from either urn. Should you draw from the same urn or the opposite urn, and what is the expected value of the chip you draw? Why?</li>
+
+<li>Probability that the first digit of 2<sup>n</sup> is 1? Suppose n is uniformly distributed over all integers.</li>
+</ul>
+<p>
+log(2)
+</p>
+
+<ul class="org-ul">
+<li>Graph problems</li>
+
+<li>Enter a dimension(number) and verify if it can be a 3 dimensional figure (minimum dimension is 2)</li>
+</ul>
+<p>
+Prime factorization
+</p>
+
+<p>
+Eg. if you enter 8 -&gt; (2 x 2 x 2) -&gt; Yes
+10 -&gt; (5x2) -&gt; No
+12 -&gt; (2x2x3) -&gt; Yes
+1 Answer
+</p>
+<ol class="org-ol">
+<li>Simple Order Book</li>
+</ol>
+<p>
+1 Answer
+</p>
+<ol class="org-ol">
+<li>Verify if two triangles are similar through 1) translation and 2) Rotation</li>
+
+<li>Given any random unknown population, you draw one billion samples from it. How would you find the 99th percentile of it?</li>
+
+<li>Judge stock performance (up or down) according to given data. Basically discriminant analysis</li>
+
+<li>Given a specific trading strategy and an input of stock prices, calculate the gain/loss at the end of the day</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">6.2</span> TrexQuant</h3>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">6.3</span> Goomu Investment</h3>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">6.4</span> PwC</h3>
+<div class="outline-text-3" id="text-6-4">
+<p>
+data scientist
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

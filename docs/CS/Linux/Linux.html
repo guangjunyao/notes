@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-08-28 Tue 07:35 -->
+<!-- 2018-09-13 Thu 18:07 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -740,11 +740,39 @@ run this line to install above libraries:
 <div class="org-src-container">
 
 <pre class="src src-bash"><span style="color: #75715E;"># </span><span style="color: #75715E;">sudo apt-get install python-tk python3-tk python-imaging-tk</span>
+<span style="color: #75715E;"># </span><span style="color: #75715E;">zsh and oh my zsh</span>
+sudo apt-get install zsh
 sh -c <span style="color: #E6DB74;">"$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</span>
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+<span style="color: #F92672;">echo</span> <span style="color: #E6DB74;">'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh'</span> &gt;&gt; ~/.zshrc
+<span style="color: #75715E;"># </span><span style="color: #75715E;">ssh</span>
+ssh-keygen -t rsa -b <span style="color: #AE81FF;">4096</span> -C <span style="color: #E6DB74;">"victor.wuv@gmail.com"</span>
+ssh-add ~/.ssh/id_rsa
+sudo apt-get install xclip
+xclip -sel clip &lt; ~/.ssh/id_rsa.pub
+<span style="color: #75715E;"># </span><span style="color: #75715E;">virtualenvwrapper</span>
+pip install virtualenvwrapper, or sudo pip install virtualenvwrapper
+
+<span style="color: #75715E;"># </span><span style="color: #75715E;">add to .zshrc</span>
+<span style="color: #F92672;">export</span> <span style="color: #FD971F;">WORKON_HOME</span>=$<span style="color: #FD971F;">HOME</span>/.virtualenv
+<span style="color: #F92672;">source</span> /usr/local/bin/virtualenvwrapper.sh
+<span style="color: #75715E;"># </span><span style="color: #75715E;">pip install source</span>
+touch ~/.pip/pip.conf
+<span style="color: #75715E;"># </span><span style="color: #75715E;">pyenv</span>
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+$ echo <span style="color: #E6DB74;">'export PATH="$HOME/.pyenv/bin:$PATH"'</span> &gt;&gt; ~/.zshrc
+$ echo <span style="color: #E6DB74;">'eval "$(pyenv init -)"'</span> &gt;&gt; ~/.zshrc
+$ echo <span style="color: #E6DB74;">'eval "$(pyenv virtualenv-init -)"'</span> &gt;&gt; ~/.zshrc
+<span style="color: #F92672;">echo</span> <span style="color: #E6DB74;">'export PYENV_ROOT="$HOME/.pyenv"'</span> &gt;&gt; ~/.zshenv
+<span style="color: #F92672;">echo</span> <span style="color: #E6DB74;">'export PATH="$PYENV_ROOT/bin:$PATH"'</span> &gt;&gt; ~/.zshenv
+<span style="color: #F92672;">echo</span> -e <span style="color: #E6DB74;">'if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval "$(pyenv init -)"\nfi'</span> &gt;&gt; ~/.zshenv
+<span style="color: #F92672;">exec</span> <span style="color: #E6DB74;">"$SHELL"</span>
+
 sudo apt-get install dkms build-essential linux-headers-generic
 sudo apt-get install python-setuptools python-dev build-essential
-sudo easy_install pip
-sudo pip install --upgrade virtualenv
+<span style="color: #75715E;"># </span><span style="color: #75715E;">sudo easy_install pip</span>
+<span style="color: #75715E;"># </span><span style="color: #75715E;">sudo pip install --upgrade virtualenv</span>
+sudo apt-get install build-essential texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libncurses-dev libxpm-dev automake autoconf
 </pre>
 </div>
 
@@ -1486,6 +1514,7 @@ xclip -o
 <pre class="src src-shell">ls -l folder/path | wc -l
 </pre>
 </div>
+
 <ul class="org-ul">
 <li>resume interrupted download via wget:</li>
 </ul>

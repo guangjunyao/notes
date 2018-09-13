@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-12-22 Fri 11:26 -->
+<!-- 2018-09-13 Thu 18:06 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -477,6 +477,55 @@ Assets A and B will outperform/underperform assets C and D by xx basis points; E
 </p>
 </div>
 <ol class="org-ol"><li><a id="orgheadline9"></a>Assessing views<br  /><ol class="org-ol"><li><a id="orgheadline7"></a>Objective<br  /><div class="outline-text-7" id="text-1-4-1-3-1-1">
+<p>
+选取中债一月期国债到期收益率作为无风险利率计算超额收益率。
+提取当月市场上各家评级机构对行业内公司评级的上下调之差，并做跨度为 1 年的移动平均，
+如果某行业当月的数值大于前一个月的数值，则在当月的模型计算中， 认为该市场对行业有
+积极的观点， 即p = 1， 反之p = −1。
+提取当月市场上各家评级机构对行业内公司的评级数量，再与当时行业内总的公司数量做商，
+即， 计算观点的覆盖率作为初始的置信度。 这是基于这样的假设： 行业内有越多的公司受到
+评级机构关注，那么行业的评级变化结果就越可信。
+</p>
+
+<p>
+提取当年市场上各家评级机构对行业内公司每个月的一致预测净资产收益率， 并做移动平均，
+将该行业的净资产收益率的变化率作为该行业的观点结果，即 Q。
+在配置资产时，为防止 BL 模型配置的权重出现极端集中于某一行业，导致风险较大的情况，
+我们设定每个行业最终分配的权重不得低于 1%。
+</p>
+
+<p>
+在实际计算中，我们发现超额收益率的协方差矩阵Σ在接近奇异的情况下， 得出的权重可能
+是异常的，因此我们采用伪逆矩阵来代替Σ的逆矩阵。 同时， 为了避免历史数据对我们的模
+型造成过多的噪声影响，我们只选取当前时间之前半年的相关数据来进行计算。
+收集市场上对行业内每家公司的评级进行了调整的评级公司数量， 用上调家数减下调家数再
+取平均，得到该行业在当月的评级净变化。把这一标准作为观点矩阵 P 的构建基础， 是十分
+自然和直观的， 这一指标也代表了市场上评级机构对行业内公司未来表现的一种预期， 当行
+业在未来局部不被看好时，其评级净变化很可能短暂为负，而当该行业在未来被看好时，其
+评级净变化又会转变为正。
+经过测试， 我们发现这一指标存在正负性波动较大的问题，分析原因， 是因为评级的净变化
+比较敏感， 相邻两个月中，如果有数家公司更改评级，即使大部分公司仍然维持原来的评级
+不变，净变化还是会发生正负的转变。 为了保留指标特点同时又使变化过程更平滑，我们对
+评级的净变化作为期一年的移动平均， 再用移动平均之后的指标变化作为市场观点： 如果当
+月某行业的移动平均值大于上月移动平均值，则认为下月行业不被市场所看好； 反之亦然。
+</p>
+
+<p>
+𝑃𝑛,𝑡+1 = 1, 若𝐺𝑟𝑎𝑑𝑒𝑛,𝑡 − 𝐺𝑟𝑎𝑑𝑒𝑛,𝑡−1 &gt; 0,
+𝑃𝑛,𝑡+1 = −1, 若𝐺𝑟𝑎𝑑𝑒𝑛,𝑡 − 𝐺𝑟𝑎𝑑𝑒𝑛,𝑡−1 &lt; 0
+</p>
+
+<p>
+同时，我们将万得一致预期数据中的净资产收益率作为模型中 Q 矩阵的构建基础。在原始
+模型中， Q 矩阵应该为投资者对未来资产超额收益率的预测， 在这里， 我们用净资产收益率
+的变化率来代替超额收益率。 我们认为， 一致预期净资产的变化率在一定程度上，反映了市
+场对行业在未来盈利能力的一种期望，这种期望在合适的时间，能够反映到股价或行业指数
+中，为我们的权重配比方向和程度带来参考价值。
+</p>
+
+<p>
+𝑄𝑛,𝑡+1 = (𝑅𝑂𝐸𝑛,𝑡 − 𝑅𝑂𝐸𝑛,𝑡−1)⁄𝑅𝑂𝐸𝑛,𝑡−1
+</p>
 <ul class="org-ul">
 <li>财务指标</li>
 </ul>
@@ -531,7 +580,7 @@ Input:
 
 <tr>
 <td class="org-left">rf</td>
-<td class="org-left">Risk free rate</td>
+<td class="org-left">Risk free rate    选取中债一月期国债到期收益率作为无风险利率计算超额收益率</td>
 </tr>
 
 <tr>
@@ -543,8 +592,10 @@ Input:
 <td class="org-left">τ</td>
 <td class="org-left">A measure of the uncertainty of the prior estimate of the mean returns.   Scalar. Proportional to the relative weight given to the implied equilibrium return vector(\(\Pi\)).       Usually between 0.01~0.05.</td>
 </tr>
-<tbody>
+
 <tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
 </tr>
 </tbody>
 </table>
