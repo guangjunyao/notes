@@ -1,0 +1,170 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t c:nil
+#+OPTIONS: creator:nil d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t
+#+OPTIONS: num:t p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t timestamp:t
+#+OPTIONS: title:t toc:t todo:t |:t
+#+TITLES: Quant Interview Questions
+#+DATE: <2018-08-29 Wed>
+#+AUTHORS: weiwu
+#+EMAIL: victor.wuv@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 24.5.1 (Org mode 8.3.4)
+#+STARTUP: latexpreview
+#+SETUPFILE: ../configOrg/level1.org
+
+* Programming
+- travelling grids, how many paths?
+|---+---+---+---+---|
+|---+---+---+---+---|
+|---+---+---+---+---|
+|---+---+---+---+---|
+|---+---+---+---+---|
+
+f(m, n) = 1 + 1
+
+f(m, n) = f(m-1, n) + f(m, n-1)
+
+total number of steps: m + n
+
+select x Ds and then m + n -x Rs, using binomial coefficient:
+
+(m + n)! / m! * n!
+* Probability
+** coin
+- expected number of flips for two consecutive heads:
+E = 2*0.25 + (1 + E)*0.5 + 0.25*(2 + E)
+
+E = 6
+
+- We randomly select 4 numbers from the set of the first 16 prime numbers, without replacement. What is the probability their sum is even? Why?
+prime numbers: 2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,61
+
+we must exclude 2 in order to get an even sum number.
+
+solution: 16C4/17C4
+
+
+* Option
+- assumption of BL
+#+BEGIN_SRC txt
+- risk free rate and volatility is constant
+- liquid market
+- no transaction cost
+- no arbitrage opportunity exists
+- European option
+- no dividend payment
+- return on the underlying are normally distributed
+#+END_SRC
+
+- pricing formula
+$$C=SN(d_1)-N(d_2)KE^{-rt}$$
+#+BEGIN_SRC text
+1. underlying asset expected benefit.
+2. current value of paying the exercise price upon expiration.
+#+END_SRC
+
+- intuition
+Bond and stock arbitrage, portfolio is the same value by buying stock and borrow money.
+
+
+* Database
+select *
+from table_a a
+inner join table_b b
+where a.key==b.key
+
+* Data Analysis
+** handle missing data
+https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4
+
+- deletion:
+  - deleting rows
+  - pairwise deletion
+  - deleting columns
+- imputation:
+  - general problem
+    - categorical: make na as level, multiple imputation, logistic regression
+    - continuous: mean median mode, multiple imputation, linear regression
+  - time series
+    - data without trend & without seasonality: mean, median, mode, random sample imputation
+    - data with trend without seasonality: linear interpolation
+    - data with trend & with seasonal: seasonal adjustment + interpolation
+
+** groupby
+#+BEGIN_SRC python
+In [5]: import pandas as pd
+
+In [6]: info = {'sex':['F','F','M'],'age':[1,2,3]}
+In [39]: df_info = pd.DataFrame(data=info,index=range(3))
+
+In [48]: df_info
+Out[49]:
+   age sex
+0    1   F
+1    2   F
+2    3   M
+
+In [63]: df_info.groupby('sex')['age'].mean()
+Out[63]:
+sex
+F    1.5
+M    3.0
+Name: age, dtype: float64
+
+#+END_SRC
+
+** merge, join
+inner join, outter join, left join, right join.
+
+* Companies
+** Akuna Capital
+- statistical learning questions
+
+- What are the eigenvalues of the nxn matrix with n in the diagonal and 1 elsewhere
+
+- simulating a stock strategy it shows
+
+- what is the difference between uncorrelated and independent and give an example of two random variables that are uncorrelated but not independent.
+X and Y are uncorrelated iff Cov(X,Y)=E[XY]-E{X]E[Y]=0, and they are independent iff the joint CDF is the product of the marginal CDFs: F(x,y)=F_X(x)F_Y(y) for all x,y. For the counterexample, let X be uniformly distributed on [-1,1] and Y=X^2.
+
+- Number of numbers with the number zero in 1-10000
+
+- DFS
+
+- There are stones in two dimension array, and given a known length rope, determine what's the maximum number of stones you can use the rope to surround? (the rope must be enclosed
+
+- You have been chosen to play a game involving a 8-sided die. You get to roll the die once, see the result, and then may choose to either stop or roll again. Your payoff is the sum of your rolls, unless this sum is greater than 8, in which case you "bust" and get nothing. What is your strategy for this game? That is, for each possible outcome of the first roll will you choose stop or to roll again?
+
+- A bag has three coins in it which are visually indistinguishable, but when flipped, one coin has a 20% chance of coming up heads, another as a 20% chance of coming up heads, and the last has 60% chance of coming up heads. I randomly draw a coin from the bag and flip it, and the result comes up heads. What is the probability that if I reflip this coin, it will come up heads again? Why?
+
+- We have two urns. You can't tell them apart from the outside, but one has four $1 chips and six $10 chips, and the other has three $1 chips and seven $10 chips. You randomly draw a chip from one of the urns and it happens to be a $1 chip. Without replacing this draw, I offer you a chance to draw and keep a chip from either urn. Should you draw from the same urn or the opposite urn, and what is the expected value of the chip you draw? Why?
+
+- Probability that the first digit of 2^n is 1? Suppose n is uniformly distributed over all integers.
+log(2)
+
+- Graph problems
+
+- Enter a dimension(number) and verify if it can be a 3 dimensional figure (minimum dimension is 2)
+Prime factorization
+
+Eg. if you enter 8 -> (2 x 2 x 2) -> Yes
+10 -> (5x2) -> No
+12 -> (2x2x3) -> Yes
+1 Answer
+2) Simple Order Book
+1 Answer
+3) Verify if two triangles are similar through 1) translation and 2) Rotation
+
+- Given any random unknown population, you draw one billion samples from it. How would you find the 99th percentile of it?
+
+- Judge stock performance (up or down) according to given data. Basically discriminant analysis
+
+- Given a specific trading strategy and an input of stock prices, calculate the gain/loss at the end of the day
+
+** TrexQuant
+
+** Goomu Investment
+
+** PwC
+data scientist
