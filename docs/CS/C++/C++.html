@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-13 Thu 18:07 -->
+<!-- 2018-09-14 Fri 10:12 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -481,6 +481,23 @@ OpenFileOrDie<span style="color: #AE81FF;">()</span>
 <div class="outline-text-2" id="text-5">
 </div><div id="outline-container-orgheadline28" class="outline-3">
 <h3 id="orgheadline28"><span class="section-number-3">5.1</span> Introducing Arrays</h3>
+<div class="outline-text-3" id="text-5-1">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #F92672;">#include</span> <span style="color: #E6DB74;">&lt;iostream&gt;</span>
+
+<span style="color: #66D9EF;">int</span> <span style="color: #A6E22E;">main</span><span style="color: #AE81FF;">()</span>
+<span style="color: #AE81FF;">{</span>
+    <span style="color: #66D9EF;">int</span> <span style="color: #FD971F;">prime</span><span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">5</span><span style="color: #66D9EF;">]</span>; <span style="color: #75715E;">// </span><span style="color: #75715E;">hold the first 5 prime numbers</span>
+    prime<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">0</span><span style="color: #66D9EF;">]</span> = <span style="color: #AE81FF;">2</span>; <span style="color: #75715E;">// </span><span style="color: #75715E;">The first element has index 0</span>
+    <span style="color: #AE81FF;">std</span>::cout &lt;&lt; <span style="color: #E6DB74;">"The lowest prime number is: "</span> &lt;&lt; prime<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">0</span><span style="color: #66D9EF;">]</span> &lt;&lt; <span style="color: #E6DB74;">"\n"</span>;
+    <span style="color: #AE81FF;">std</span>::cout &lt;&lt; <span style="color: #E6DB74;">"The sum of the first 5 primes is: "</span> &lt;&lt; prime<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">0</span><span style="color: #66D9EF;">]</span> + prime<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">1</span><span style="color: #66D9EF;">]</span> + prime<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">2</span><span style="color: #66D9EF;">]</span> + prime<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">3</span><span style="color: #66D9EF;">]</span> + prime<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">4</span><span style="color: #66D9EF;">]</span> &lt;&lt; <span style="color: #E6DB74;">"\n"</span>;
+
+    <span style="color: #F92672;">return</span> <span style="color: #AE81FF;">0</span>;
+<span style="color: #AE81FF;">}</span>
+</pre>
+</div>
+</div>
 </div>
 <div id="outline-container-orgheadline29" class="outline-3">
 <h3 id="orgheadline29"><span class="section-number-3">5.2</span> Strings</h3>

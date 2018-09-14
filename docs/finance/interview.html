@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-13 Thu 18:06 -->
+<!-- 2018-09-14 Fri 10:12 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -171,35 +171,57 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline1">1. Programming</a></li>
-<li><a href="#orgheadline3">2. Probability</a>
+<li><a href="#orgheadline3">1. Programming</a>
 <ul>
-<li><a href="#orgheadline2">2.1. coin</a></li>
+<li><a href="#orgheadline2">1.1. C++</a>
+<ul>
+<li><a href="#orgheadline1">1.1.1. c++ list, vector, map, set 区别与用法比较</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline4">3. Option</a></li>
-<li><a href="#orgheadline5">4. Database</a></li>
-<li><a href="#orgheadline9">5. Data Analysis</a>
-<ul>
-<li><a href="#orgheadline6">5.1. handle missing data</a></li>
-<li><a href="#orgheadline7">5.2. groupby</a></li>
-<li><a href="#orgheadline8">5.3. merge, join</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline14">6. Companies</a>
+<li><a href="#orgheadline5">2. Probability</a>
 <ul>
-<li><a href="#orgheadline10">6.1. Akuna Capital</a></li>
-<li><a href="#orgheadline11">6.2. TrexQuant</a></li>
-<li><a href="#orgheadline12">6.3. Goomu Investment</a></li>
-<li><a href="#orgheadline13">6.4. PwC</a></li>
+<li><a href="#orgheadline4">2.1. coin</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline6">3. Option</a></li>
+<li><a href="#orgheadline7">4. Database</a></li>
+<li><a href="#orgheadline11">5. Data Analysis</a>
+<ul>
+<li><a href="#orgheadline8">5.1. handle missing data</a></li>
+<li><a href="#orgheadline9">5.2. groupby</a></li>
+<li><a href="#orgheadline10">5.3. merge, join</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline16">6. Companies</a>
+<ul>
+<li><a href="#orgheadline12">6.1. Akuna Capital</a></li>
+<li><a href="#orgheadline13">6.2. TrexQuant</a></li>
+<li><a href="#orgheadline14">6.3. Goomu Investment</a></li>
+<li><a href="#orgheadline15">6.4. PwC</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline27">7. 多因子</a>
+<ul>
+<li><a href="#orgheadline17">7.1. 因子</a></li>
+<li><a href="#orgheadline18">7.2. 模型拟合</a></li>
+<li><a href="#orgheadline19">7.3. 收益预测</a></li>
+<li><a href="#orgheadline20">7.4. 风险预测</a></li>
+<li><a href="#orgheadline21">7.5. 业绩归因</a></li>
+<li><a href="#orgheadline22">7.6. 组合构建</a></li>
+<li><a href="#orgheadline23">7.7. 实盘</a></li>
+<li><a href="#orgheadline24">7.8. 数据</a></li>
+<li><a href="#orgheadline25">7.9. 程序</a></li>
+<li><a href="#orgheadline26">7.10. 综合</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1"><span class="section-number-2">1</span> Programming</h2>
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3"><span class="section-number-2">1</span> Programming</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>travelling grids, how many paths?</li>
@@ -229,12 +251,42 @@ select x Ds and then m + n -x Rs, using binomial coefficient:
 (m + n)! / m! * n!
 </p>
 </div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.1</span> C++</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> c++ list, vector, map, set 区别与用法比较</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+List封装了链表,Vector封装了数组, list和vector得最主要的区别在于vector使用连续内存存储的，他支持[]运算符，而list是以链表形式实现的，不支持[]。
+</p>
+
+<p>
+Vector对于随机访问的速度很快，但是对于插入尤其是在头部插入元素速度很慢，在尾部插入速度很快。List对于随机访问速度慢得多，因为可能要遍历整个链表才能做到，但是对于插入就快的多了，不需要拷贝和移动数据，只需要改变指针的指向就可以了。另外对于新添加的元素，Vector有一套算法，而List可以任意加入。
+</p>
+
+<p>
+Map,Set属于标准关联容器，使用了非常高效的平衡检索二叉树：红黑树，他的插入删除效率比其他序列容器高是因为不需要做内存拷贝和内存移动，而直接替换指向节点的指针即可。
+</p>
+
+<p>
+Set和Vector的区别在于Set不包含重复的数据。Set和Map的区别在于Set只含有Key，而Map有一个Key和Key所对应的Value两个元素。
+</p>
+
+<p>
+Map和Hash<sub>Map的区别是Hash</sub><sub>Map使用了Hash算法来加快查找过程</sub>，但是需要更多的内存来存放这些Hash桶元素，因此可以算得上是采用空间来换取时间策略。
+</p>
 </div>
-<div id="outline-container-orgheadline3" class="outline-2">
-<h2 id="orgheadline3"><span class="section-number-2">2</span> Probability</h2>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5"><span class="section-number-2">2</span> Probability</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2"><span class="section-number-3">2.1</span> coin</h3>
+</div><div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4"><span class="section-number-3">2.1</span> coin</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>expected number of flips for two consecutive heads:</li>
@@ -261,16 +313,35 @@ we must exclude 2 in order to get an even sum number.
 <p>
 solution: 16C4/17C4
 </p>
+
+<ul class="org-ul">
+<li>Martingale Process</li>
+</ul>
+<p>
+the conditional expected value of the next observation, given all the past observations, is equal to the most recent observation.
+</p>
+
+<p>
+E[Xt | Fs] = Xs （其中，s小于t）
+</p>
+
+<p>
+An unbiased random walk (in any number of dimensions) is an example of a martingale.
+</p>
+
+<p>
+A gambler's fortune (capital) is a martingale if all the betting games which the gambler plays are fair.
+</p>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgheadline4" class="outline-2">
-<h2 id="orgheadline4"><span class="section-number-2">3</span> Option</h2>
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">3</span> Option</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li>assumption of BL</li>
+<li>assumption of Black Scholes</li>
 </ul>
 <div class="org-src-container">
 
@@ -307,8 +378,8 @@ Bond and stock arbitrage, portfolio is the same value by buying stock and borrow
 </div>
 
 
-<div id="outline-container-orgheadline5" class="outline-2">
-<h2 id="orgheadline5"><span class="section-number-2">4</span> Database</h2>
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7"><span class="section-number-2">4</span> Database</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 select *
@@ -319,11 +390,11 @@ where a.key==b.key
 </div>
 </div>
 
-<div id="outline-container-orgheadline9" class="outline-2">
-<h2 id="orgheadline9"><span class="section-number-2">5</span> Data Analysis</h2>
+<div id="outline-container-orgheadline11" class="outline-2">
+<h2 id="orgheadline11"><span class="section-number-2">5</span> Data Analysis</h2>
 <div class="outline-text-2" id="text-5">
-</div><div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6"><span class="section-number-3">5.1</span> handle missing data</h3>
+</div><div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8"><span class="section-number-3">5.1</span> handle missing data</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 <a href="https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4">https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4</a>
@@ -354,8 +425,8 @@ where a.key==b.key
 </div>
 </div>
 
-<div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7"><span class="section-number-3">5.2</span> groupby</h3>
+<div id="outline-container-orgheadline9" class="outline-3">
+<h3 id="orgheadline9"><span class="section-number-3">5.2</span> groupby</h3>
 <div class="outline-text-3" id="text-5-2">
 <div class="org-src-container">
 
@@ -382,8 +453,8 @@ Name: age, dtype: float64
 </div>
 </div>
 
-<div id="outline-container-orgheadline8" class="outline-3">
-<h3 id="orgheadline8"><span class="section-number-3">5.3</span> merge, join</h3>
+<div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10"><span class="section-number-3">5.3</span> merge, join</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 inner join, outter join, left join, right join.
@@ -392,11 +463,11 @@ inner join, outter join, left join, right join.
 </div>
 </div>
 
-<div id="outline-container-orgheadline14" class="outline-2">
-<h2 id="orgheadline14"><span class="section-number-2">6</span> Companies</h2>
+<div id="outline-container-orgheadline16" class="outline-2">
+<h2 id="orgheadline16"><span class="section-number-2">6</span> Companies</h2>
 <div class="outline-text-2" id="text-6">
-</div><div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10"><span class="section-number-3">6.1</span> Akuna Capital</h3>
+</div><div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12"><span class="section-number-3">6.1</span> Akuna Capital</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>statistical learning questions</li>
@@ -463,19 +534,709 @@ Eg. if you enter 8 -&gt; (2 x 2 x 2) -&gt; Yes
 </div>
 </div>
 
-<div id="outline-container-orgheadline11" class="outline-3">
-<h3 id="orgheadline11"><span class="section-number-3">6.2</span> TrexQuant</h3>
-</div>
-
-<div id="outline-container-orgheadline12" class="outline-3">
-<h3 id="orgheadline12"><span class="section-number-3">6.3</span> Goomu Investment</h3>
-</div>
-
 <div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13"><span class="section-number-3">6.4</span> PwC</h3>
+<h3 id="orgheadline13"><span class="section-number-3">6.2</span> TrexQuant</h3>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14"><span class="section-number-3">6.3</span> Goomu Investment</h3>
+</div>
+
+<div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15"><span class="section-number-3">6.4</span> PwC</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 data scientist
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline27" class="outline-2">
+<h2 id="orgheadline27"><span class="section-number-2">7</span> 多因子</h2>
+<div class="outline-text-2" id="text-7">
+</div><div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17"><span class="section-number-3">7.1</span> 因子</h3>
+<div class="outline-text-3" id="text-7-1">
+<ol class="org-ol">
+<li>A股市场驱动因子能分为哪几大类?【按信息源分：技术、基本面、情绪等】</li>
+</ol>
+<p>
+说风格因子和行业因子
+</p>
+
+<ol class="org-ol">
+<li>常见的因子类别？【行业、技术、基本面、分析师预测、大数据】</li>
+</ol>
+<p>
+风格因子又可以分为基本面因子和技术类因子，诸如估值、质量等属于基本面因子，这些因子的计算原料均取自财务报表，而技术因子则一般仅用价格和成交量这两个基础数据来计算。当然还有一些其他用的比较多的因子，比如分析师预期、大数据以及高频因子等.
+</p>
+
+<ol class="org-ol">
+<li>除了最常用的回归法，还有没有其他方法可以进行单因子测试？各自优劣是什么？注：下面问题均针对回归法。【如果用分组法，可以看到非线性的关系】</li>
+</ol>
+<p>
+其他常用的方法比如有直接计算因子rankIC，通过IC来检验因子的预测效果和对股票的区分度；另外还有用分组法来测试因子效果，选取不同分位因子构建投资组合，然后对比各分组收益表现.
+</p>
+
+<ol class="org-ol">
+<li>单因子测试是否需要纠正版块、市值偏离等问题？如何纠正？【在版块偏离方面，可以设置行业虚拟变量。在市值偏离方面，可以取因子对市值回归的残差，但这种处理不一定有必要？】</li>
+</ol>
+<p>
+是否行业中性和市值中性取决于个人，行业中性和市值中性可以帮我们更好地理解收益的来源，也许某个财务因子表现好，但很可能是其与市值因子相关性极高。行业的纠正可以使组合中各行业的占比和基准保持一致，市值的纠正可以在优化限制条件中加入市值暴露为零的限制条件，或者简单的按市值加权构建组合.
+</p>
+
+<ol class="org-ol">
+<li>行业归属因子是否应选择动态变化的数据？【是，否则在回归过程中用到未来信息】</li>
+</ol>
+<p>
+是，因为同一家公司在不同时期可能主营业务发生变化，导致的行业分类会发生变化，若用静态的数据一方面不合理，另一方面是隐含的用到了未来数据.
+</p>
+
+<ol class="org-ol">
+<li>混业经营的上市公司，其行业因子有哪些处理方式？利弊？</li>
+</ol>
+<p>
+一个常见的处理方法是继续用虚拟变量来代表行业因子，只是对于混业经营的公司而言不是简单地0和1，而是根据某个财务指标（比如营业收入占比）来决定各行业的分配比例.
+</p>
+
+<ol class="org-ol">
+<li>行业因子采用GICS、证监会、申万、中信等第三方数据更好？还是利用相关性、聚类分析等算法来动态确定更好？各自利弊？</li>
+</ol>
+<p>
+个人建议用市场通用的第三方数据更好，比如申万；相关性和聚类分析等算法有可能存在伪回归的风险，缺乏踏实可靠财务经营逻辑，而且第三方数据都会根据公司的经营状况进行动态更新，在市场山也会形成一致预期.
+</p>
+
+<ol class="org-ol">
+<li>规模因子（Size，也叫市值因子）为什么在中国具有如此重大的影响？选择长期暴露小盘股有哪些利弊？</li>
+</ol>
+<p>
+一是小盘股的壳资源效应；二是小盘股可操作性强，在A股市场散户居多而且内幕交易盛行；三是小盘股成长性更高，如三因子中提到，长期来看，小盘股确实较大盘股有超额收益.
+</p>
+
+<ol class="org-ol">
+<li>市值因子应该怎么取？取市值本身、市值对数、市值平方根有什么区别，哪种更好？你认为流通市值和市值哪个信号更强？</li>
+</ol>
+<p>
+市值取对数会拉近个股间的差距，很多股票就近乎与等权重；至于哪一个好，得看实际的回测效果，从个人经验和直觉来看流通市值的代表性更强.
+</p>
+
+<ol class="org-ol">
+<li>换手率应该怎么计算？如遇长时间停牌，如何处理？</li>
+</ol>
+<p>
+对于个股一般用成交量/总流通股本来计算换手率，对于一个策略而言换收益一般是来衡量手续费的高低，常用每天双边交易总额/前一天收盘总资产来计算。停牌没有交易，可以简单置零处理.
+</p>
+
+<ol class="org-ol">
+<li>若某一因子包含长期平均数据（比如5年平均净利润），而中间有数据缺失的片段（比如最近5年中有2年的年报缺失），应该如何处理？现有两种参考方法：设为空值，或取现有数据的平均值充作长期均值。哪种更好？还是无所谓？</li>
+</ol>
+<p>
+考虑三种情况：1 存在缺失值的企业盈利线性增加；存在缺失值的企业盈利线性减少；存在缺失值的股票经营情况来回波动。
+</p>
+
+<p>
+如果企业盈利线性增加，剔除缺失值再取平均会导致盈利因子暴露度被高估；
+</p>
+
+<p>
+如果企业盈利线性减少，剔除缺失值再取平均会导致盈利因子暴露度被低估；
+</p>
+
+<p>
+如果在5年时间区间内企业盈利大幅波动，剔除缺失值再取平均对盈利因子暴露度的暴露度误差的影响无法估计。
+</p>
+
+<p>
+对于缺失值的处理没有一劳永逸的方法。其合适的处理方式依赖于数据特点、缺失情况（个别缺失还是大段缺失）、我们计算的目标是什么，等等。因此必须要对具体的问题和数据仔细斟酌，才能找到相对合适的处理方法。
+</p>
+
+<ol class="org-ol">
+<li>财务数据应该在哪个时点进行更新？比如月频的多因子模型，年报公布时间可能为3月或4月，是在3月底的时候即时更新那些已出的数据，还是在4月底统一更新使用？【有先有后，随时公布随时更新，或许更有时效性】</li>
+</ol>
+<p>
+在用历史数据对基本面因子取值进行计算的时候，我们应当保证因子所包含的信息和当时市场上投资者获得的信息一致。对于题目中的例子，如果企业是在 3 月份公布年报，则这些股票的因子暴露度应当在 3 月底进行更新；对于没有公布年报的企业，因子暴露度则维持原来的取值。
+</p>
+
+<ol class="org-ol">
+<li>有哪些指标可以用来衡量单因子测试的结果？【t绝对值均值，|t|&gt;2占比，t序列方差，beta均值，beta方差等】</li>
+</ol>
+<p>
+如果希望判断但因子的预测能力，最常见的基本指标是信息率（Information Ratio, IR）。一些业绩评价的常用指标，例如夏普比率，最大回撤等也可以用于单因子效果判断。
+</p>
+
+<ol class="org-ol">
+<li>依据单因子测试结果，如何对因子的有效程度进行排序？或者说，如何用单一指标衡量因子有效性？【参考：abs(mean(t))/std(t)，也许有更优解】</li>
+</ol>
+<p>
+用问题13的指标对因子进行排序则可。在排序的时候，更常见的方法是采用多个股票池对因子进行多次测试.
+</p>
+
+<ol class="org-ol">
+<li>所谓的“alpha因子”和“风险因子”，应该怎么进行区分？</li>
+</ol>
+<p>
+alpha 因子通常是对特定证券的预期收益率有预测能力的因子；而风险因子通常是投资者认为他们的信息或者策略对于该维度没有预测能力，并希望实现中性化处理的因子 (先验)，或对投资组合的风险存在显著边际贡献的因子 (后验)。
+</p>
+
+<ol class="org-ol">
+<li>你理解中有效且有逻辑的因子应该包括哪些？有逻辑但效果较差的因子应该包括哪些？如果采用某种方法组合出一个古怪的因子解释力很强，但是看不出因子的经济意义，你该怎么办？</li>
+</ol>
+
+
+<ol class="org-ol">
+<li>如何打磨旧的因子，提高其有效性？</li>
+</ol>
+<p>
+一个简单的想法是多测试旧因子的不同使用场景，比如估值因子在不同行业间的表现差异；又或者构建动态情景模型（dynamic contextual alpha model），在不同情境下看旧因子的表现；当然最直接的是进行旧因子的择时。另一个思路是，把旧因子和新因子进行组合。在旧因子的预测能力未完全衰减至0，且和新因子存在相关性的前提下，旧因子可以增强新因子的预测能力，或者对冲其风险。
+</p>
+
+<ol class="org-ol">
+<li>构建因子的新信息源如何寻找？有哪些思路？</li>
+</ol>
+<p>
+非结构化，需要很轻的技术把这些数据变为结构化的因子形态，比如热度数据、情感数据、支付数据等大数据领域。
+</p>
+
+<ol class="org-ol">
+<li>现在常用的因子都是易于量化的因子，对于基本面因子、事件驱动因子、市场情绪因子等不易量化的因子，有无合适的处理方法？</li>
+</ol>
+<p>
+分层打分
+</p>
+
+<ol class="org-ol">
+<li>Information Ratio vs Information Coefficient vs Breadth</li>
+</ol>
+<p>
+IR: mean(alpha<sub>p</sub>(t))/stdev(alpha<sub>p</sub>(t)
+</p>
+
+<p>
+IC: correlation of forecasts to returns
+</p>
+
+<p>
+BR: number of trading opportunities per year.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">7.2</span> 模型拟合</h3>
+<div class="outline-text-3" id="text-7-2">
+<ol class="org-ol">
+<li>拟合多因子模型的综合目标是什么？</li>
+</ol>
+<p>
+增强模型的解释能力，提高模型对风险的预测。
+</p>
+
+<p>
+通过拟合多因子模型，来筛选显著、有逻辑的因子达到解释股票的价格变动，预测其未来的变化情况.
+</p>
+
+<ol class="org-ol">
+<li>如何选择样本空间？例如对初上市股票、ST股票、指数成分股变动、停牌股票等异常情况的处理方法。</li>
+</ol>
+<p>
+每一期进行回归时的样本空间都需要动态处理，对于明显不合理且没有代表性的股票可以直接剔除，比如初上市的股票，ST股票、停牌股票等，保证最终所选出来的股票是最具有代表性的。同时需要注意，剔除时需要考虑行业问题，不能剔除不合理之后某个行业下面就没有代表股了，比如A股的保险业，对于这种情况就需要综合考虑。
+</p>
+
+<p>
+连续的、无缺失值的足够分析精度的频率样本是最好的，如果不满足其中的一项或者几项，可以采用插值、舍去等方法进行处理，这都是数据清洗的内容。对于初上市的股票、ST股票由于没有足够的历史数据进行回测，或者适用的模型和一般的不同，我个人的建议是能不碰就不碰，承认量化的局限性。指数成分股变动、停牌等，应对应修正我们在对冲系统风险时的头寸，避免不必要的风险暴露。
+</p>
+
+<ol class="org-ol">
+<li>如何选取因子组？有什么可以参考的经典理论？【提示：Barra USE3 Handbook】</li>
+</ol>
+<p>
+所选取的因子要保证合乎投资逻辑且经过长期市场检验，参考理论多来自于经济金融教科书、论文期刊等，比如Fama-French三因子模型。
+</p>
+
+<p>
+可以通过阅读研报、内部讨论等方式进行因子选取检验；最经典的应该就是三因子以及三因子扩展模型了吧。
+</p>
+
+<ol class="org-ol">
+<li>从选择因子到多因子策略回测，一般有哪几个环节？哪些可以省去，哪些不能？【单因子测试（似乎可以省略），合并因子（貌似不能省略，因为不合并相似因子无法消除共线性），预测个股收益率、成本、跟踪误差等，再进行约束优化问题求解】</li>
+</ol>
+<p>
+单因子测试，多因子合成，预测个股收益率、交易成本估算、组合构建.
+</p>
+
+
+<ol class="org-ol">
+<li>每一期的因子暴露度，如果不进行离群值、缺失值以及标准化处理，会有什么后果？如果选择进行处理，又会带来哪些需要注意的模型扭曲？</li>
+</ol>
+<p>
+极值在回归中会影响整体的情况，若不进行标准化处理会导致因子间的量纲相差甚远，缺失值过多也回影响模型整体情况；对于极值的处理要考虑合理性，特别异常的极值可以直接去掉，缺失值剔除太多也不行，标准化要考虑行业之间在某些因子上固有的差异。
+</p>
+
+<p>
+不处理的话可能会造成模型的预测收益虚高/虚低、模型的时间频度不一致导致被估计参数错误/不稳健等后果。进行处理主要是插值、取对数、拉回n倍标准差等等，可能会存在过拟合等问题。
+</p>
+
+<ol class="org-ol">
+<li>离群值处理方法有那几种？一种比较常用的办法是将离开均值N倍标准差距离以外的离群值拉回N倍标准差的位置上，这时候N一般取值多少？【离群值处理还可以用中位数去极值等办法，对题干所述方法，有把N取成2，2.5，3，5的，也许可以通过理论+实践验证一下哪种取值更好】</li>
+</ol>
+<p>
+离群值处理有分位数去极值、标准正态分布去极值；若用标准正态分布，常见的N取3。
+</p>
+
+<ol class="org-ol">
+<li>缺失值的处理方法有哪几种？现提供三种参考方式：一是把空置设为NaN，回归涉及NaN项时用程序自动忽略；二是把所有含NaN项的个股从当期票池中剔除；三是把所有NaN（在标准化后）设为零（或中位数）。它们有什么区别？哪种好？或者有没有更好的？</li>
+</ol>
+<p>
+回归时有NaN的项，程序也会自动忽略，和剔除所达到的效果一样；直接将NaN设置为0或者中位数也是一个可选方案，但这种替代是否合理还要具体情况具体分析；个人经验是，若因为某些原因缺失值不能直接去掉则建议用某个值替换，反之没有这个限制则可以剔除。
+</p>
+
+<p>
+剔除各股是最稳健、保守的处理方法，缺点是排除了可能存在alpha的股票；一般的做法是标准化后做技术处理，这样可能导致模型过拟合；自动忽略不太建议使用，因为数据的连续性上会出现问题。如果可行的话，可以采用和缺失值因子相关度较高的、数据质量较好的另外一个或者一组因子来代替含油缺失值的因子，可以避免以上问题。但现实不一定满足，满足不一定能获取。
+</p>
+
+<ol class="org-ol">
+<li>标准化的方法有哪些？标准化后数据近似呈现何种分布规律？各种标准化方法的利弊？【除了减去均值、再除以标准差，还可以取排序序数等】</li>
+</ol>
+<p>
+常用的是假设因子值服从正态分布，用(x-u)/sigma来进行标准化；在因子值明显不服从正态分布时，可以采用中位数标准化方法。
+</p>
+
+<p>
+一般就是将因子减去均值除以方差，标准化后呈现N（0，1）分布。我仅知这一种标准化方法。另外，根据我计量经济学上的知识，标准化在模型的处理中不一定是必要的，在未标准化时，也可以直接采用回归方法进行处理。
+</p>
+
+<ol class="org-ol">
+<li>带权重的标准化，权重怎么设置？是否需要和回归时的个股权重保持一致？</li>
+</ol>
+<p>
+可以选用流通市值作为权重，回归时个股设置的权重是为了剔除异方差的影响，没有必要和带全标准化这时的一样。
+</p>
+
+<ol class="org-ol">
+<li>标准化、离群值处理、缺失值处理，三个环节如何确立先后顺序？</li>
+</ol>
+<p>
+一般来说，处理顺序为极值处理、缺失值处理、标准化。
+</p>
+
+<ol class="org-ol">
+<li>因子之间或多或少具有一些相关性，若把所有因子进行正交化处理，会发生什么情况？这样做或不这样做的理由是什么？</li>
+</ol>
+<p>
+类似于主成分分析法，若把所有因子进行正交化则会失去因子的投资逻辑，会使得模型的解释性不够强也没有原始因子那么直观。
+</p>
+
+<ol class="org-ol">
+<li>如何选择截面回归的频率？依据是什么？</li>
+</ol>
+<p>
+截面回归的频率决定了对风险预测的horizon，这也对应了后续构建组合的调仓频率，需要联系起来考虑；常用的计算截面回归的一般是日频。
+</p>
+
+<ol class="org-ol">
+<li>回归模型涉及的个股收益率怎么计算？最简单的（又能保证一定精确度的）方法是什么？</li>
+</ol>
+<p>
+【可以用复权收盘价。精确结果应该是利用市场价格和分股、配股等影响收益的因素结合计算】
+</p>
+
+<ol class="org-ol">
+<li>回归模型是否需要加入截距项（即常数项）？在什么情况下可以取，什么情况下不能取？【有行业因子时不能加入截距项，因为行业因子之和为全1向量，再加截距项就会导致回归系数不唯一确定】</li>
+</ol>
+<p>
+有行业因子时不能加入截距项，因为行业因子之和为全1向量，再加截距项就会导致回归系数不唯一确定
+</p>
+
+<ol class="org-ol">
+<li>回归时用OLS和WLS的区别在哪里？使用WLS的依据是什么？【Barra文档里提到两点：一是市场更关注那些流通市值更大的股票；二是对消除异方差有帮助，并且支出sqrt（流通市值）是对异方差的一个较好的估计，可以用作回归权重】</li>
+</ol>
+<p>
+WLS主要是消除异方差的影响，得到的factor return更有效，在现实中确实存在不同市值股票的波动表现差异很大，大市值蓝筹股波动明显小于小市值股票，WLS有其合理的意义。
+当残差序列存在异方差性时，用OLS估计的估计参数不稳健，此时应采用WLS对各项参数进行加权，以保证残差序列的无偏、一致、有效性。加权的一般方法是采用OLS估计下的残差、残差平方来做加权。
+</p>
+
+<ol class="org-ol">
+<li>如何评估或衡量多因子模型的效果？</li>
+</ol>
+<p>
+常见的有两种方式，一个是进行典型的bias test，构建组合计算BS统计量，看其波动率是否为1；另一个是直接绘图，xy轴分别为组合实际波动率和组合预测波动率。
+</p>
+
+<p>
+一般来说用偏差检验（Bias Test）来评测风险模型对于组合波动率的预测精度；从概念上来讲，偏差检验值代表的是组合实际波动率与预测波动率的比值。
+</p>
+
+<p>
+一些统计学上的指标，比如卡方分布等等来检验实盘中的波动率和预测模型的波动率是否服从同一分布。
+</p>
+
+<ol class="org-ol">
+<li>如何判断现有因子是否足够解释收益率？【R<sup>2可以辅助判断</sup>，也许有更好的标准？】</li>
+</ol>
+<p>
+最直观的标准当然是R<sup>2</sup>；但是R<sup>2的缺点在于没有考虑因子的数量</sup>，因此可以使用Adjusted R<sup>2</sup>，也可以使用RSME。当然对于Alpha模型来说，更重要的是预测能力，可以通过factor return的t值和IC来判断。
+</p>
+
+<ol class="org-ol">
+<li>中国股票市场多因子模型的R<sup>2通常在什么量级</sup>？</li>
+</ol>
+<p>
+BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
+</p>
+
+<p>
+19.为了提高R<sup>2</sup>，尽可能多地加入各种因子，会导致什么问题？
+入更多的因子一定会提升R<sup>2</sup>，但是会导致过拟合的问题.
+</p>
+
+<ol class="org-ol">
+<li>如果一个因子与现有因子组均低相关，而且能够显著提高R<sup>2</sup>，那么什么样的理由可能会使我们选择不加入这个因子？【因子收益率不稳定】</li>
+</ol>
+<p>
+因子收益率不稳定，即在统计上因子收益率均值不显著。
+</p>
+
+<ol class="org-ol">
+<li>对于回归法因子测试，能否直接用不同截面的数据叠加在一起进行回归（即面板回归）？可能产生的后果是什么？【牛熊市数据可能分层了，掩盖真正的规律】</li>
+</ol>
+<p>
+不能。因为市场可能会产生结构性调整，牛市和熊市中因子收益率会产生巨大变化。
+</p>
+
+<ol class="org-ol">
+<li>进行多元回归时，如何检验共线性、异方差问题？如何解决？</li>
+</ol>
+<p>
+用VIF来判断是否存在多重共线性；异方差和自相关可以用white-robust或者Newey-West-robust解决。
+</p>
+
+<ol class="org-ol">
+<li>无风险资产在各个市场应该如何选择？中国市场有哪些选择？各自的利弊（例如历史长度、数据完整性、代表性等）？</li>
+</ol>
+<p>
+无风险资产是指具有确定的收益率，并且不存在违约风险的资产。在中国，可以用中国固定利率国债作为无风险资产。
+</p>
+
+<ol class="org-ol">
+<li>计算beta值的基准（benchmark）如何选择？不同选择对整个模型影响有哪些方面？</li>
+</ol>
+<p>
+根据投资目标和投资股票池来选择。
+</p>
+
+<ol class="org-ol">
+<li>似乎研究者已经惯于用线性模型来解释收益率，为什么不用更复杂的模型？（或者已经存在什么非线性的结果？）</li>
+</ol>
+<p>
+线性模型的可解释性较好.
+</p>
+
+<ol class="org-ol">
+<li>拟合多因子模型时，数据挖掘问题有多严重？怎样降低过拟合的程度？</li>
+</ol>
+<p>
+选取不同大类的因子、因子构建需要有经济学逻辑、控制因子的数量等等.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">7.3</span> 收益预测</h3>
+<div class="outline-text-3" id="text-7-3">
+<ol class="org-ol">
+<li>在多因子回归中，预测的目标是什么？收益率？对行业的超额收益率？对市场的超额收益率？还是其他的？</li>
+</ol>
+<p>
+对市场的超额收益率。
+</p>
+
+<ol class="org-ol">
+<li>用于收益预测的多因子模型，在拟合时应侧重考虑哪些方面？</li>
+
+<li>因子收益率如何预测？有哪些方法？是否有必要进行因子择时? 国外的文献对这方面的研究成果如何？</li>
+</ol>
+<p>
+风险模型
+</p>
+
+<ol class="org-ol">
+<li>构建选股模型时，通常会对许多因子进行降维、合并，这样做的主要意义是什么？【国信、中信的多因子报告里都有相关介绍】</li>
+</ol>
+<p>
+减少多重共线性，减少计算量。
+</p>
+
+<ol class="org-ol">
+<li>对将要合并的几个因子，如何分配它们的权重？请对静态、动态赋值各一例，它们各自的优劣是什么？【提示：静态比如简单平均，动态比如IC加权平均，参见安信或中信多因子报告。简单平均的好处是逻辑简洁便于计算，动态平均能更多地利用市场信息】</li>
+<li>已知过去若干期的（合并后）因子暴露度，根据以上测试结果，如何预测下期收益率？</li>
+<li>用IC（横截面相关性）衡量预测有效性有什么缺陷？</li>
+<li>未来1日收益率预测的IC通常在什么水平？未来1月的呢？不同时间尺度之间是否有固定的转换关系？</li>
+<li>预测时间尺度如何选择？未来1天、1周、1月、3月还是更长？【看你拥有的信息/因子在哪个时间尺度上最有效】</li>
+</ol>
+<p>
+需要考虑因子的时间衰减情况，如果因子衰减随时间衰减较快，需要考虑较短的预测周期。
+</p>
+
+<p>
+10.如何将多因子模型的预测与其它预测（例如定性研究对少数股票的预测）整合？
+【Black-Litterman模型】
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">7.4</span> 风险预测</h3>
+<div class="outline-text-3" id="text-7-4">
+<ol class="org-ol">
+<li>用于风险预测的多因子模型，在拟合时应侧重考虑哪些方面？</li>
+</ol>
+<p>
+1 仔细检查离群值，剔除错误或不合理的离群值，把合理的，但在三个标准差以外的离群值拉回到三个标准差；
+</p>
+
+<p>
+2 用市值平方根近似股票的特异波动率，对股票进行加权。一方面减轻残差异方差性的影响，另一方面保证在所有风险暴露相同的组合之中，因子组合是风险最小的组合
+</p>
+
+<ol class="org-ol">
+<li>是否有必要预测收益的波动率？如何预测收益的波动率？是否要在优化中使用波动率？</li>
+</ol>
+<p>
+在使用多因子模型对资产风险进行预测时，我们一般使用 Rosenberg （Barra创始人）1974 年提出的建模思路，先估计因子收益的协方差矩阵，再预测组合收益的协方差矩阵。
+</p>
+
+<p>
+如果直接对资产组合收益的波动率建模，由于多期的资产收益波动率通常是一个自相关性不稳定的非平稳时间序列，使用多因子模型进行时间序列回归的话，残差时间序列也可能是非平稳的。因此会造成以下问题：
+</p>
+
+<p>
+1 最小二乘法不再是最优线性无偏估计（Best Linear Unbiased Estimation，BLUE），需要采用广义最小二乘法（Generalized Least Square， GLS）进行回归系数估计；
+</p>
+
+<p>
+2 残差自相关性导致一些基于残差分析的绩效指标和统计量（信息率和T统计量）不再适用。
+</p>
+
+<p>
+因此，如果希望对资产组合的波动率直接进行预测，一般会使用 Garch 模型等时间序列模型。不过广义来说，时间序列模型和多因子模型具有相同的数学形式。如果把自回归项、移动平均项和长期均值视为因子，那么 Garch 模型也可以认为是一个多因子模型。但必须注意的是，Garch 的参数估计方法是极大似然估计（Maximum Likelihood Estimation）而不是回归模型常用的最小二乘法
+</p>
+
+
+<ol class="org-ol">
+<li>多因子模型预测出的协方差矩阵是否会有发生高度接近奇异的情况？</li>
+</ol>
+<p>
+有可能。如果因子收益的协方差矩阵是奇异矩阵，则估计出来的资产收益协方差矩阵也可能是奇异的。所以一般要通过特定的处理，例如矩阵收缩（matrix shrinkage）等对因子协方差矩阵进行降噪。USE4 给出的模型主要改进就是协方差矩阵的降噪处理
+</p>
+
+<ol class="org-ol">
+<li>设我们称风险预测模型中的因子为“风险因子”，称收益预测模型中的因子为“alpha因子”。如果一个alpha因子也入选了风险因子，会对组合优化结果产生什么影响？如果在风险模型中特意剔除所有alpha因子，会对组合优化结果产生什么影响？</li>
+</ol>
+<p>
+如果一个 alpha 因子进入了风险结构化模型，且在组合优化时对其进行了中性化处理，那么该 alpha 因子理论上不会产生收益。
+</p>
+
+<p>
+组合优化中，哪些因子是阿尔法因子，哪些是风险因子，取决于测试结果和投资者本身对于该因子的理解。就一般而言，对越多因子进行中性化处理，资产组合的风险就越低，同时预期收益也会越低；反之风险和预期收益都会增加.
+</p>
+
+<ol class="org-ol">
+<li>BARRA的多因子风险预测模型主要在哪些细节上做了精细处理？</li>
+</ol>
+<p>
+在估计因子协方差矩阵时的Eigen Factor Adjustment、Volatility Regime Adjustment以及Bayesian Shrinkage等等。
+</p>
+
+<ol class="org-ol">
+<li>BARRA在不同市场上的多因子风险预测模型之间的细微差异，反映了各个市场的哪些特点？</li>
+</ol>
+<p>
+对比 USE4 和 CNE5 的话，USE4 中的因子组比 CNE5 多出了两个：Dividend Yield 和Non-Linear Beta
+</p>
+
+<ol class="org-ol">
+<li>用日数据vs用月数据估计协方差矩阵，各适用于什么需求？用日内（例如分钟级）数据来估计协方差阵的好处与坏处是什么？</li>
+</ol>
+<p>
+如果使用分钟级别的数据，所选的因子必须有一致的时间尺度——这意味不能使用任何基本面因子，而只能使用量价因子。用一套量价因子来做收益预测是完全可行的，但我个人认为，仅仅使用量价因子做风险分解和预测未必妥当。
+</p>
+
+<p>
+下面我们仅仅比较月频率和日频率的数据使用：
+</p>
+
+<p>
+理论上，Barra 的结构化模型中，相当部分的风险因子都是基本面因子，其时间尺度较大，因此每月计算一次因子收益即可。
+</p>
+
+<p>
+但在对因子收益的经验协方差矩阵（empirical covariance matrix）进行估计时，我们会面临以下的两难问题：
+</p>
+
+<p>
+1 假定我们的模型中包含20个因子，那么我们至少需要 21 个月的数据。而对于政策变化频繁，投资理念不成熟的中国A股市场，21个月的时间已经足够让市场发生结构性的变化，从而使协方差矩阵的估计失去意义；
+</p>
+
+<p>
+2 如果用日频率的因子收益计算，则其中包含的噪音相对较多，而且在得到日频率的因子收益协方差矩阵以后，我们对其进行时间尺度的转换，而且需要对其噪音进行严格控制
+</p>
+
+<ol class="org-ol">
+<li>怎样衡量或评估风险预测模型的有效性？</li>
+</ol>
+<p>
+对于因子的有效性，USE 4 主要提到以下标准：
+</p>
+
+<p>
+1 选用的因子组应该能够有效把系统性风险分解出来——即特异收益率没有相关性。特异收益率没有相关性也是结构化风险模型的假设之一；
+</p>
+
+<p>
+2 在有效分解系统性风险的前提下，因子数目越少越好（parsimony），降低模型过拟合的可能性；
+</p>
+
+<p>
+3 持续的统计显著性。对于具体某个因子，我们可以通过多期回归得到一组因子T统计量，如果这组T统计量的绝对值的均值大于2，或者在该组T统计量中，其绝对值大于2的比例较高，则认为该因子有很好的效果；
+</p>
+
+<p>
+4 因子暴露度的稳定性。理论上，结构化风险模型更新频率是每月一次，因此因子暴露度时间尺度应该与之一致；
+</p>
+
+<p>
+5 因子的共线性。因子之间存在共线性会导致回归系数的估计方差变大，因此在因子选择时应尽量避免出现共线性问题。
+</p>
+
+<p>
+6 因子的经济学意义符合直觉。因子意义容易理解，一方面是模型质量的要求；另一方面，在组合优化的时候，我们需要根据自己的理解选择中性化约束。如果因子的意义难于理解，是否有必要对其进行中性化处理自然也无从判断。
+</p>
+
+<p>
+除此以外，USE4中，也给出了因子的年化收益率、年化波动率、年化夏普率等指标。但我个人认为，如果以风险预测为目标，这些指标并不是必要的。
+</p>
+
+<p>
+对于整个模型的有效性检验，USE4 提到以下标准：
+</p>
+
+<p>
+1 可决系数（coefficient of determination)，也就是我们常说的 R<sup>2</sup>；
+</p>
+
+<p>
+2 Bias Statistics，这个测试的思路和我们开发策略常用的信息系数类似，是比较模型的预测和实际情况的差距；而基于 Bias Statistics 的 Mean Rolling Absolute Deviation（MRAD）会提供更多关于模型精度的信息
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">7.5</span> 业绩归因</h3>
+<div class="outline-text-3" id="text-7-5">
+<p>
+1用于业绩归因的多因子模型，在拟合时应侧重考虑哪些方面？
+2有人认为，与用于预测的多因子模型相比，用于业绩归因的多因子模型，对因子之间的低共线性要求更高，请解释可能的原因？
+3业绩归因将组合收益分解为若干个因子上的收益和一个特异收益。一位有技术的定性投资经理（基于实地调研和对某些行业、公司的洞察力）的归因结果应该是什么样子？一位利用多因子模型量化选股的投资经理的归因结果应该是什么样子？
+4在对一个已知策略逻辑大体思路的投资组合进行业绩归因时，采用标准的因子组vs采用针对性的因子组各有什么利弊？【采用标准因子组便于与其它组合横比；采用针对性因子组便于与自身策略逻辑纵比】
+5多因子业绩归因系统输出的结果中，特异收益（specific return，即不可被因子解释的收益）如果显著地偏正或偏负，怎样解释？怎样调试归因系统来消除偏离？
+6纯多头组合业绩归因时，以总头寸或者主动头寸（=总头寸-基准头寸）为分析对象，各有什么利弊？
+7如果不知道组合持股明细，只知道组合每日收益率，怎样对它进行多因子业绩归因？误差会放大多少？
+8多因子业绩归因模型怎样与Brinson业绩归因模型整合使用？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22"><span class="section-number-3">7.6</span> 组合构建</h3>
+<div class="outline-text-3" id="text-7-6">
+<p>
+1利用多因子模型进行选股，求解每期股票权重的问题本质上是一个带约束的最优化问题，请阐述优化目标和约束条件各是什么？
+2组合优化有哪些常见方法？各要注意什么问题？
+3股票组合中个股权重上限的设计有什么技巧？大约应设置在什么范围？【个股权重不能太大，否则只会集中买入每个行业预期收益最高的股票；也不能太小，否则可能出现某个行业内所有股票都持仓至上限也无法达到行业中性。参考值：2%～3%，应根据实际情况调整取值】
+4是否要根据个股的交易量来限制个股权重的上限？
+5如何预估市场冲击？
+6是否可以（大概）控制每个版块的持仓个股数？如何做？【参考方法：股权重上限为它所处行业在沪深300（或其他基准）中占比除以希望持仓的个股数】
+7建立选股模型时，如何控制行业中性、市值中性（或其他条件）？
+8建立选股模型时，如何处理交易成本、股票停牌等问题？如何计买入、卖出价？
+9纯多头约束对组合构建的影响不止是少了一半的获利机会，这句话怎样理解？
+10纯多头股票组合策略应选择怎样的指数作为基准？沪深300、中证500、中证800？各有什么利弊？
+11应该每日调整头寸，还是更低的频率，例如每月，抑或每次财报集中发布之后？
+12多因子模型回测过程中，是否应对个股特别设立平仓与开仓条件（即对多因子的结果进行修正）？如何做？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23"><span class="section-number-3">7.7</span> 实盘</h3>
+<div class="outline-text-3" id="text-7-7">
+<p>
+1新策略从提出到开发，再到上线的流程中，历史回测（back-test）、实时模拟（paper-trading）和实盘交易（real-money）的关键差异何在，各自的优劣何在？
+2如何检测你的模型是否已经失效？ 模型因子是否需要定期重选？
+3实盘中一个历史回测、实时模拟业绩都很好的策略发生了异常回撤，问题可能出在什么地方？应急预案是什么？
+4如何设计数据库表结构来记录实盘交易流水和每日资产明细？
+5在实盘交易中，模型给出的交易指令常常不能被精确地执行，如何评估其影响？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24"><span class="section-number-3">7.8</span> 数据</h3>
+<div class="outline-text-3" id="text-7-8">
+<p>
+1基本信息、行情、基本面等基础数据库的表结构应该怎样设计？出于怎样的考虑？
+2选择Mysql、SQL及其它数据库管理系统的利弊？
+3常见的数据来源有哪些，数据提供商有哪些，各有哪些优劣？
+4用网页抓取生成的数据源的利弊？
+5如何支持多数据源？
+6每个数据具有三个关键日期，数据日期、公告日期、录入日期。对于不同类型的数据项，上述三个关键日期之间的时滞情况不同，请对不同情况分别举例。数据库应怎样设计以全息保存三种关键日期，并使历史回测结果更加逼真？
+7行业分类数据选用哪家的好？
+8发现一只股票的某个财务数据异常，怎样找到真值？
+9如何记录基础数据的勘误历史？
+10怎么进行数据清洗？拥有哪些异常行为的股票应该列入黑名单？
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25"><span class="section-number-3">7.9</span> 程序</h3>
+<div class="outline-text-3" id="text-7-9">
+<ol class="org-ol">
+<li>分析程序用MATLAB、Python、R、C++等语言各自的利弊？哪种背景和需求的人应该选择哪种语言？</li>
+</ol>
+<p>
+Python脚本化语言，学习过程快，处理数据方便，有很多成熟的开源科学运算库，和开源的程序，如Cvxopt, zipline, scipy. 速度慢
+C++ 速度快，但是学习曲线很陡峭，开发周期长，调试不方便。
+</p>
+
+<ol class="org-ol">
+<li>10年历史回测，数据量大约是多少，运算量大约是多少？怎样的内存不会溢出？</li>
+</ol>
+<p>
+3000 stocks * 10 years * 250 days * 8 Bytes = 57 MBytes
+</p>
+
+<ol class="org-ol">
+<li>面向过程的架构vs面向对象架构来实现多因子模型各有什么利弊？</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">7.10</span> 综合</h3>
+<div class="outline-text-3" id="text-7-10">
+<p>
+1股票市场是否存在alpha，怎样验证？
+2传统的基本面投资方法与多因子模型都是为了得到股票组合，他们的异同是什么？
+3多因子回归模型与CAPM理论和APT理论的关系是什么？
+4一般的选股模型可以达到多少年化收益率和夏普比率？
+5在多因子模型的构造过程中，最核心的一个环节是什么？【我认为是预测收益率，也许有人认为是风险（跟踪误差）控制】
+6不同交易频率的组合投资策略——日内（高频、中频、低频）、日频、中期、长期，其对应的多因子模型有哪些不同？
+7为什么同样的策略，不同的执行者之间会存在无法抹去的误差（为什么你无法复制另一个人的研究报告成果）？
+8一般来说，多因子模型对数据敏感性很强，那么它的结果还有参考意义吗？
+9多因子模型作为一个如此成熟的策略，为什么还有前仆后继的研究者？
+10基于多因子模型的策略收益没有吸引力，从业者众多，是夕阳产业吗？年轻人学习多因子模型是否值得？
+11机器学习、人工智能的工具可以应用到多因子模型的哪些地方？
 </p>
 </div>
 </div>
