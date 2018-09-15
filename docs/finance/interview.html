@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-14 Fri 10:12 -->
+<!-- 2018-09-15 Sat 13:07 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -194,28 +194,33 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline10">5.3. merge, join</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline16">6. Companies</a>
+<li><a href="#orgheadline17">6. Companies</a>
 <ul>
-<li><a href="#orgheadline12">6.1. Akuna Capital</a></li>
-<li><a href="#orgheadline13">6.2. TrexQuant</a></li>
-<li><a href="#orgheadline14">6.3. Goomu Investment</a></li>
-<li><a href="#orgheadline15">6.4. PwC</a></li>
+<li><a href="#orgheadline13">6.1. Akuna Capital</a>
+<ul>
+<li><a href="#orgheadline12">6.1.1. Quant dynamic</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline27">7. 多因子</a>
-<ul>
-<li><a href="#orgheadline17">7.1. 因子</a></li>
-<li><a href="#orgheadline18">7.2. 模型拟合</a></li>
-<li><a href="#orgheadline19">7.3. 收益预测</a></li>
-<li><a href="#orgheadline20">7.4. 风险预测</a></li>
-<li><a href="#orgheadline21">7.5. 业绩归因</a></li>
-<li><a href="#orgheadline22">7.6. 组合构建</a></li>
-<li><a href="#orgheadline23">7.7. 实盘</a></li>
-<li><a href="#orgheadline24">7.8. 数据</a></li>
-<li><a href="#orgheadline25">7.9. 程序</a></li>
-<li><a href="#orgheadline26">7.10. 综合</a></li>
+<li><a href="#orgheadline14">6.2. TrexQuant</a></li>
+<li><a href="#orgheadline15">6.3. Goomu Investment</a></li>
+<li><a href="#orgheadline16">6.4. PwC</a></li>
 </ul>
 </li>
+<li><a href="#orgheadline28">7. 多因子</a>
+<ul>
+<li><a href="#orgheadline18">7.1. 因子</a></li>
+<li><a href="#orgheadline19">7.2. 模型拟合</a></li>
+<li><a href="#orgheadline20">7.3. 收益预测</a></li>
+<li><a href="#orgheadline21">7.4. 风险预测</a></li>
+<li><a href="#orgheadline22">7.5. 业绩归因</a></li>
+<li><a href="#orgheadline23">7.6. 组合构建</a></li>
+<li><a href="#orgheadline24">7.7. 实盘</a></li>
+<li><a href="#orgheadline25">7.8. 数据</a></li>
+<li><a href="#orgheadline26">7.9. 程序</a></li>
+<li><a href="#orgheadline27">7.10. 综合</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline29">8. Macroeconomy</a></li>
 </ul>
 </div>
 </div>
@@ -463,11 +468,11 @@ inner join, outter join, left join, right join.
 </div>
 </div>
 
-<div id="outline-container-orgheadline16" class="outline-2">
-<h2 id="orgheadline16"><span class="section-number-2">6</span> Companies</h2>
+<div id="outline-container-orgheadline17" class="outline-2">
+<h2 id="orgheadline17"><span class="section-number-2">6</span> Companies</h2>
 <div class="outline-text-2" id="text-6">
-</div><div id="outline-container-orgheadline12" class="outline-3">
-<h3 id="orgheadline12"><span class="section-number-3">6.1</span> Akuna Capital</h3>
+</div><div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13"><span class="section-number-3">6.1</span> Akuna Capital</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>statistical learning questions</li>
@@ -514,8 +519,8 @@ Prime factorization
 Eg. if you enter 8 -&gt; (2 x 2 x 2) -&gt; Yes
 10 -&gt; (5x2) -&gt; No
 12 -&gt; (2x2x3) -&gt; Yes
-1 Answer
 </p>
+
 <ol class="org-ol">
 <li>Simple Order Book</li>
 </ol>
@@ -530,20 +535,196 @@ Eg. if you enter 8 -&gt; (2 x 2 x 2) -&gt; Yes
 <li>Judge stock performance (up or down) according to given data. Basically discriminant analysis</li>
 
 <li>Given a specific trading strategy and an input of stock prices, calculate the gain/loss at the end of the day</li>
+
+<li>What is the probability of an integer from 1 to 60,000 not having the digit 6?</li>
+
+<li>input: (array, k), find median of the subarray which includes numbers smaller than or equal to k . 2. matrix rotation 3. orderbook 4. parsing words.</li>
+
+<li>Rotate a matrix counter-clockwise</li>
+
+<li>Rotate a matrix anti-clockwise (matrix can be rectangle too)</li>
 </ol>
+<p>
+<a href="https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/">https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/</a>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #75715E;"># </span><span style="color: #75715E;">Python3 program to rotate a matrix by 90 degrees</span>
+<span style="color: #FD971F;">N</span> = <span style="color: #AE81FF;">4</span>
+
+<span style="color: #75715E;"># </span><span style="color: #75715E;">An Inplace function to rotate</span>
+<span style="color: #75715E;"># </span><span style="color: #75715E;">N x N matrix by 90 degrees in</span>
+<span style="color: #75715E;"># </span><span style="color: #75715E;">anti-clockwise direction</span>
+<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">rotateMatrix</span><span style="color: #AE81FF;">(</span>mat<span style="color: #AE81FF;">)</span>:
+
+    <span style="color: #75715E;"># </span><span style="color: #75715E;">Consider all squares one by one</span>
+    <span style="color: #F92672;">for</span> x <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #AE81FF;">(</span><span style="color: #AE81FF;">0</span>, <span style="color: #F92672;">int</span><span style="color: #66D9EF;">(</span>N/<span style="color: #AE81FF;">2</span><span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">)</span>:
+
+        <span style="color: #75715E;"># </span><span style="color: #75715E;">Consider elements in group</span>
+        <span style="color: #75715E;"># </span><span style="color: #75715E;">of 4 in current square</span>
+        <span style="color: #F92672;">for</span> y <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #AE81FF;">(</span>x, N-x-<span style="color: #AE81FF;">1</span><span style="color: #AE81FF;">)</span>:
+
+            <span style="color: #75715E;"># </span><span style="color: #75715E;">store current cell in temp variable</span>
+            <span style="color: #FD971F;">temp</span> = mat<span style="color: #AE81FF;">[</span>x<span style="color: #AE81FF;">][</span>y<span style="color: #AE81FF;">]</span>
+
+            <span style="color: #75715E;"># </span><span style="color: #75715E;">move values from right to top</span>
+            mat<span style="color: #AE81FF;">[</span>x<span style="color: #AE81FF;">][</span>y<span style="color: #AE81FF;">]</span> = mat<span style="color: #AE81FF;">[</span>y<span style="color: #AE81FF;">][</span>N-<span style="color: #AE81FF;">1</span>-x<span style="color: #AE81FF;">]</span>
+
+            <span style="color: #75715E;"># </span><span style="color: #75715E;">move values from bottom to right</span>
+            mat<span style="color: #AE81FF;">[</span>y<span style="color: #AE81FF;">][</span>N-<span style="color: #AE81FF;">1</span>-x<span style="color: #AE81FF;">]</span> = mat<span style="color: #AE81FF;">[</span>N-<span style="color: #AE81FF;">1</span>-x<span style="color: #AE81FF;">][</span>N-<span style="color: #AE81FF;">1</span>-y<span style="color: #AE81FF;">]</span>
+
+            <span style="color: #75715E;"># </span><span style="color: #75715E;">move values from left to bottom</span>
+            mat<span style="color: #AE81FF;">[</span>N-<span style="color: #AE81FF;">1</span>-x<span style="color: #AE81FF;">][</span>N-<span style="color: #AE81FF;">1</span>-y<span style="color: #AE81FF;">]</span> = mat<span style="color: #AE81FF;">[</span>N-<span style="color: #AE81FF;">1</span>-y<span style="color: #AE81FF;">][</span>x<span style="color: #AE81FF;">]</span>
+
+            <span style="color: #75715E;"># </span><span style="color: #75715E;">assign temp to left</span>
+            mat<span style="color: #AE81FF;">[</span>N-<span style="color: #AE81FF;">1</span>-y<span style="color: #AE81FF;">][</span>x<span style="color: #AE81FF;">]</span> = temp
+
+
+<span style="color: #75715E;"># </span><span style="color: #75715E;">Function to pr the matrix</span>
+<span style="color: #F92672;">def</span> <span style="color: #A6E22E;">displayMatrix</span><span style="color: #AE81FF;">(</span> mat <span style="color: #AE81FF;">)</span>:
+
+    <span style="color: #F92672;">for</span> i <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #AE81FF;">(</span><span style="color: #AE81FF;">0</span>, N<span style="color: #AE81FF;">)</span>:
+
+        <span style="color: #F92672;">for</span> j <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #AE81FF;">(</span><span style="color: #AE81FF;">0</span>, N<span style="color: #AE81FF;">)</span>:
+
+            <span style="color: #F92672;">print</span> <span style="color: #AE81FF;">(</span>mat<span style="color: #66D9EF;">[</span>i<span style="color: #66D9EF;">][</span>j<span style="color: #66D9EF;">]</span>, end = <span style="color: #E6DB74;">' '</span><span style="color: #AE81FF;">)</span>
+        <span style="color: #F92672;">print</span> <span style="color: #AE81FF;">(</span><span style="color: #E6DB74;">""</span><span style="color: #AE81FF;">)</span>
+
+
+
+
+<span style="color: #75715E;"># </span><span style="color: #75715E;">Driver Code</span>
+<span style="color: #FD971F;">mat</span> = <span style="color: #AE81FF;">[</span><span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">0</span> <span style="color: #F92672;">for</span> x <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #A6E22E;">(</span>N<span style="color: #A6E22E;">)</span><span style="color: #66D9EF;">]</span> <span style="color: #F92672;">for</span> y <span style="color: #F92672;">in</span> <span style="color: #F92672;">range</span><span style="color: #66D9EF;">(</span>N<span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">]</span>
+
+<span style="color: #75715E;"># </span><span style="color: #75715E;">Test case 1</span>
+<span style="color: #FD971F;">mat</span> = <span style="color: #AE81FF;">[</span> <span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">1</span>, <span style="color: #AE81FF;">2</span>, <span style="color: #AE81FF;">3</span>, <span style="color: #AE81FF;">4</span> <span style="color: #66D9EF;">]</span>,
+        <span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">5</span>, <span style="color: #AE81FF;">6</span>, <span style="color: #AE81FF;">7</span>, <span style="color: #AE81FF;">8</span> <span style="color: #66D9EF;">]</span>,
+        <span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">9</span>, <span style="color: #AE81FF;">10</span>, <span style="color: #AE81FF;">11</span>, <span style="color: #AE81FF;">12</span> <span style="color: #66D9EF;">]</span>,
+        <span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">13</span>, <span style="color: #AE81FF;">14</span>, <span style="color: #AE81FF;">15</span>, <span style="color: #AE81FF;">16</span> <span style="color: #66D9EF;">]</span> <span style="color: #AE81FF;">]</span>
+
+<span style="color: #E6DB74;">'''</span>
+<span style="color: #E6DB74;"># Test case 2</span>
+<span style="color: #E6DB74;">mat = [ [1, 2, 3 ],</span>
+<span style="color: #E6DB74;">        [4, 5, 6 ],</span>
+<span style="color: #E6DB74;">        [7, 8, 9 ] ]</span>
+
+<span style="color: #E6DB74;"># Test case 3</span>
+<span style="color: #E6DB74;">mat = [ [1, 2 ],</span>
+<span style="color: #E6DB74;">        [4, 5 ] ]</span>
+
+<span style="color: #E6DB74;">'''</span>
+
+rotateMatrix<span style="color: #AE81FF;">(</span>mat<span style="color: #AE81FF;">)</span>
+
+<span style="color: #75715E;"># </span><span style="color: #75715E;">Print rotated matrix</span>
+displayMatrix<span style="color: #AE81FF;">(</span>mat<span style="color: #AE81FF;">)</span>
+</pre>
 </div>
+<ul class="org-ul">
+<li>Given a sorted array, find the median of the subarray with values greater than or equal to k</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #F92672;">def</span> <span style="color: #A6E22E;">median</span><span style="color: #AE81FF;">(</span>lst<span style="color: #AE81FF;">)</span>:
+    <span style="color: #FD971F;">n</span> = <span style="color: #F92672;">len</span><span style="color: #AE81FF;">(</span>lst<span style="color: #AE81FF;">)</span>
+    <span style="color: #F92672;">if</span> n &lt; <span style="color: #AE81FF;">1</span>:
+            <span style="color: #F92672;">return</span> <span style="color: #AE81FF;">None</span>
+    <span style="color: #F92672;">if</span> n % <span style="color: #AE81FF;">2</span> == <span style="color: #AE81FF;">1</span>:
+            <span style="color: #F92672;">return</span> <span style="color: #F92672;">sorted</span><span style="color: #AE81FF;">(</span>lst<span style="color: #AE81FF;">)[</span>n//<span style="color: #AE81FF;">2</span><span style="color: #AE81FF;">]</span>
+    <span style="color: #F92672;">else</span>:
+            <span style="color: #F92672;">return</span> <span style="color: #F92672;">sum</span><span style="color: #AE81FF;">(</span><span style="color: #F92672;">sorted</span><span style="color: #66D9EF;">(</span>lst<span style="color: #66D9EF;">)[</span>n//<span style="color: #AE81FF;">2</span>-<span style="color: #AE81FF;">1</span>:n//<span style="color: #AE81FF;">2</span>+<span style="color: #AE81FF;">1</span><span style="color: #66D9EF;">]</span><span style="color: #AE81FF;">)</span>/<span style="color: #AE81FF;">2</span>.<span style="color: #AE81FF;">0</span>
+<span style="color: #FD971F;">array</span> = <span style="color: #AE81FF;">[</span><span style="color: #AE81FF;">1</span>,<span style="color: #AE81FF;">2</span>,<span style="color: #AE81FF;">3</span>,<span style="color: #AE81FF;">4</span>,<span style="color: #AE81FF;">5</span>,<span style="color: #AE81FF;">6</span><span style="color: #AE81FF;">]</span>
+<span style="color: #FD971F;">k</span> = <span style="color: #AE81FF;">3</span>
+<span style="color: #FD971F;">subarray</span> = array<span style="color: #AE81FF;">[</span>array.index<span style="color: #66D9EF;">(</span>k<span style="color: #66D9EF;">)</span>:<span style="color: #AE81FF;">]</span>
+<span style="color: #F92672;">import</span> numpy <span style="color: #F92672;">as</span> np
+np.median<span style="color: #AE81FF;">(</span>subarray<span style="color: #AE81FF;">)</span>
+</pre>
 </div>
 
-<div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13"><span class="section-number-3">6.2</span> TrexQuant</h3>
-</div>
+<ul class="org-ul">
+<li>Given lines, count all words and alpha characters</li>
 
+<li>Design an orderbook</li>
+
+<li>#6</li>
+</ul>
+<p>
+Q: integer list mapping and alternations
+</p>
+
+<p>
+Q: find the maximum perimeter of the polygons could form given a list of points with their vectors.
+</p>
+
+<p>
+Q: brackets eliminations. ex {{}} -&gt; true; {)}( -&gt; false; {}[] -&gt; true
+</p>
+<div class="org-src-container">
+
+<pre class="src src-python"><span style="color: #F92672;">def</span>  <span style="color: #A6E22E;">balanced</span><span style="color: #AE81FF;">(</span>a_str<span style="color: #AE81FF;">)</span>:
+  <span style="color: #FD971F;">stack</span> = <span style="color: #AE81FF;">[]</span>
+  <span style="color: #FD971F;">pushChars</span>, <span style="color: #FD971F;">popChars</span> = <span style="color: #E6DB74;">"({["</span>, <span style="color: #E6DB74;">")}]"</span>
+  <span style="color: #F92672;">for</span> c <span style="color: #F92672;">in</span> a_str :
+    <span style="color: #F92672;">if</span> c <span style="color: #F92672;">in</span> pushChars :
+      stack.append<span style="color: #AE81FF;">(</span>c<span style="color: #AE81FF;">)</span>
+    <span style="color: #F92672;">elif</span> c <span style="color: #F92672;">in</span> popChars :
+      <span style="color: #F92672;">if</span> <span style="color: #F92672;">not</span> <span style="color: #F92672;">len</span><span style="color: #AE81FF;">(</span>stack<span style="color: #AE81FF;">)</span> :
+        <span style="color: #F92672;">return</span> <span style="color: #AE81FF;">False</span>
+      <span style="color: #F92672;">else</span> :
+        <span style="color: #FD971F;">stackTop</span> = stack.pop<span style="color: #AE81FF;">()</span>
+        <span style="color: #FD971F;">balancingBracket</span> = pushChars<span style="color: #AE81FF;">[</span>popChars.index<span style="color: #66D9EF;">(</span>c<span style="color: #66D9EF;">)</span><span style="color: #AE81FF;">]</span>
+        <span style="color: #F92672;">if</span> stackTop != balancingBracket :
+          <span style="color: #F92672;">return</span> <span style="color: #AE81FF;">False</span>
+    <span style="color: #F92672;">else</span> :
+      <span style="color: #F92672;">return</span> <span style="color: #AE81FF;">False</span>
+  <span style="color: #F92672;">return</span> <span style="color: #F92672;">not</span> <span style="color: #F92672;">len</span><span style="color: #AE81FF;">(</span>stack<span style="color: #AE81FF;">)</span>
+</pre>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-txt">What is virtual memory, explain
+Compiled language vs interpreted language, explain
+Override vs overload, explain
+What is cache
+What is mutex
+智力题：三个basket，一个全apple，一个全orange，一个是apple和orange的混合，然后三个label分别写着apple，orange，apple &amp; orange然后三个标签都贴错了，你只能取出一个水果然后如何把三个标签都贴到正确的那个basket上。注意关键点是三个标签全部都贴错，然后只能取出一个basket中的水果。这个可以先自己想想，想知道答案可以自己搜Google或者留言。
+编程题三题:
+leolle，本帖隐藏的内容需要积分高于 155 才可浏览，您当前积分为 71。
+查看如何攒积分 Click here for more info.
+
+(之前面经没见过的题目之一) What is fork: 我现场开google搜的＝ ＝
+Given 1 billion number, get the largest 1 million. Large dataset means you cannot store all of them and sort. 这个用MinHeap解决。
+</pre>
+</div>
+</div>
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">6.1.1</span> Quant dynamic</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>你的包里有m个正n边形，一共有k种颜色，每条边任意染色，染每个颜色的概率是相同的。然后你从这m个多边形里任取两个，求它们恰好是相同染色的概率，这里“相同”是指通过旋转能够重合，但是不能翻折。已知n=2*p，p是质数。</li>
+
+<li>X，Y是两个independent random variable，X+Y的standard deviation的上限是什么</li>
+<li>一个square matrix A，A2 = A，问A有什么特点</li>
+<li>解释SVM，如果data不是linear separatable的话怎么办</li>
+<li>解释newton method</li>
+<li>硬币题，地里已经有的，连续两次得到tail的expectation of flip times.1point3acres网</li>
+<li>有constrain的情况下如何求极值</li>
+<li>给一列实数，如何判断有没有limit</li>
+<li>解释independent和uncorrelated有什么区别. 1</li>
+</ul>
+</div>
+</div>
+</div>
 <div id="outline-container-orgheadline14" class="outline-3">
-<h3 id="orgheadline14"><span class="section-number-3">6.3</span> Goomu Investment</h3>
+<h3 id="orgheadline14"><span class="section-number-3">6.2</span> TrexQuant</h3>
 </div>
 
 <div id="outline-container-orgheadline15" class="outline-3">
-<h3 id="orgheadline15"><span class="section-number-3">6.4</span> PwC</h3>
+<h3 id="orgheadline15"><span class="section-number-3">6.3</span> Goomu Investment</h3>
+</div>
+
+<div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16"><span class="section-number-3">6.4</span> PwC</h3>
 <div class="outline-text-3" id="text-6-4">
 <p>
 data scientist
@@ -552,11 +733,11 @@ data scientist
 </div>
 </div>
 
-<div id="outline-container-orgheadline27" class="outline-2">
-<h2 id="orgheadline27"><span class="section-number-2">7</span> 多因子</h2>
+<div id="outline-container-orgheadline28" class="outline-2">
+<h2 id="orgheadline28"><span class="section-number-2">7</span> 多因子</h2>
 <div class="outline-text-2" id="text-7">
-</div><div id="outline-container-orgheadline17" class="outline-3">
-<h3 id="orgheadline17"><span class="section-number-3">7.1</span> 因子</h3>
+</div><div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">7.1</span> 因子</h3>
 <div class="outline-text-3" id="text-7-1">
 <ol class="org-ol">
 <li>A股市场驱动因子能分为哪几大类?【按信息源分：技术、基本面、情绪等】</li>
@@ -722,8 +903,8 @@ BR: number of trading opportunities per year.
 </div>
 </div>
 
-<div id="outline-container-orgheadline18" class="outline-3">
-<h3 id="orgheadline18"><span class="section-number-3">7.2</span> 模型拟合</h3>
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">7.2</span> 模型拟合</h3>
 <div class="outline-text-3" id="text-7-2">
 <ol class="org-ol">
 <li>拟合多因子模型的综合目标是什么？</li>
@@ -941,8 +1122,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="orgheadline19"><span class="section-number-3">7.3</span> 收益预测</h3>
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">7.3</span> 收益预测</h3>
 <div class="outline-text-3" id="text-7-3">
 <ol class="org-ol">
 <li>在多因子回归中，预测的目标是什么？收益率？对行业的超额收益率？对市场的超额收益率？还是其他的？</li>
@@ -985,8 +1166,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline20" class="outline-3">
-<h3 id="orgheadline20"><span class="section-number-3">7.4</span> 风险预测</h3>
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">7.4</span> 风险预测</h3>
 <div class="outline-text-3" id="text-7-4">
 <ol class="org-ol">
 <li>用于风险预测的多因子模型，在拟合时应侧重考虑哪些方面？</li>
@@ -1131,8 +1312,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline21" class="outline-3">
-<h3 id="orgheadline21"><span class="section-number-3">7.5</span> 业绩归因</h3>
+<div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22"><span class="section-number-3">7.5</span> 业绩归因</h3>
 <div class="outline-text-3" id="text-7-5">
 <p>
 1用于业绩归因的多因子模型，在拟合时应侧重考虑哪些方面？
@@ -1147,8 +1328,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline22" class="outline-3">
-<h3 id="orgheadline22"><span class="section-number-3">7.6</span> 组合构建</h3>
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23"><span class="section-number-3">7.6</span> 组合构建</h3>
 <div class="outline-text-3" id="text-7-6">
 <p>
 1利用多因子模型进行选股，求解每期股票权重的问题本质上是一个带约束的最优化问题，请阐述优化目标和约束条件各是什么？
@@ -1167,8 +1348,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline23" class="outline-3">
-<h3 id="orgheadline23"><span class="section-number-3">7.7</span> 实盘</h3>
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24"><span class="section-number-3">7.7</span> 实盘</h3>
 <div class="outline-text-3" id="text-7-7">
 <p>
 1新策略从提出到开发，再到上线的流程中，历史回测（back-test）、实时模拟（paper-trading）和实盘交易（real-money）的关键差异何在，各自的优劣何在？
@@ -1180,8 +1361,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline24" class="outline-3">
-<h3 id="orgheadline24"><span class="section-number-3">7.8</span> 数据</h3>
+<div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25"><span class="section-number-3">7.8</span> 数据</h3>
 <div class="outline-text-3" id="text-7-8">
 <p>
 1基本信息、行情、基本面等基础数据库的表结构应该怎样设计？出于怎样的考虑？
@@ -1198,8 +1379,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline25" class="outline-3">
-<h3 id="orgheadline25"><span class="section-number-3">7.9</span> 程序</h3>
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">7.9</span> 程序</h3>
 <div class="outline-text-3" id="text-7-9">
 <ol class="org-ol">
 <li>分析程序用MATLAB、Python、R、C++等语言各自的利弊？哪种背景和需求的人应该选择哪种语言？</li>
@@ -1222,8 +1403,8 @@ C++ 速度快，但是学习曲线很陡峭，开发周期长，调试不方便�
 </div>
 </div>
 
-<div id="outline-container-orgheadline26" class="outline-3">
-<h3 id="orgheadline26"><span class="section-number-3">7.10</span> 综合</h3>
+<div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27"><span class="section-number-3">7.10</span> 综合</h3>
 <div class="outline-text-3" id="text-7-10">
 <p>
 1股票市场是否存在alpha，怎样验证？
@@ -1239,6 +1420,58 @@ C++ 速度快，但是学习曲线很陡峭，开发周期长，调试不方便�
 11机器学习、人工智能的工具可以应用到多因子模型的哪些地方？
 </p>
 </div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline29" class="outline-2">
+<h2 id="orgheadline29"><span class="section-number-2">8</span> Macroeconomy</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>蒙代尔不可能三角</li>
+</ul>
+<p>
+一个国家不可能在同时控制独立的货币政策，固定汇率和资本自由出入。
+</p>
+
+<ul class="org-ul">
+<li>资本自由进出且固定汇率</li>
+</ul>
+<p>
+在资本自由进出及固定汇率之下，政府无法固定货币供给，也不能固定利率，于是资本的流动将使利率趋向于国际利率水准，失去货币政策自主性。
+</p>
+
+<p>
+像是香港资本自由进出，且港币在1983年10月17日采联系汇率制度钉住美元。故香港利率水准完全由美国主导。
+</p>
+
+<ul class="org-ul">
+<li>资本自由进出且自主的货币政策</li>
+</ul>
+<p>
+在资本自由进出且自主的货币政策之下，利率变化造成的资本流动会被汇率的反向变动所抵销，使资本的进出不影响货币供给，因此国家可以拥有货币政策自主性，却不能固定汇率。
+</p>
+
+<p>
+发达的大型开放经济体多采用此种制度。（开放指资本自由进出）
+</p>
+
+<ul class="org-ul">
+<li>自主的货币政策与固定汇率</li>
+</ul>
+<p>
+在上面两个情况皆为资本流动造成双率只能择一控管，于是在管制资本流动后，便可控制双率。
+</p>
+
+<p>
+如亚洲金融危机后采金融锁国之马来西亚。
+</p>
+
+<ul class="org-ul">
+<li>利率的传导机制</li>
+</ul>
+<p>
+利率传导机制是指央行通过调整以国债为核心的基准利率进而影响银行间同业拆借利率最终实现对社会资金总量的调控。
+</p>
 </div>
 </div>
 </div>

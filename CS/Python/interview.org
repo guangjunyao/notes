@@ -184,12 +184,14 @@ Docstring: Return a Unicode string of one character with ordinal i; 0 <= i <= 0x
 Type:      builtin_function_or_method
 #+END_SRC
 
-*2.3  简单解释Python基于值的内存管理模式。*
+*2.3.1  简单解释Python基于值的内存管理模式。*
 #+BEGIN_SRC text
 Python采用的是基于值得内存管理方式，在Python中可以为不同变量赋值为相同值，这个值在内存中只有一份，多个变量指向同一个内存地址；
 
 Python具有自动内存管理功能，会自动跟踪内存中所有的值，对于没有任何变量指向的值，Python自动将其删除。
 #+END_SRC
+2.3.2 yield
+The yield statement suspends function’s execution and sends a value back to caller, but retains enough state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This allows its code to produce a series of values over time, rather them computing them at once and sending them back like a list.
 
 2.4  简单解释运算符/和//的区别。
 #+BEGIN_SRC text

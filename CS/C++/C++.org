@@ -103,6 +103,15 @@ int main()
 
     return 0;
 }
+int array[3][5] =
+{
+{ 1, 2, 3, 4, 5 }, // row 0
+{ 6, 7, 8, 9, 10 }, // row 1
+{ 11, 12, 13, 14, 15 } // row 2
+};
+for (int row = 0; row < numRows; ++row) // step through the rows in the array
+    for (int col = 0; col < numCols; ++col) // step through each element in the row
+        std::cout << array[row][col];
 #+END_SRC
 ** Strings
 ** Introducing the string Class

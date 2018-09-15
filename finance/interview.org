@@ -57,6 +57,15 @@ we must exclude 2 in order to get an even sum number.
 
 solution: 16C4/17C4
 
+- Martingale Process
+the conditional expected value of the next observation, given all the past observations, is equal to the most recent observation.
+
+E[Xt | Fs] = Xs （其中，s小于t）
+
+An unbiased random walk (in any number of dimensions) is an example of a martingale.
+
+A gambler's fortune (capital) is a martingale if all the betting games which the gambler plays are fair.
+
 
 * Option
 - assumption of Black Scholes
@@ -164,7 +173,7 @@ Prime factorization
 Eg. if you enter 8 -> (2 x 2 x 2) -> Yes
 10 -> (5x2) -> No
 12 -> (2x2x3) -> Yes
-1 Answer
+
 2) Simple Order Book
 1 Answer
 3) Verify if two triangles are similar through 1) translation and 2) Rotation
@@ -175,6 +184,156 @@ Eg. if you enter 8 -> (2 x 2 x 2) -> Yes
 
 - Given a specific trading strategy and an input of stock prices, calculate the gain/loss at the end of the day
 
+- What is the probability of an integer from 1 to 60,000 not having the digit 6?
+
+- input: (array, k), find median of the subarray which includes numbers smaller than or equal to k . 2. matrix rotation 3. orderbook 4. parsing words.
+
+- Rotate a matrix counter-clockwise
+
+- Rotate a matrix anti-clockwise (matrix can be rectangle too)
+https://www.geeksforgeeks.org/inplace-rotate-square-matrix-by-90-degrees/
+#+BEGIN_SRC python
+# Python3 program to rotate a matrix by 90 degrees
+N = 4
+
+# An Inplace function to rotate
+# N x N matrix by 90 degrees in
+# anti-clockwise direction
+def rotateMatrix(mat):
+
+    # Consider all squares one by one
+    for x in range(0, int(N/2)):
+
+        # Consider elements in group
+        # of 4 in current square
+        for y in range(x, N-x-1):
+
+            # store current cell in temp variable
+            temp = mat[x][y]
+
+            # move values from right to top
+            mat[x][y] = mat[y][N-1-x]
+
+            # move values from bottom to right
+            mat[y][N-1-x] = mat[N-1-x][N-1-y]
+
+            # move values from left to bottom
+            mat[N-1-x][N-1-y] = mat[N-1-y][x]
+
+            # assign temp to left
+            mat[N-1-y][x] = temp
+
+
+# Function to pr the matrix
+def displayMatrix( mat ):
+
+    for i in range(0, N):
+
+        for j in range(0, N):
+
+            print (mat[i][j], end = ' ')
+        print ("")
+
+
+
+
+# Driver Code
+mat = [[0 for x in range(N)] for y in range(N)]
+
+# Test case 1
+mat = [ [1, 2, 3, 4 ],
+        [5, 6, 7, 8 ],
+        [9, 10, 11, 12 ],
+        [13, 14, 15, 16 ] ]
+
+'''
+# Test case 2
+mat = [ [1, 2, 3 ],
+        [4, 5, 6 ],
+        [7, 8, 9 ] ]
+
+# Test case 3
+mat = [ [1, 2 ],
+        [4, 5 ] ]
+
+'''
+
+rotateMatrix(mat)
+
+# Print rotated matrix
+displayMatrix(mat)
+#+END_SRC
+- Given a sorted array, find the median of the subarray with values greater than or equal to k
+#+BEGIN_SRC python
+def median(lst):
+    n = len(lst)
+    if n < 1:
+            return None
+    if n % 2 == 1:
+            return sorted(lst)[n//2]
+    else:
+            return sum(sorted(lst)[n//2-1:n//2+1])/2.0
+array = [1,2,3,4,5,6]
+k = 3
+subarray = array[array.index(k):]
+import numpy as np
+np.median(subarray)
+#+END_SRC
+
+- Given lines, count all words and alpha characters
+
+- Design an orderbook
+
+- #6
+Q: integer list mapping and alternations
+
+Q: find the maximum perimeter of the polygons could form given a list of points with their vectors.
+
+Q: brackets eliminations. ex {{}} -> true; {)}( -> false; {}[] -> true
+#+BEGIN_SRC python
+def  balanced(a_str):
+  stack = []
+  pushChars, popChars = "({[", ")}]"
+  for c in a_str :
+    if c in pushChars :
+      stack.append(c)
+    elif c in popChars :
+      if not len(stack) :
+        return False
+      else :
+        stackTop = stack.pop()
+        balancingBracket = pushChars[popChars.index(c)]
+        if stackTop != balancingBracket :
+          return False
+    else :
+      return False
+  return not len(stack)
+#+END_SRC
+#+BEGIN_SRC txt
+What is virtual memory, explain
+Compiled language vs interpreted language, explain
+Override vs overload, explain
+What is cache
+What is mutex
+智力题：三个basket，一个全apple，一个全orange，一个是apple和orange的混合，然后三个label分别写着apple，orange，apple & orange然后三个标签都贴错了，你只能取出一个水果然后如何把三个标签都贴到正确的那个basket上。注意关键点是三个标签全部都贴错，然后只能取出一个basket中的水果。这个可以先自己想想，想知道答案可以自己搜Google或者留言。
+编程题三题:
+leolle，本帖隐藏的内容需要积分高于 155 才可浏览，您当前积分为 71。
+查看如何攒积分 Click here for more info.
+
+(之前面经没见过的题目之一) What is fork: 我现场开google搜的＝ ＝
+Given 1 billion number, get the largest 1 million. Large dataset means you cannot store all of them and sort. 这个用MinHeap解决。
+#+END_SRC
+*** Quant dynamic
+- 你的包里有m个正n边形，一共有k种颜色，每条边任意染色，染每个颜色的概率是相同的。然后你从这m个多边形里任取两个，求它们恰好是相同染色的概率，这里“相同”是指通过旋转能够重合，但是不能翻折。已知n=2*p，p是质数。
+
+1. X，Y是两个independent random variable，X+Y的standard deviation的上限是什么
+2. 一个square matrix A，A2 = A，问A有什么特点
+3. 解释SVM，如果data不是linear separatable的话怎么办
+4. 解释newton method
+5. 硬币题，地里已经有的，连续两次得到tail的expectation of flip times.1point3acres网
+6. 有constrain的情况下如何求极值
+7. 给一列实数，如何判断有没有limit
+8. 解释independent和uncorrelated有什么区别. 1
 ** TrexQuant
 
 ** Goomu Investment
@@ -518,3 +677,25 @@ C++ 速度快，但是学习曲线很陡峭，开发周期长，调试不方便�
 9多因子模型作为一个如此成熟的策略，为什么还有前仆后继的研究者？
 10基于多因子模型的策略收益没有吸引力，从业者众多，是夕阳产业吗？年轻人学习多因子模型是否值得？
 11机器学习、人工智能的工具可以应用到多因子模型的哪些地方？
+
+* Macroeconomy
+- 蒙代尔不可能三角
+一个国家不可能在同时控制独立的货币政策，固定汇率和资本自由出入。
+
+  - 资本自由进出且固定汇率
+在资本自由进出及固定汇率之下，政府无法固定货币供给，也不能固定利率，于是资本的流动将使利率趋向于国际利率水准，失去货币政策自主性。
+
+像是香港资本自由进出，且港币在1983年10月17日采联系汇率制度钉住美元。故香港利率水准完全由美国主导。
+
+  - 资本自由进出且自主的货币政策
+在资本自由进出且自主的货币政策之下，利率变化造成的资本流动会被汇率的反向变动所抵销，使资本的进出不影响货币供给，因此国家可以拥有货币政策自主性，却不能固定汇率。
+
+发达的大型开放经济体多采用此种制度。（开放指资本自由进出）
+
+  - 自主的货币政策与固定汇率
+在上面两个情况皆为资本流动造成双率只能择一控管，于是在管制资本流动后，便可控制双率。
+
+如亚洲金融危机后采金融锁国之马来西亚。
+
+- 利率的传导机制
+利率传导机制是指央行通过调整以国债为核心的基准利率进而影响银行间同业拆借利率最终实现对社会资金总量的调控。
