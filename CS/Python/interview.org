@@ -190,6 +190,7 @@ Python采用的是基于值得内存管理方式，在Python中可以为不同�
 
 Python具有自动内存管理功能，会自动跟踪内存中所有的值，对于没有任何变量指向的值，Python自动将其删除。
 #+END_SRC
+
 2.3.2 yield
 The yield statement suspends function’s execution and sends a value back to caller, but retains enough state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This allows its code to produce a series of values over time, rather them computing them at once and sending them back like a list.
 
