@@ -322,6 +322,17 @@ StopIteration
 ** Sequence Types — list, tuple, range
 - tuple vs set
 A set is a slightly different concept from a list or a tuple. A set, in Python, is just like the mathematical set. It does not hold duplicate values, and is unordered. However, it is not immutable unlike a tuple.Jan 9, 2018
+- count number of value bigger than a certain value:
+#+BEGIN_SRC python
+left = [1,0,1]
+reduce(lambda acc, x: acc + (1 if x > 0 else 0), left, 0)
+#+END_SRC
+
+- get all value bigger than a certain value:
+#+BEGIN_SRC python
+left = [1, 0, 1]
+[i for i in left if i > 0]
+#+END_SRC
 
 - combine list of lists into one list, join list of lists
 #+BEGIN_SRC python

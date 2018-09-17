@@ -369,23 +369,7 @@ Classes may be imbalanced(eg, 'red' label may greatly outnumber 'green' label)
 The data set is small: Old trades less than 100, new trades less than 10.
 
 4, Drone Delivery
-Drone delevery service is goint to be tested in a location.
--The location has constructed homes on multiple identical grids throughout the town.
--Each grid has 50 homes and each grid is assigned a unique number.
--Each home within a grid has a unique number from 1 to 50.
-So each home can be uniquely identified by its grid number and home number pair.
 
-The simple algorithm for the initial rollout of the drone delivery service:
--A swarm of delivery drones will be deployed for the delivery.
--In each swarm there will be one drone for each unique housing grid that will receive deliveries.. 1point3acres
--Each drone will start at home number 1 in the grid and advance until all delivery for the grid is complete.
--over the period of 1 minute each drone can move to the next house, can make a delivery or can stay at its current position..1point3acres网
--All products must be delivered in exact order in which the order was made.
-
-Determine how long it take a swarm of drones to complete a specified delivery.
-There can be at most two drones. For each test case you will be given the total number of packages and sequence of locations.
-. Waral 博客有更多文章,
-如果对Python不熟悉可能时间不够用，建议提前打好草稿。另外蛋疼的一点是，有的test case不显示细节，只显示Failed，没办法对应的debug。
 
 电面
 美国人，预定45分钟，实际52分钟。
@@ -520,6 +504,28 @@ bus and bus stop
 6. Python memory management, garbage collection. If there is an object with non-zero reference, should I GC
 
 7. Why it is a bad idea to use list as default parameter when you define a function
+
+Dev #1
+申请：Junior Quant Researcher. 1point3acres
+9月在学校的网上投的Application
+10月初收到OA，是hackerrank的python题，我的好像是Dev#1. .留学论坛-一亩-三分地
+题目不太记得了，第一题忘记，第二题是开灯关灯，以及第三题染色那道非常难，作为数学PhD 的我表示，并不记得这些代数的结论ORZ
+
+之后收到了第一轮Technical Interview，小哥的口音听上去像是加拿大人.留学论坛-一亩-三分地
+先，自我介绍然后说Why Akuna。接下来
+1. 地里有的题目，n*n matrix with 1 on the diagnal and n on the aux diag. Find eigen values and eigen vectors.. 牛人云集,一亩三分地
+2. X，Y iid standard normal Find the conditional distribution of X given X+Y>0
+3. 楼主朋友有了我的面经之后回答比较快又被问了第三题：find an example or corr(X,Y)=0 but X and Y are not independent.
+-google 1point3acres
+一段时间没有消息后，
+第二轮是codepair+brainteaser：
+1. delete duplicate in a list, not hard
+2. list comprehension, easy. 一亩-三分-地，独家发布
+3. use class to build a data structure to perform in real time data that can: insert, return max, return mean, return major element.
+
+Brainteaser:
+1. how many integrers are there in 1 to 10,000 that doesn't have a 5 in its digit
+2. given 50 black ball and 50 white balls and 2 baskets, how can you distribute them so that you can have a maximum chance of gettin black ball.
 
 ** TrexQuant
 

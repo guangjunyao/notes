@@ -137,7 +137,7 @@ mouse removed
 # State Machine pattern using 'if' statements
 # to determine the next state.
 import string, sys
-sys.path += ['../stateMachine', '../mouse']
+sys.path += ['../StateMachine', '../mouse']
 from State import State
 from StateMachine import StateMachine
 from MouseAction import MouseAction
