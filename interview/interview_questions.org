@@ -14,8 +14,12 @@
 #+SETUPFILE: ../configOrg/level1.org
 
 
-
+* Akuna capital:
 [[file:./drones_time_to_deliver.py][time_to_deliver]]
 [[file:./minimize_ice_cream_shop_cost.py][minimize ice cream shop cost]]
 [[file:./postfix_to_infix.py][postfix_to_infix]]
 [[file:./classify_trades.py][classify trades]]
+[[file:./fermat_point.py][fermat point]]
+[[file:./palindromes_dates.py][palindromes dates]]
+[[file:./squared_summation_of_digits.py][squared summation of digits]]
+[[file:./detect_colinearity.py][detect colinearity]]
