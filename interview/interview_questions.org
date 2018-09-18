@@ -23,3 +23,11 @@
 [[file:./palindromes_dates.py][palindromes dates]]
 [[file:./squared_summation_of_digits.py][squared summation of digits]]
 [[file:./detect_colinearity.py][detect colinearity]]
+
+* Turingideas
+[[file:./fibonacci.py][fibonacci]]
+[[file:./find_product_closest_to_M_in_array.py][find_product_closest_to_M_in_array]]
+[[file:./overfitting.org][overfitting]]
+[[file:./robustness.org][robustness]]
+[[file:./dice_rolling.org][dice]]
+[[file:./random_walk.org][random walk]]

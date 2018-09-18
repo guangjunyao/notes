@@ -1,0 +1,11 @@
+* definition
+效度的稳健性（robustness of validity）、效率的稳健性（robustness of efficiency）。效度的稳健性简单理解是数据微小的波动，不会对估计量造成剧烈的影响，效率的稳健性简单理解是估计量假定分布不满足是，对其精度影响小。
+
+一个具有鲁棒性的模型就是即使当测试集的数据分布与训练集数据分布比较不同的时候，模型也能给出较好的预测结果。
+
+所谓鲁棒（robust），就是让模型本身尽量少受离群点的影响。最常用的鲁棒回归模型就是中位数回归，median regression，或者最小绝对偏差回归，Least Absolute Deviation regression。
+
+The robustness is the property that characterizes how effective your algorithm is while being tested on the new independent (but similar) dataset. In the other words, the robust algorithm is the one, the testing error of which is close to the training error.
+
+* test
+increase data

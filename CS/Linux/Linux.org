@@ -51,6 +51,13 @@ svn checkout http://192.168.1.30/svn/gftchina/Hanadev/trunk/WaveFront/
 *** Other authoritative documentation
 *** Other sources of information
 *** Ways to find and install software
+- PPA:
+#+BEGIN_SRC bash
+sudo add-apt-repository ppa:git-core/ppa -y
+# Removing a PPA with ppa-purge
+sudo ppa-purge ppa:<lp-name>/<ppa-name>
+#+END_SRC
+
 *** System administration under duress
 *** Configuring a deep learning machine after installing a new operation system:
 *very important:*
