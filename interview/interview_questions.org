@@ -31,3 +31,8 @@
 [[file:./robustness.org][robustness]]
 [[file:./dice_rolling.org][dice]]
 [[file:./random_walk.org][random walk]]
+
+* 中国平安
+[[file:./prime_in_fibonacci.py][prime in fibonacci]]
+[[file:./rotate_list_of_nodes.py][rotate the list of nodes]]
+[[file:./area_of_submatrix.py][area of submatrix with all 1s]]
