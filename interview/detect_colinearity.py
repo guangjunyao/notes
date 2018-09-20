@@ -31,5 +31,5 @@ def collinear(points):
 
 
 # Driver Code
-points = [[1, 1], [1, 1], [2, 3], [0, 0]]
+points = [[1, 1], [1, 1], [2, 3], [0, 1]]
 print(collinear(points))

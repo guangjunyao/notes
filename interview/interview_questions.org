@@ -36,3 +36,12 @@
 [[file:./prime_in_fibonacci.py][prime in fibonacci]]
 [[file:./rotate_list_of_nodes.py][rotate the list of nodes]]
 [[file:./area_of_submatrix.py][area of submatrix with all 1s]]
+* leetcode
+** 链表
+[[file:./max_sub_array_sum.py][maximum subarray sum]]
+[[file:./minimum_in_array_after_rotation.py][minimum in array after rotation]]
+** Longest Common Subsequences
+[[file:./LCS.py][LCS]]
+** String
+*** KMP
+*** Manacher
