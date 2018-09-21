@@ -457,7 +457,28 @@ void print(void);
 
 * OBJECTS AND CLASSES
 ** Procedural and Object-Oriented Programming
+*** Steps for OO project
+- Requirements Determination (RD)
+  - Specify the problem and corresponding stakeholders
+- Object Oriented Analysis (OOA)
+  - Model the problem into a domain hierarchy
+- Object Oriented Design (OOD)
+  - Take hardware and others into consideration, apply Design Patterns
+- Object Oriented Programming (OOP)
+  - Implement the model in an OO language
 ** Abstraction and Classes
+*** Abstract Data Types
+- State, data members (hidden)
+*private*
+ - Data Hiding
+ - User only sees functionality, not implementation
+ - When implementation changes no effect to client code
+ - Data Encapsulation
+ - Combining state with functionality
+- Behaviour, member functions
+*public*
+
+how does an object react to external events or messages?
 ** Class Constructors and Destructors
 ** Knowing Your Objects: The this Pointer
 ** An Array of Objects
