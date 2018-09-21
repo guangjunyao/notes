@@ -19,12 +19,41 @@
 
 *** logic operation
 - --i and i--.
+//--i will decrements the value of i, and then return the decremented value.
+//i-- will return the value of i, then decrements the value of i.
 - logical and arithmetic shift.
 
 *** scientific output expression
 - use “%10.1f” as format specifier.
+*** A global variable is declared at file scope.
+*** External Variables
+To declare the variable but don’t allocate memory for it (just a placeholder) we have to use the keyword extern which specifies that the variable is defined in another source file.
+*** static global variables
+It is often preferable to have a global variable in one source file but this global variable should not be accessible by any other source file. Use the static specifier to bound its use to the current source file.
 
+*** register variables
+- Request for variable to be placed in register
+  - register int a;
+- Access to register variable is faster
+- Not always granted
 
+** preprocessor
+*** l Preprocessor directives start with ‘#’ e.g.:
+#+BEGIN_SRC c
+#include
+#define
+#+END_SRC
+- The directive:
+#include "filename"
+
+causes the file to be searched first in the directory of the original source file. The include directive
+can be used to handle compiler dependencies.
+
+#include <filename>
+
+causes the preprocessor to search for a file in a defined sequence of standard places (the include
+directory).
+*** Preprocessor looks for ‘#’
 * GETTING STARTED
 ** Learning C++: What Lies Before You
 ** The Origins of C++: A Little History
@@ -114,12 +143,55 @@ for (int row = 0; row < numRows; ++row) // step through the rows in the array
         std::cout << array[row][col];
 #+END_SRC
 ** Strings
+- A string is an array of characters
+- Declare using array notation
+#+BEGIN_SRC c
+char string[80];
+/* A string of 80 characters */
+
+#+END_SRC
+- Last character of string should be ‘\0’
+- Use functions declared in <string.h>
+#+BEGIN_SRC c
+void main()
+{
+char s1[] = {'C', ' ', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e', '\0'};
+char s2[] = "C language"; /* Adds the ‘\0’ for us */
+char s3[80];
+s3 = "Hello"; /* NOT POSSIBLE! We have to use strcpy() */
+strcpy(s3, "Hello");
+}
+#+END_SRC
 ** Introducing the string Class
 ** Introducing Structures
 ** Unions
 ** Enumerations
 ** Pointers and the Free Store
+*** Pointers as Function Arguments
+- Normally function arguments are copied on the stack
+- If you don’t want a copy use pointers
+#+BEGIN_SRC c
+sqr(int* a);
+
+#+END_SRC
+- Pass argument address upon function call, 指针是地址，所以传参时应该给一个地址.
+#+BEGIN_SRC c
+int var = 10;
+sqr(&var);
+
+#+END_SRC
 ** Pointers, Arrays, and Pointer Arithmetic
+*** arrays and pointers
+- Array name is the address of the first element of the array
+#+BEGIN_SRC c
+int array[3];
+/* array is address of first element
+array == &array[0]*/
+
+#+END_SRC
+- Pointer also contains address of some element
+- Can assign pointers to arrays
+- Can use array indexing with pointers
 *** swap value of two variables using pointers
 #+begin_src c++
 #include <stdio.h>
@@ -144,7 +216,19 @@ int main()
 return 0;
 }
 #+end_src
+*** Initialising Arrays
+- Arrays need to be initialised element by element
+- Cannot assign two arrays
+#+BEGIN_SRC c
+array_int1 = array_int2; /* NOT POSSIBLE */
 
+#+END_SRC
+- Can initialise upon creation by specifying each element
+#+BEGIN_SRC c
+int array_int1[4] = {1, 4, 5, 6};
+float array_f[] = {10.23, 34.33, 30.0};
+
+#+END_SRC
 
 * LOOPS AND RELATIONAL EXPRESSIONS
 ** Introducing for Loops
@@ -154,6 +238,60 @@ return 0;
 ** Loops and Text Input
 ** Nested Loops and Two-Dimensional Arrays
 
+** The compound or block statement
+- Blocks are pieces of discrete code
+- Blocks are bounded with braces {}
+- Variables must be declared in the beginning of blocks
+- Indent the statements inside blocks
+** The if statement
+- if - else
+- switch
+#+BEGIN_SRC c++
+/* Leaving out these brackets is not advisable because
+of future modifications to one of the sub statements of the if-else construction.*/
+if (a > b)
+{
+    printf("a is larger than b\n");
+}
+else
+{
+    printf("a is not larger than b");
+}
+#+END_SRC
+*** switch
+The switch statement is almost equal to the if-else construction.
+The syntax is:
+#+BEGIN_SRC c++
+switch(<expression>)
+{
+case <const_expression1>:
+    <sub_statement> [break;]
+case <const_expression2>:
+    <sub_statement> [break;]
+case <const_expression3>:
+    <sub_statement> [break;]
+default:
+    <sub_statement>
+}
+#+END_SRC
+The break statement is optional in the different cases. When it is left out all the following sub_statements are executed until a break statement or the end of the switch is reached.
+** The for loop
+Creating an infinite loop
+#+BEGIN_SRC c
+for (;;)
+#+END_SRC
+** The while loop
+#+BEGIN_SRC c
+do
+    <sub_statement>
+while (<expression>); /* do not forget the semicolon */
+#+END_SRC
+** The do-while loop
+When creating a do-while loop do not place a semi-colon ';' after the while expression. Placing a
+semicolon can create an infinite loop.
+** Break and continue statements
+** Multiple choices, the switch statement
+** Goto and labels
 
 
 * BRANCHING STATEMENTS AND LOGICAL OPERATORS
@@ -170,7 +308,27 @@ return 0;
 
 * FUNCTIONS: C++’S PROGRAMMING MODULES
 ** Function Review
+*** Function Signatures
+- A function consists of a return type, name and arguments
+- The declaration is a description of the function characteristics
+(signature)
+<return_type> name([<arg_type arg, arg_type arg, ...>]);
+#+BEGIN_SRC c++
+int sqr(int);
+/* returns: int
+name: sqr
+arguments: one int
+*/
+#+END_SRC
+The function declaration needs to be repeated in every source file where we use the function. If 20 different source files use the function multiply() we have to declare it in all of those source files. *An easier way is to create a so called header file which contains the declarations of commonly used
+functions (see next module).*
+
+- The definition is the implementation of the function (body with code)
+<return_type> name([<arg_type arg, arg_type arg, ...>])
+{
+}
 ** Function Arguments and Passing by Value
+
 ** Functions and Arrays
 ** Functions and Two-Dimensional Arrays
 ** Functions and C-Style Strings
@@ -192,6 +350,37 @@ return 0;
 
 * MEMORY MODELS AND NAMESPACES
 ** Separate Compilation
+*** Conditional Compilation
+- #ifdef
+- #ifndef
+- #elif
+- #else
+- #endif
+*** Header Files and Directives
+- Can include header file multiple times
+- This can lead to redefinition errors
+- Prevent multiple inclusion:
+#+BEGIN_SRC c++
+#ifndef CONSTANT_NAME
+#define CONSTANT_NAME
+/* declarations */
+#endif
+
+#+END_SRC
+There is a possibility that a header file gets included more than once during one compilation. The
+definitions in that header file will be defined more than once and generate a compiler error.
+#+BEGIN_SRC c
+#include "mine.h"
+#include "mine.h" /* Error multiple declarations */
+#+END_SRC
+use
+#+BEGIN_SRC c
+#ifndef MINE_H
+#define MINE_H
+void print(void);
+/* Other definitions */
+#endif
+#+END_SRC
 ** Storage Duration, Scope, and Linkage
 ** The Placement new Operator
 ** Namespaces
