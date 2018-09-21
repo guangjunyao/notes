@@ -54,6 +54,23 @@ can be used to handle compiler dependencies.
 causes the preprocessor to search for a file in a defined sequence of standard places (the include
 directory).
 *** Preprocessor looks for ‘#’
+** Typedef
+- Use typedef for substitution
+#+BEGIN_SRC c
+typedef long int INT32;
+
+#+END_SRC
+** Macros
+- For global magic numbers
+#+BEGIN_SRC c
+#define MAX 256
+
+#+END_SRC
+- Macros with arguments (not a function)
+#+BEGIN_SRC c
+#define sqr(x) ((x) * (x))
+
+#+END_SRC
 * GETTING STARTED
 ** Learning C++: What Lies Before You
 ** The Origins of C++: A Little History
@@ -164,7 +181,50 @@ strcpy(s3, "Hello");
 #+END_SRC
 ** Introducing the string Class
 ** Introducing Structures
+The struct declaration is nothing more than a type definition. The members defined in the structure become concrete members when we create a variable of this struct type.
+- Structure creates new type
+#+BEGIN_SRC c
+struct <name> { [members] };
+
+#+END_SRC
+- Example a new type representing a point
+#+BEGIN_SRC C
+struct point
+{
+int x;
+int y;
+};
+
+#+END_SRC
+*** Arrays of Structures
+- Can initialise the elements upon declaring using {}
+#+BEGIN_SRC c
+struct point arr[2] = {{10, 11}, {11, 24}};
+
+#+END_SRC
+*** Structures and Pointers
+- Access members of structures using dot (.)
+#+BEGIN_SRC c
+struct point pt;
+pt.x = 10.0;
+
+#+END_SRC
+- When using pointers to structures use a -> to access struct members
+#+BEGIN_SRC c
+struct point* pp = &pt;
+pt->x=20.0; /* Use -> to access members */
+(*pt).y=30.0; /* Use dereference and . */
+
+#+END_SRC
 ** Unions
+- Or relation: variables contain value of one of the union field types
+- Same syntax as struct only type union
+union u_tag
+{
+int ival;
+float fval;
+};
+- Size equal to size of largest member
 ** Enumerations
 ** Pointers and the Free Store
 *** Pointers as Function Arguments
@@ -299,6 +359,9 @@ semicolon can create an infinite loop.
 ** Logical Expressions
 ** The cctype Library of Character Functions
 ** The ?: Operator
+#+BEGIN_SRC c
+const int x = (a<b) ? b : a;
+#+END_SRC
 ** The switch Statement
 ** The break and continue Statements
 ** Number-Reading Loops
@@ -331,6 +394,11 @@ functions (see next module).*
 
 ** Functions and Arrays
 ** Functions and Two-Dimensional Arrays
+The pointer equivalent is a double pointer (pointer to a pointer)
+#+BEGIN_SRC c
+int** pmarr;
+
+#+END_SRC
 ** Functions and C-Style Strings
 ** Functions and Structures
 ** Functions and string Class Objects
@@ -411,6 +479,37 @@ void print(void);
 
 * CLASSES AND DYNAMIC MEMORY ALLOCATION
 ** Dynamic Memory and Classes
+- Create memory blocks during run-time
+By using a function malloc() we can request a block of memory during run-time. We specify how many bytes we want and the malloc() function allocates it for us and assigns it to our program. The size is the number of bytes we want to allocate. The malloc() function returns the address of the memory we requested. This address must be stored in a variable.
+
+When we use dynamic memory we have to request it using malloc() but we also need to return it to the system when we do not use it anymore. If we do not return it to the system but keep requesting more memory we would run out of memory. The free() function returns the memory to the system.
+
+The function free() does not check if the pointer points to something allocated using malloc(). If the pointer was not initialised using the malloc() function and we would try to free() it, unpredictable errors would occur.
+Pointers can store address:
+#+BEGIN_SRC c
+void main()
+{
+int* p;
+p = (int*) malloc(10*sizeof(int));
+if (p != NULL)
+{
+/* Use the array */
+free(p);
+}
+}
+#+END_SRC
+- Use malloc() for allocation of block of bytes
+- Returns NULL if not enough memory
+- Cast return pointer to type*
+#+BEGIN_SRC c
+(int*)malloc(2*sizeof(int));
+
+#+END_SRC
+- Use free() to release allocated memory
+#+BEGIN_SRC c
+free(p);
+
+#+END_SRC
 ** A Queue Simulation
 
 
@@ -456,8 +555,19 @@ void print(void);
 
 * INPUT, OUTPUT, AND FILES
 ** An Overview of C++ Input and Output
+*** print
+%<flags><field width><.precision><type><format specifier>
 ** Output with cout
 ** Input with cin
 ** File Input and Output
+#+BEGIN_SRC c
+FILE* fp=fopen(file, mode)
+fcose(fp)
+#+END_SRC
 ** Incore Formatting
+- String functions are defined in <string.h>
+strcmp(), strcpy(), strcat(), etc.
+- Character functions defined in <ctype.h>
+isalpha(), toupper(),
+tolower(), isdigit(), etc.
 ** What Now?
