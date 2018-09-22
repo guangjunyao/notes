@@ -47,7 +47,7 @@ Map和Hash_Map的区别是Hash_Map使用了Hash算法来加快查找过程，但
 ** coin
 - expected number of flips for two consecutive heads:
 E = 2*0.25 + (1 + E)*0.5 + 0.25*(2 + E)
-
+    HH         THH           HTHH
 E = 6
 
 - We randomly select 4 numbers from the set of the first 16 prime numbers, without replacement. What is the probability their sum is even? Why?

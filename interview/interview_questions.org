@@ -33,10 +33,15 @@
 
 * Turingideas
 [[file:./fibonacci.py][fibonacci]]
+
 [[file:./find_product_closest_to_M_in_array.py][find_product_closest_to_M_in_array]]
+
 [[file:./overfitting.org][overfitting]]
+
 [[file:./robustness.org][robustness]]
+
 [[file:./dice_rolling.org][dice]]
+
 [[file:./random_walk.org][random walk]]
 
 * 中国平安
@@ -53,6 +58,10 @@
 
 [[file:./traveling_is_fun.py][traveling is fun]]
 * Goomoo
+[[file:./baby_birthday_probability.org][four babies born in a year are randomly selected, what's the expected birthday for the youngest one?]]
+[[file:./birthday_probability.py][monte carlo simulation]]
+
+[[file:./expected_number_of_flips_for_two_consecutive_heads.org][expected number of flips for two consecutive heads]]
 
 * leetcode
 ** 链表
@@ -76,7 +85,7 @@
 [[file:./lower_case_to_upper_case.cpp][lower case to upper case]]
 
 *** KMP
-[[file:./first_match.py][first match pattern]]
+[[file:./first_match.py][position of match pattern]]
 
 *** Manacher
 ** Array

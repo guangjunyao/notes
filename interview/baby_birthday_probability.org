@@ -1,0 +1,3 @@
+it's the expected return of n th day in a year.
+
+1/356 * sum(1,356)
