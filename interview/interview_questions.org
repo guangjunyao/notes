@@ -16,12 +16,19 @@
 
 * Akuna capital:
 [[file:./drones_time_to_deliver.py][time_to_deliver]]
+
 [[file:./minimize_ice_cream_shop_cost.py][minimize ice cream shop cost]]
+
 [[file:./postfix_to_infix.py][postfix_to_infix]]
+
 [[file:./classify_trades.py][classify trades]]
+
 [[file:./fermat_point.py][fermat point]]
+
 [[file:./palindromes_dates.py][palindromes dates]]
+
 [[file:./squared_summation_of_digits.py][squared summation of digits]]
+
 [[file:./detect_colinearity.py][detect colinearity]]
 
 * Turingideas
@@ -34,14 +41,45 @@
 
 * 中国平安
 [[file:./prime_in_fibonacci.py][prime in fibonacci]]
+
 [[file:./rotate_list_of_nodes.py][rotate the list of nodes]]
+
 [[file:./area_of_submatrix.py][area of submatrix with all 1s]]
+
+* Trexquant
+[[file:./second_order_difference.py][second order difference with missing value]]
+
+[[file:./consecutive_sum.py][consecutive sum]]
+
+[[file:./traveling_is_fun.py][traveling is fun]]
+* Goomoo
+
 * leetcode
 ** 链表
+*** basic:
+[[file:./basic_of_node_list.py][basic of node list]]
+
+*** practice
 [[file:./max_sub_array_sum.py][maximum subarray sum]]
+
 [[file:./minimum_in_array_after_rotation.py][minimum in array after rotation]]
+
 ** Longest Common Subsequences
 [[file:./LCS.py][LCS]]
 ** String
+[[file:./move_first_k_characters_to_the_end.py][move the first k characters to the end]]
+
+[[file:./combination_of_all_strings.py][permutate all strings]]
+
+[[file:./next_permutation.cpp][next permutation]]
+
+[[file:./lower_case_to_upper_case.cpp][lower case to upper case]]
+
 *** KMP
+[[file:./first_match.py][first match pattern]]
+
 *** Manacher
+** Array
+[[file:./fibonacci.cpp][fibonacci]]
+
+[[file:./fizz_buzz.cpp][fizz buzz]]
