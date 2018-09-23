@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-15 Sat 13:07 -->
+<!-- 2018-09-24 Mon 07:58 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -194,33 +194,30 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline10">5.3. merge, join</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline17">6. Companies</a>
+<li><a href="#orgheadline14">6. Companies</a>
 <ul>
 <li><a href="#orgheadline13">6.1. Akuna Capital</a>
 <ul>
 <li><a href="#orgheadline12">6.1.1. Quant dynamic</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline14">6.2. TrexQuant</a></li>
-<li><a href="#orgheadline15">6.3. Goomu Investment</a></li>
-<li><a href="#orgheadline16">6.4. PwC</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline28">7. 多因子</a>
+<li><a href="#orgheadline25">7. 多因子</a>
 <ul>
-<li><a href="#orgheadline18">7.1. 因子</a></li>
-<li><a href="#orgheadline19">7.2. 模型拟合</a></li>
-<li><a href="#orgheadline20">7.3. 收益预测</a></li>
-<li><a href="#orgheadline21">7.4. 风险预测</a></li>
-<li><a href="#orgheadline22">7.5. 业绩归因</a></li>
-<li><a href="#orgheadline23">7.6. 组合构建</a></li>
-<li><a href="#orgheadline24">7.7. 实盘</a></li>
-<li><a href="#orgheadline25">7.8. 数据</a></li>
-<li><a href="#orgheadline26">7.9. 程序</a></li>
-<li><a href="#orgheadline27">7.10. 综合</a></li>
+<li><a href="#orgheadline15">7.1. 因子</a></li>
+<li><a href="#orgheadline16">7.2. 模型拟合</a></li>
+<li><a href="#orgheadline17">7.3. 收益预测</a></li>
+<li><a href="#orgheadline18">7.4. 风险预测</a></li>
+<li><a href="#orgheadline19">7.5. 业绩归因</a></li>
+<li><a href="#orgheadline20">7.6. 组合构建</a></li>
+<li><a href="#orgheadline21">7.7. 实盘</a></li>
+<li><a href="#orgheadline22">7.8. 数据</a></li>
+<li><a href="#orgheadline23">7.9. 程序</a></li>
+<li><a href="#orgheadline24">7.10. 综合</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline29">8. Macroeconomy</a></li>
+<li><a href="#orgheadline26">8. Macroeconomy</a></li>
 </ul>
 </div>
 </div>
@@ -298,9 +295,7 @@ Map和Hash<sub>Map的区别是Hash</sub><sub>Map使用了Hash算法来加快查�
 </ul>
 <p>
 E = 2*0.25 + (1 + E)*0.5 + 0.25*(2 + E)
-</p>
-
-<p>
+    HH         THH           HTHH
 E = 6
 </p>
 
@@ -468,8 +463,8 @@ inner join, outter join, left join, right join.
 </div>
 </div>
 
-<div id="outline-container-orgheadline17" class="outline-2">
-<h2 id="orgheadline17"><span class="section-number-2">6</span> Companies</h2>
+<div id="outline-container-orgheadline14" class="outline-2">
+<h2 id="orgheadline14"><span class="section-number-2">6</span> Companies</h2>
 <div class="outline-text-2" id="text-6">
 </div><div id="outline-container-orgheadline13" class="outline-3">
 <h3 id="orgheadline13"><span class="section-number-3">6.1</span> Akuna Capital</h3>
@@ -710,34 +705,312 @@ Given 1 billion number, get the largest 1 million. Large dataset means you canno
 <li>硬币题，地里已经有的，连续两次得到tail的expectation of flip times.1point3acres网</li>
 <li>有constrain的情况下如何求极值</li>
 <li>给一列实数，如何判断有没有limit</li>
-<li>解释independent和uncorrelated有什么区别. 1</li>
+<li>解释independent和uncorrelated有什么区别.</li>
 </ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgheadline14" class="outline-3">
-<h3 id="orgheadline14"><span class="section-number-3">6.2</span> TrexQuant</h3>
-</div>
 
-<div id="outline-container-orgheadline15" class="outline-3">
-<h3 id="orgheadline15"><span class="section-number-3">6.3</span> Goomu Investment</h3>
-</div>
-
-<div id="outline-container-orgheadline16" class="outline-3">
-<h3 id="orgheadline16"><span class="section-number-3">6.4</span> PwC</h3>
-<div class="outline-text-3" id="text-6-4">
 <p>
-data scientist
+两个变量X和Y，都是标准正态分布，如何求当X+Y&gt;0下X的条件概率分布.
 </p>
+
+<p>
+做的是Quant Dev＃1 － Fall 2016
+120分钟，四道题，只能用Python
+1, Packing Melons
+Two assembly lines, one with watermelons, one with boxes. Put as many watermelons into boxes as possible. You can pick where you start taking watermelons from, but once you start, all melons going past you must be placed, or you must stop.
+Calculate how many watermelons can be placed.-google 1point3acres
+A watermelon will fit into a box with a size &gt;= melon size. You can hold onto the melon and skip a box to place in in a later one.
+</p>
+
+<p>
+2, Parsing Words
+Define a word as any sequence of one or more lower-case letters(no numbers, no punctuation), words are separated by white space.
+Read all words(on every line)from standard input, and to produce, in order, on separate lines:
+-the count of words in input. more info on 1point3acres
+-the word "words"
+-each unique word, and the count of times it occurs in the input(listed in alphabetical order)
+-the word "letters"
+-for every letter from a to z, the letter, the count of times it occured IN A WORD(listed in alphabetical order). more info on 1point3acres
+</p>
+
+<p>
+There must be whitespace separating valid words in the input&#x2013;actual spaces, and newlines. If your program finds something that isn't whitespace, and not a word, it should skip until it comes to a valid word(or the end of the input). Finding a non-word character makes the whole sequence a non-word.
+</p>
+
+<p>
+Read input from STDIN, print to STDOUT
+</p>
+
+<p>
+3, Classify new trades
+Classify new trades based on their similarity to old trades.
+Every trade has three features: profit, risk, latency.. 留学申请论坛-一亩三分地
+You have a list of old trades, each has been labeled with a color. You have a list of new trades, unlabeled.
+Create an algorithm that uses old trades to predict labels of new trades.
+</p>
+
+<p>
+Input:
+A list of old trades. A list of labels corresponding to old trades. A list of new trades.. 留学申请论坛-一亩三分地
+Classes may be imbalanced(eg, 'red' label may greatly outnumber 'green' label)
+The data set is small: Old trades less than 100, new trades less than 10.
+</p>
+
+<p>
+4, Drone Delivery
+</p>
+
+
+<p>
+电面
+美国人，预定45分钟，实际52分钟。
+1, Python experience, relative project, may follow up quite a few questions about project, depends on whether he is interested
+2, Difference between List, Dict and Set; follow up, time complexity of search in List and Dict
+3, Generator.1point3acres网
+4, Decorator, give an example
+5, Why we need Multithread, why we prefer Multiprocess over Multithread
+6, How many numbers between 1 to 10,000 don't have 5 in it?
+7, Bank A has 10 tellers, each serving one customer at a time independently; Bank B has 10 tellers, sharing a queue of customers to serve. Which bank you prefer? Why?
+8, Any questions you want to ask about Akuna?
+</p>
+
+<p>
+然后问了linear regression 的assumption以及为什么要有这些assumption
+然后问了PCA的原理，如何和eigen value/vector关联并证明；然后面试官问你为什么不把y的variance算进去只算了x的variance……我懵逼了……
+</p>
+
+<p>
+电面1：（约的45min实际半小时就答完了）考的全是数学统计概率概念性质的问题。uncorrelated和independent有什么区别，举一个uncorrelated但不independent的例子；什么时候积分和求极限可以交换顺序，Brownian mothion中X<sub>s和X</sub><sub>t的covariance</sub>。不动点定理，他说的是“fixpoint iteration”，a.s收敛和in probability的区别。svd等矩阵分解，projection matrix，kernel trick，MC integral，Lagrangian multiplier。等等。。。面试后一小时通知了下一轮
+</p>
+
+<p>
+电面2：（约的30min实际花了35min）考的全是数据结构有关的概念（lz跟她说自己熟悉的是Python，所以问的问题基本上跟Python有关）比如class的inheritance，generator的keyword，list comprehension，garbage collection，其他具体不大记得了，但是我记得这轮考的基本都是地里面经里提到的，包括quant development的面经，虽然跟我职位不同，但好像都有问到。最后问了一道算法题，经典的data stream median，用两个heap。只要跟她电话讲思路，不用写code。第二天早上收到final web-round面试
+.留学论坛-一亩-三分地
+这两轮店面感觉面试官都是被安排的任务，一人拿了一个list of questions，然后就挨个问。。面试官也不想深入了解你到底理不理解，只要你答的基本对就ok了，直接下一题。。
+</p>
+
+<p>
+Final web round：（90min，实际由于前边连接视频耽误了点时间，最后超时了一些）总共三个人。
+第一个人，上来就问请推倒arctan(x)导数。lz一下愣了一下，直接说了结果，然后又被要求写推导过程。。然后写了一半卡住了。。。他说没关系，他不是来问问题的，有另外两个人负责问问题，他只负责回答我的问题。。我半信半疑。。问了他俩问题
+第二个人，问一个binary classification的问题，问是否存在一个model，使得他的accuracy能达到95%。training data可以无限多，应该是说不考虑overfitting吧？没搞懂他想问什么，后来他提到了Neyman Pearson引理，可惜我也不记得这引理说的啥了。。。应该是主要挂在这道题上
+第三个人，好像是senior quant trader。先问了问简历，让我用给undergrade的讲法讲了一个project，他好像听懂了还不错。然后问了几道概率题，1-10000中含有5的数字有多少个，很简单。。。两个人玩游戏，一人一个硬币，两个人同时扔。A的目标是连续两个head，B的目标是一个H一个T（即HT）。谁先出现谁就赢。问谁赢的概率大？答案是B。然后是问去除duplicate怎么去，答用set或者dict，time complexity O(n) 空间是unique数字的个数。然后又问还可以怎么优化，应该是当list长度很长，但是可能出现的value比较少的时候，只需要记录如果所有value都出现过了，就可以停了。order不会变，不过就是稍微快一点点。。lz没有想出别的解决办法
+</p>
+
+<p>
+<a href="https://rushter.com/blog/python-garbage-collector/">https://rushter.com/blog/python-garbage-collector/</a>
+</p>
+
+<p>
+#3
+wiggle sort II 原题
+</p>
+
+<ol class="org-ol">
+<li>無人機2. 冰淇淋</li>
+<li>postfix to infix.</li>
+</ol>
+<p>
+1.无人机送包裹流程设计。给定一个送包裹的顺序（这个顺序必须要遵守）还有包裹的总数量，要求输出最短的送完所有包裹的时间。情景如下：有两个homeblock，每个block 50 户人家（线性排列），每个block有一台无人机送货，两个block都有包裹，最后的运送顺序要严格遵守给定顺序，无人机可以执行三个动作，1）送货。2）移动到下一户人家。3）在某户人家等待。无人机初始就在block的第一户人家。
+2.把prefix的equation改成infix的equation。这里面有一点不理解就是如何加括号。
+3.找到最优解。情景如下：输入是一个卖ice cream的总天数，每天卖多少的list，家里冰柜的大小，运输一次的成本，还有冰柜存一天ice cream的成本。根绝这些信息算最后的总的最小成本。
+</p>
+
+<p>
+包裹题就完全用业务逻辑硬写了 test case 全过了但是code写的复杂的一笔
+</p>
+
+<p>
+infix题用stack做，遇到数字就往里扔遇到符号就stack取前两个中间加符号。我用的判断加括号的方法是加减1乘除2次方3数字四然后stack里面每一个存的对应一个等级。遇到里面的符号比外面符号小的就加括号。9个testcase过了7个。估计应该是次方优先级的问题。
+</p>
+
+<p>
+冰淇淋题没写完，个人思路是DP 每天考虑买最少个，逐个加一，一直到min（剩余需求， 填满冰箱）。然后计算这一天的费用然后DP后面的。然后取最小费用。反正当时是没写出来，自爆了。
+</p>
+
+
+<p>
+1.给两个int array: boxes and lemons，一个代表箱子的大小，一个代表西瓜的大小，每个箱子最多只能装一个小于等于它size的西瓜。在西瓜size array选择起点i,
+leolle，本帖隐藏的内容需要积分高于 133 才可浏览，您当前积分为 70。
+查看如何攒积分 Click here for more info.
+. more info on 1point3acres
+</p>
+<ol class="org-ol">
+<li>Given training data, whose features are 3-dimensional numerical features, 在不允许调用机器学习包（如sklearn）的情况下，写出为目标3 classes的classification方法</li>
+</ol>
+<p>
+3.输入文件，输出unique words与26个字母的counts到文件里。invalid word（比如其它字符出现在了space separated words里面）,不能被考虑
+4.类似于给定2个快递员送货到每家的策略，一个快递员deliver的time slot另一个不能有action只能在原地等，求最短送完货需要的时间。简单但是写起来比较烦。
+</p>
+
+<p>
+. From 1point 3acres bbs
+电面：
+1小时 介绍个人背景20min 考Python三道题：
+1.Generator如何使用
+2.python都有哪些data analysis相关的包
+3.在不让用乘法operator的情况下如何进行乘法
+脑筋急转弯一道题： 有1个完整的金条，需要每天付给员工1/7并且连续7天都要付。在只能切两刀的条件下如何每天都给1/7。.1point3acres网
+</p>
+
+<ol class="org-ol">
+<li>定义一下encapsulation. more info on 1point3acres</li>
+<li>解释一下interface</li>
+<li>static decorator</li>
+<li>is和==的区别</li>
+<li>pickle是做什么的</li>
+<li>垃圾回收</li>
+</ol>
+
+<p>
+求矩阵A的特征值。 A 是一个N * N 的矩阵， 对角线是N， 其他元素是1.
+</p>
+
+<p>
+number base arithmetic，palindrome date，word graph。
+</p>
+
+<p>
+#7
+market equilibrium.
+given a couple companies, their initial market shares, and the probabilities of customer switching from one company to another, what;s the final market share of each company?
+1 Answer
+tetris
+given a couple pieces of tetris pieces, ask if we can fit these pieces exactly into a given rectangle
+1 Answer
+given a couple sentences, count word frequency, and letter frequency
+</p>
+
+<ol class="org-ol">
+<li>given an array, find duplicate</li>
+</ol>
+<p>
+我心想 easy 題
+跟他聊說要 重視space or time (啥的)  給了兩個解法sort, hashmap
+對方一點也不在乎  說用hashmap
+我很快寫完
+</p>
+
+<p>
+2.given an array, 問  max subarray sum (dp LC題)
+</p>
+
+<ol class="org-ol">
+<li>三男選兩人  三女選一人  幾種選法</li>
+
+<li>1- 10000 有幾個數不包含 5</li>
+</ol>
+<p>
+我也跟他聊了我的解法  聊很久
+</p>
+
+<ol class="org-ol">
+<li>what is primary key, foreign key, index, what is the benefit of index</li>
+</ol>
+<p>
+我說搜尋快 可以找唯一的
+但他一直沒很滿意
+我也不知要講啥. 一亩-三分-地，独家发布
+感覺應該是這題掛了. from: 1point3acres
+. 1point 3acres 论坛
+</p>
+<ol class="org-ol">
+<li>bus app, database怎麼設計</li>
+</ol>
+<p>
+我說有兩個table
+bus and bus stop
+然後再加上一個many to many 的relationship tables
+若 你要10分鐘更新一次 要怎麼做
+</p>
+
+<ol class="org-ol">
+<li>线性代数：求矩阵特征值，这个矩阵是n*n方正，对角线全为n, 其他元素全为1. 我只找到了最简单的一个特征值和特征向量没找到其他&#x2026;</li>
+<li>机器学习：SVM+deep learning，考概念，objective function（啥是activate func, RNN,SVM不需要求解只需要讲方程和物理意义）</li>
+</ol>
+<p>
+一个问的就是 set，dict，list的区别，follow up问dict的search time complexity，什么情况下不是constant time；list的search time是多少，如果sorted list的话用什么search，time complexity是多少；set的search time complexity是多少，怎么解决hash collision
+然后问的是generator， 以及你的implement
+接着问decorator， 以及你的implement
+这时小哥貌似终于想起要问一些resume的事了，就挑了几个project问了些细节。
+然后说来做几个brain teaser：1－10000里面多少个数不含5； 两个银行a和b都有10个teller，a里每个人都有一个queue，b里10个人share一个queue，问你prefer哪一个
+接着小哥又绕回tech的问题了，要我解释thread和process，问我有没有写过mutliprocess。。。我说有在aws里跑过mapreduce，小哥就问什么是maper，什么是reducer
+不知道小哥是不是没什么可问的了，就开始问金融了。。。什么是put option 什么是call option
+如果apple stock selling price是100， call option 30days $110， 要不要这个trade 为什么， 如果换成90days 呢
+</p>
+
+<ol class="org-ol">
+<li>给一个三角形三个顶点的坐标，要找出在三角形内部或者边上的整点（两个坐标都是整数的点），使得这个点到三个顶点距离之和最短。</li>
+</ol>
+<p>
+这题其实不难，一个重点是读题要仔细，一个值得注意的地方是如果三角形内部没有符合要求的点要输出一个特定字符串，我一开始没看到这句，第五个testcase死活过不去……浪费了好多时间
+另一个重点是如何判断一个点是不是在三角形内部，我当时在网上查了一下，用的方法是判断ABC面积=ABD+BCD+ACD，感觉还是靠谱的
+. Waral 博客有更多文章,
+</p>
+<ol class="org-ol">
+<li>第二题特别坑爹，给了一个交易策略要写代码模拟它的表现，题目本来不难，但是那个策略有好几个分支，描述的又不是特别清楚，再加上前面浪费了好多时间，最后就没AC……这题不考什么算法，就是看能不能理解正确他那个策略，然后写对代码</li>
+
+<li>第三题是给一个数组（全是正数），要找一个连续的subarray，使得和最接近某个给定的n。题目里特别说了尽量写时间复杂度低的程序，我一开始写了个O(n<sup>2</sup>)，只能过5/6个点。后来改写了个O(n logn)的，就把6个点都过了。</li>
+<li>OOP benifits</li>
+
+<li>"with" in python</li>
+
+<li>Generator in python</li>
+
+<li>Function is first class object in python, can you describe some use of it</li>
+</ol>
+<p>
+. more info on 1point3acres
+</p>
+<ol class="org-ol">
+<li>Python memory management, garbage collection. If there is an object with non-zero reference, should I GC</li>
+
+<li>Why it is a bad idea to use list as default parameter when you define a function</li>
+</ol>
+
+<p>
+Dev #1
+申请：Junior Quant Researcher. 1point3acres
+9月在学校的网上投的Application
+10月初收到OA，是hackerrank的python题，我的好像是Dev#1. .留学论坛-一亩-三分地
+题目不太记得了，第一题忘记，第二题是开灯关灯，以及第三题染色那道非常难，作为数学PhD 的我表示，并不记得这些代数的结论ORZ
+</p>
+
+<p>
+之后收到了第一轮Technical Interview，小哥的口音听上去像是加拿大人.留学论坛-一亩-三分地
+先，自我介绍然后说Why Akuna。接下来
+</p>
+<ol class="org-ol">
+<li>地里有的题目，n*n matrix with 1 on the diagnal and n on the aux diag. Find eigen values and eigen vectors.. 牛人云集,一亩三分地</li>
+<li>X，Y iid standard normal Find the conditional distribution of X given X+Y&gt;0</li>
+<li>楼主朋友有了我的面经之后回答比较快又被问了第三题：find an example or corr(X,Y)=0 but X and Y are not independent.</li>
+</ol>
+<p>
+-google 1point3acres
+一段时间没有消息后，
+第二轮是codepair+brainteaser：
+</p>
+<ol class="org-ol">
+<li>delete duplicate in a list, not hard</li>
+<li>list comprehension, easy. 一亩-三分-地，独家发布</li>
+<li>use class to build a data structure to perform in real time data that can: insert, return max, return mean, return major element.</li>
+</ol>
+
+<p>
+Brainteaser:
+</p>
+<ol class="org-ol">
+<li>how many integrers are there in 1 to 10,000 that doesn't have a 5 in its digit</li>
+<li>given 50 black ball and 50 white balls and 2 baskets, how can you distribute them so that you can have a maximum chance of gettin black ball.</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgheadline28" class="outline-2">
-<h2 id="orgheadline28"><span class="section-number-2">7</span> 多因子</h2>
+<div id="outline-container-orgheadline25" class="outline-2">
+<h2 id="orgheadline25"><span class="section-number-2">7</span> 多因子</h2>
 <div class="outline-text-2" id="text-7">
-</div><div id="outline-container-orgheadline18" class="outline-3">
-<h3 id="orgheadline18"><span class="section-number-3">7.1</span> 因子</h3>
+</div><div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15"><span class="section-number-3">7.1</span> 因子</h3>
 <div class="outline-text-3" id="text-7-1">
 <ol class="org-ol">
 <li>A股市场驱动因子能分为哪几大类?【按信息源分：技术、基本面、情绪等】</li>
@@ -903,8 +1176,8 @@ BR: number of trading opportunities per year.
 </div>
 </div>
 
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="orgheadline19"><span class="section-number-3">7.2</span> 模型拟合</h3>
+<div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16"><span class="section-number-3">7.2</span> 模型拟合</h3>
 <div class="outline-text-3" id="text-7-2">
 <ol class="org-ol">
 <li>拟合多因子模型的综合目标是什么？</li>
@@ -1122,8 +1395,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline20" class="outline-3">
-<h3 id="orgheadline20"><span class="section-number-3">7.3</span> 收益预测</h3>
+<div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17"><span class="section-number-3">7.3</span> 收益预测</h3>
 <div class="outline-text-3" id="text-7-3">
 <ol class="org-ol">
 <li>在多因子回归中，预测的目标是什么？收益率？对行业的超额收益率？对市场的超额收益率？还是其他的？</li>
@@ -1166,8 +1439,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline21" class="outline-3">
-<h3 id="orgheadline21"><span class="section-number-3">7.4</span> 风险预测</h3>
+<div id="outline-container-orgheadline18" class="outline-3">
+<h3 id="orgheadline18"><span class="section-number-3">7.4</span> 风险预测</h3>
 <div class="outline-text-3" id="text-7-4">
 <ol class="org-ol">
 <li>用于风险预测的多因子模型，在拟合时应侧重考虑哪些方面？</li>
@@ -1312,8 +1585,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline22" class="outline-3">
-<h3 id="orgheadline22"><span class="section-number-3">7.5</span> 业绩归因</h3>
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">7.5</span> 业绩归因</h3>
 <div class="outline-text-3" id="text-7-5">
 <p>
 1用于业绩归因的多因子模型，在拟合时应侧重考虑哪些方面？
@@ -1328,8 +1601,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline23" class="outline-3">
-<h3 id="orgheadline23"><span class="section-number-3">7.6</span> 组合构建</h3>
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">7.6</span> 组合构建</h3>
 <div class="outline-text-3" id="text-7-6">
 <p>
 1利用多因子模型进行选股，求解每期股票权重的问题本质上是一个带约束的最优化问题，请阐述优化目标和约束条件各是什么？
@@ -1348,8 +1621,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline24" class="outline-3">
-<h3 id="orgheadline24"><span class="section-number-3">7.7</span> 实盘</h3>
+<div id="outline-container-orgheadline21" class="outline-3">
+<h3 id="orgheadline21"><span class="section-number-3">7.7</span> 实盘</h3>
 <div class="outline-text-3" id="text-7-7">
 <p>
 1新策略从提出到开发，再到上线的流程中，历史回测（back-test）、实时模拟（paper-trading）和实盘交易（real-money）的关键差异何在，各自的优劣何在？
@@ -1361,8 +1634,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline25" class="outline-3">
-<h3 id="orgheadline25"><span class="section-number-3">7.8</span> 数据</h3>
+<div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22"><span class="section-number-3">7.8</span> 数据</h3>
 <div class="outline-text-3" id="text-7-8">
 <p>
 1基本信息、行情、基本面等基础数据库的表结构应该怎样设计？出于怎样的考虑？
@@ -1379,8 +1652,8 @@ BARRA CNE5 Model的R<sup>2在0.4左右</sup>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline26" class="outline-3">
-<h3 id="orgheadline26"><span class="section-number-3">7.9</span> 程序</h3>
+<div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23"><span class="section-number-3">7.9</span> 程序</h3>
 <div class="outline-text-3" id="text-7-9">
 <ol class="org-ol">
 <li>分析程序用MATLAB、Python、R、C++等语言各自的利弊？哪种背景和需求的人应该选择哪种语言？</li>
@@ -1403,8 +1676,8 @@ C++ 速度快，但是学习曲线很陡峭，开发周期长，调试不方便�
 </div>
 </div>
 
-<div id="outline-container-orgheadline27" class="outline-3">
-<h3 id="orgheadline27"><span class="section-number-3">7.10</span> 综合</h3>
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24"><span class="section-number-3">7.10</span> 综合</h3>
 <div class="outline-text-3" id="text-7-10">
 <p>
 1股票市场是否存在alpha，怎样验证？
@@ -1423,8 +1696,8 @@ C++ 速度快，但是学习曲线很陡峭，开发周期长，调试不方便�
 </div>
 </div>
 
-<div id="outline-container-orgheadline29" class="outline-2">
-<h2 id="orgheadline29"><span class="section-number-2">8</span> Macroeconomy</h2>
+<div id="outline-container-orgheadline26" class="outline-2">
+<h2 id="orgheadline26"><span class="section-number-2">8</span> Macroeconomy</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li>蒙代尔不可能三角</li>

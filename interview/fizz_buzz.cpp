@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <vector>
 #include <string.h>
+using namespace std;
+
 class Solution {
 public:
   std::vector<string> fizzBuzz_old_school_way(int n) {

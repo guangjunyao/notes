@@ -51,6 +51,8 @@
 
 [[file:./area_of_submatrix.py][area of submatrix with all 1s]]
 
+[[file:./pingan_interview_questions.org][面经]]
+
 * Trexquant
 [[file:./second_order_difference.py][second order difference with missing value]]
 
@@ -79,6 +81,8 @@
 [[file:./move_first_k_characters_to_the_end.py][move the first k characters to the end]]
 
 [[file:./combination_of_all_strings.py][permutate all strings]]
+
+[[file:./select_n_letters_from.cpp][how many combinations in n letters selected from 26 letters]]
 
 [[file:./next_permutation.cpp][next permutation]]
 

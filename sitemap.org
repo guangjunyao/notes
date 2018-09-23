@@ -34,6 +34,8 @@
     + [[file:emacs/markdown.org][Markdown]]
     + [[file:emacs/tutorial.org][Tutorial]]
     + [[file:emacs/tutorial_backup.org][Backup]]
+  + Interview
+    + [[file:./interview/interview_questions.org][interview questions]]
 + Finance
   + [[file:finance/Backtest.org][Backtest]]
   + [[file:finance/ComputationalInvestment.org][ComputationalInvestment]]
@@ -51,6 +53,7 @@
   + [[file:finance/QuantitativeInvestment.org][QuantitativeInvestment]]
   + [[file:finance/future.org][Future]]
   + [[file:finance/option.org][Option]]
+  + [[file:./finance/interview.org][finance interview questions]]
 + Math
   + [[file:./Math/knowledge_tree.html/index.html][KnowledgeTree]]
   + MachineLearning

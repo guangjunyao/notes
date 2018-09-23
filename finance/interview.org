@@ -527,13 +527,6 @@ Brainteaser:
 1. how many integrers are there in 1 to 10,000 that doesn't have a 5 in its digit
 2. given 50 black ball and 50 white balls and 2 baskets, how can you distribute them so that you can have a maximum chance of gettin black ball.
 
-** TrexQuant
-
-** Goomu Investment
-
-** PwC
-data scientist
-
 * 多因子
 ** 因子
 

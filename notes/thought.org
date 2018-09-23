@@ -503,7 +503,8 @@ Find comprehension QA dataset, which answers these questions need deep understan
 - 汽车金融
 - 智能定价，不同车不同城市定价不同
 - 路径规划
-
+** September 2018
+当人面临巨大压力时，会做不出不正确的决定。当你面临的大太大，让你感觉完全无法承受，你可能会装死，shut down your brain, 大脑完全放弃思考。
 * Footnotes
 
 [1] https://metacademy.org/roadmaps/rgrosse/learn_on_your_own

@@ -915,7 +915,7 @@ Type:      builtin_function_or_method
 
 In : rex_property.match?
 Signature: rex_property.match(string=None, pos=0, endpos=9223372036854775807, *, pattern=None)
-Docstring: Matches zero or more characters at the beginning of the string.
+Docstring: Matches zero or more characters *at the beginning* of the string.
 Type:      builtin_function_or_method
 
 *** string array
