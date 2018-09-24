@@ -1,0 +1,2 @@
+- start from (0, 0), what's the probability to get -10 for step 20.
+1/2^20.

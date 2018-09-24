@@ -1,0 +1,8 @@
+* 什么是过拟合？
+模型出现在训练数据上效果好，但在测试数据上效果不好的现象。
+* 怎么应对过拟合
+- data augumentation
+- regulazation(L1, L2, dropout)
+- increase training data and test data
+- reduce model complexity
+- generalize architecture
