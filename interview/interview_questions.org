@@ -75,6 +75,7 @@
 
 [[file:./minimum_in_array_after_rotation.py][minimum in array after rotation]]
 
+[[file:./Partition_List.py][Partition List]]
 ** Longest Common Subsequences
 [[file:./LCS.py][LCS]]
 ** String
@@ -96,3 +97,9 @@
 [[file:./fibonacci.cpp][fibonacci]]
 
 [[file:./fizz_buzz.cpp][fizz buzz]]
+
+[[file:./subarray_product.cpp][sub array product less than k]]
+
+[[file:./greatest_common_divisor.cpp][greatest common divisor]]
+
+[[file:./test.cpp][test]]

@@ -164,37 +164,9 @@ class ListNode():
         self.next = next_
 
 
-# if __name__ == '__main__':
 mlist1 = LList()
-for i in range(10):
-    mlist1.prepend(i)
+a = [1, 4, 3, 2, 5, 2]
+for i in a:
+    print(i)
+    mlist1.append(i)
 mlist1.print_all()
-
-# # append
-# llist0 = ListNode(0)
-# head = llist0
-# temp = head
-# for i in range(1, 10):
-#     node = ListNode(i)
-#     temp.next = node
-#     temp = node
-# # print_node(head)
-
-# # prepend
-# head = llist0
-# for i in range(1, 10):
-#     q = ListNode(i)
-#     q.next = head
-#     head = q
-# # print_node(head)
-
-# # insert at k, pre of k is known.
-# q = ListNode(11)
-# q.next = temp.next
-# temp.next = q
-
-# # delete head
-# head = head.next
-
-# # delete k
-# temp.next = temp.next.next
