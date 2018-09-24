@@ -7,6 +7,22 @@ class LList:
     def __init__(self):
         self._head = None
 
+    def __iter__(self,):
+        p = self._head
+        while True:
+            try:
+                yield p.value
+            except:
+                break
+            p = p.next
+
+    def __len__(self,):
+        p, count = self._head, 0
+        while p:
+            count += 1
+            p = p.next
+        return count
+
     def is_empty(self):
         return self._head is None
 
@@ -114,6 +130,15 @@ class LList:
             proc(p.value)
             p = p.next
 
+    def reverse(self,):
+        p = None
+        while self._head is not None:
+            q = self._head
+            self._head = q.next  # get the first node
+            q.next = p  # reverse one by one
+            p = q
+        self._head = p
+
 
 class ListNode():
 
@@ -122,11 +147,11 @@ class ListNode():
         self.next = next_
 
 
-if __name__ == '__main__':
-    mlist1 = LList()
-    for i in range(10):
-        mlist1.prepend(i)
-        mlist1.print_all()
+# if __name__ == '__main__':
+mlist1 = LList()
+for i in range(10):
+    mlist1.prepend(i)
+mlist1.print_all()
 
 
 def print_node(head):
