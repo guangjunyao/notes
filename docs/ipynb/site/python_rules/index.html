@@ -13,18 +13,19 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Python \u98ce\u683c\u6307\u5357";
     var mkdocs_page_input_path = "python_rules.md";
-    var mkdocs_page_url = "/python_rules/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +39,7 @@
         <a href=".." class="icon icon-home"> Ipython notebooks</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -113,6 +114,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../optimization/">Optimization summary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PCA/">Principle Component Anlysis</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -629,7 +635,7 @@ pylint警告是以一个数字编号(如 ``C0112`` )和一个符号名(如 ``emp
 <h2 id="_12">线程</h2>
 <p>.. tip::
     不要依赖内建类型的原子性.</p>
-<p>虽然Python的内建类型例如字典看上去拥有原子操作, 但是在某些情形下它们仍然不是原子的(即: 如果<strong>hash</strong>或<strong>eq</strong>被实现为Python方法)且它们的原子性是靠不住的. 你也不能指望原子变量赋值(因为这个反过来依赖字典).</p>
+<p>虽然Python的内建类型例如字典看上去拥有原子操作, 但是在某些情形下它们仍然不是原子的(即: 如果__hash__或__eq__被实现为Python方法)且它们的原子性是靠不住的. 你也不能指望原子变量赋值(因为这个反过来依赖字典).</p>
 <p>优先使用Queue模块的 <code>Queue</code> 数据类型作为线程间的数据通信方式. 另外, 使用threading模块及其锁原语(locking primitives). 了解条件变量的合适使用方式, 这样你就可以使用 <code>threading.Condition</code> 来取代低级别的锁了.</p>
 <h2 id="_13">威力过大的特性</h2>
 <p>.. tip::
@@ -666,12 +672,12 @@ pylint警告是以一个数字编号(如 ``C0112`` )和一个符号名(如 ``emp
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -685,7 +691,9 @@ pylint警告是以一个数字编号(如 ``C0112`` )和一个符号名(如 ``emp
       
     </span>
 </div>
-    <script src="../js/theme.js"></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>

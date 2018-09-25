@@ -28,7 +28,7 @@ research and project oriented, adjusting speed based on progress.
 聚类分析（英语：Cluster analysis，亦称为群集分析）是对于统计数据分析的一门技术，在许多领域受到广泛应用，包括机器学习，数据挖掘，模式识别，图像分析以及生物信息。聚类是把相似的对象通过静态分类的方法分成不同的组别或者更多的子集（subset），这样让在同一个子集中的成员对象都有相似的一些属性，常见的包括在坐标系中更加短的空间距离等。
 *** 回归
 回归分析（英语：Regression Analysis）是一种统计学上分析数据的方法，目的在于了解两个或多个变数间是否相关、相关方向与强度，并建立数学模型以便观察特定变数来预测研究者感兴趣的变数。更具体的来说，回归分析可以帮助人们了解在只有一个自变量变化时因变量的变化量。一般来说，通过回归分析我们可以由给出的自变量估计因变量的条件期望。
-回归分析是建立因变数$ {\displaystyle Y} Y$（或称依变数，反应变数）与自变数 ${\displaystyle X} X$（或称独变数，解释变数）之间关系的模型。简单线性回归使用一个自变量$ {\displaystyle X} X$，复回归使用超过一个自变量$（ {\displaystyle X_{1},X_{2}...X_{i}} X_{1},X_{2}...X_{i}）$。
+回归分析是建立因变数$  Y$（或称依变数，反应变数）与自变数 $ X$（或称独变数，解释变数）之间关系的模型。简单线性回归使用一个自变量$ X$，复回归使用超过一个自变量$（  X_{1},X_{2}...X_{i}）$。
 
 **** 模型
 线性回归 简单回归 普通最小二乘法 多项式回归 一般线性模型
@@ -53,6 +53,15 @@ research and project oriented, adjusting speed based on progress.
 
 有三大类异常检测算法。 在假设数据集中大多数实例都是正常的前提下，无监督异常检测方法能通过寻找与其他数据最不匹配的实例来检测出未标记测试数据的异常。监督式异常检测方法需要一个已经被标记“正常”与“异常”的数据集，并涉及到训练分类器（与许多其他的统计分类问题的关键区别是异常检测的内在不均衡性）。半监督式异常检测方法根据一个给定的正常训练数据集创建一个表示正常行为的模型，然后检测由学习模型生成的测试实例的可能性。
 关联规则 强化学习 结构预测 特征学习 在线学习 半监督学习 语法归纳
+** 流程：
+1. 抽象转换为数学问题（回归、聚类、分类），定义目标
+2. 寻找数据(归一化、离散化、因子化、缺失值处理、去除共线性等)
+3. 特征预处理，选择
+4. 建模，训练，看效果，调参
+5. 模型诊断
+6. 模型融合
+7. 可视化分析
+8. 生成报告
 ** 监督学习(分类 · 回归)
 *** 决策树
 [[file:./DecisionTree.org][DecisionTree]]
@@ -90,6 +99,7 @@ $$\mu_j=\frac{1}{m} \sum_{i=1}^m x_j^{(i)}$$
 replace each $x_j^{(i)}$ with $x_i-\mu_j$
 *** LASSO
 PCA vs Lasso:
+[[./Images/lasso_ridge.png]]
 unsupervised, supervised.
 *** t-SNE
 ** 结构预测
@@ -196,6 +206,8 @@ linear regression with one variable is also called simple regression. The X vari
     residual sum of squares
   - RSE
     residual standard error.
+  - mean squared error (MSE) or mean squared deviation (MSD) of an estimator
+    measures the average of the squares of the errors
 
 ** Linear Algebra Review
 - Vector
@@ -208,7 +220,7 @@ The slope of the tangent is the derivative at that point and it will give us a d
 We make steps down the cost function in the direction with the steepest descent.
 The size of each step is determined by the parameter α, which is called the learning rate.
 - Algorithm:
-$$\Theta_j = \Theta_j + \alpha \derivative{J(\Theta_0,\Theta_1)}$$
+$$\Theta_j = \Theta_j + \alpha \derivative_{J(\Theta_0,\Theta_1)}$$
 Update simutaneously:
 $$Temp_0 := \Theta_0 - \alpha \triangledown J(\Theta_0,\Theta_1)} $$
 $$Temp_1 := \Theta_1 - \alpha \bigtriangledown J(\Theta_0,\Theta_1) $$
@@ -316,7 +328,34 @@ Cluster analysis is the assignment of a set of observations into subsets (called
 which group of stocks could possibly move up in the next trading period.
 
 *** K-Nearest Neighbors(KNN)
+#+BEGIN_SRC python
+trades = [[99,5,20],[95,15,10],[5,80,40],[3,92,20]]
+labels = ['green','green','red','red']
+new_trades = [[90,10,15],[10,98,50]]
+def distance(trades, labels, new_trade, assumed_label):
+    distance = 0;
+    count = 0;
+    for i in range(len(labels)):
+        if labels[i] == assumed_label:
+            count = count +1
+            portion = 0
+            for j in range(3):
+                portion = portion + abs(trades[i][j] - new_trade[j])
+            distance = distance + portion
+    return(distance/count)
 
+def classify(trades, labels, new_trades):
+    new_labels = []
+    for new_trade in new_trades:
+        if distance(trades, labels, new_trade,'red') >= distance(trades, labels, new_trade,'green'):
+            new_labels.append('green')
+        else:
+            new_labels.append('red')
+    return(new_labels)
+
+classify(trades,labels,new_trades)
+
+#+END_SRC
 *** Hierarchical Clustering
 * Resampling Methods
 
@@ -410,12 +449,26 @@ print(model.predict(X))
 [14 16 -1 8 -5]
 [ 14. 16. -1. 8. -5.]
 #+END_SRC
+* Automated Machine Learning
+** TPOT
+https://colab.research.google.com/drive/1MEDiw-QKIQYhD3iLprNvgsL7EDMrtdeA
+** pipeline
+The machine learning pipeline in this context consists of:
 
+*** Feature Preprocessing
+- Imputing missing values and scaling values
+- Constructing new features such as polynomial transformations
+*** Feature selection
+- Dimensionality reduction, for example using PCA and other techniques
+*** Model Selection
+- Evaluting a number of machine learning models
+*** Hyperparameter tuning
+Finding the optimal settings of the model for the particular problem
 * Machine Learning Project Checklist for portfolio optimization
 This checklist can guide you through your Machine Learning projects. There are
 eight main steps:
 1. Frame the problem and look at the big picture.
-2. Get the data.
+2. Get the data. https://www.google.com/publicdata/directory?hl=en_US&dl=en_US#!
 3. Explore the data to gain insights.
 4. Prepare the data to better expose the underlying data patterns to Machine Learning algorithms.
 5. Explore many different models and short-list the best ones.

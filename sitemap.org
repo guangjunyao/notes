@@ -54,6 +54,9 @@
   + [[file:finance/future.org][Future]]
   + [[file:finance/option.org][Option]]
   + [[file:./finance/interview.org][finance interview questions]]
+  + Research
+    + [[file:GS/OSet/oset.org][ObjectSets]]
+      + [[file:GS/OSet/anomalies.org][The Handbook of Equity Market Anomalies]]
 + Math
   + [[file:./Math/knowledge_tree.html/index.html][KnowledgeTree]]
   + MachineLearning
@@ -70,12 +73,6 @@
     + [[file:CS/MachineLearning/DeepLearning.org][DeepLearning]]
     + [[file:./Boosting.org][Boosting]]
     + [[file:CS/MachineLearning/TextBasedIndustryClassification.org][TextBasedIndustryClassification]]
-+ GS
-  + Introduction
-    + [[file:GS/Introduction/functions.org][Functions]]
-  + Research
-    + [[file:GS/OSet/oset.org][ObjectSets]]
-      + [[file:GS/OSet/anomalies.org][The Handbook of Equity Market Anomalies]]
 + Notes
   + [[file:notes/thought.org][Thought]]
 + [[file:./notes/nlp_overview.org][NLP overview]]

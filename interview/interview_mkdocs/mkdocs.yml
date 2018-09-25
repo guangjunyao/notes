@@ -1,0 +1,5 @@
+site_name: Interview questions
+pages:
+    - Programming Interview Questions: programming.md
+    - Home: index.md
+theme: mkdocs

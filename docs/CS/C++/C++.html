@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-24 Mon 07:59 -->
+<!-- 2018-09-24 Mon 21:36 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -309,25 +309,25 @@ for the JavaScript code in this tag.
 <li><a href="#orgheadline139">16.5. Type Cast Operators</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline148">17. THE string CLASS AND THE STANDARD TEMPLATE LIBRARY</a>
+<li><a href="#orgheadline149">17. THE string CLASS AND THE STANDARD TEMPLATE LIBRARY</a>
 <ul>
 <li><a href="#orgheadline141">17.1. The string Class</a></li>
 <li><a href="#orgheadline142">17.2. The auto_ptr Class</a></li>
-<li><a href="#orgheadline143">17.3. The STL</a></li>
-<li><a href="#orgheadline144">17.4. Generic Programming</a></li>
-<li><a href="#orgheadline145">17.5. Function Objects (aka Functors)</a></li>
-<li><a href="#orgheadline146">17.6. Algorithms</a></li>
-<li><a href="#orgheadline147">17.7. Other Libraries</a></li>
+<li><a href="#orgheadline144">17.3. The STL</a></li>
+<li><a href="#orgheadline145">17.4. Generic Programming</a></li>
+<li><a href="#orgheadline146">17.5. Function Objects (aka Functors)</a></li>
+<li><a href="#orgheadline147">17.6. Algorithms</a></li>
+<li><a href="#orgheadline148">17.7. Other Libraries</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline156">18. INPUT, OUTPUT, AND FILES</a>
+<li><a href="#orgheadline157">18. INPUT, OUTPUT, AND FILES</a>
 <ul>
-<li><a href="#orgheadline150">18.1. An Overview of C++ Input and Output</a></li>
-<li><a href="#orgheadline151">18.2. Output with cout</a></li>
-<li><a href="#orgheadline152">18.3. Input with cin</a></li>
-<li><a href="#orgheadline153">18.4. File Input and Output</a></li>
-<li><a href="#orgheadline154">18.5. Incore Formatting</a></li>
-<li><a href="#orgheadline155">18.6. What Now?</a></li>
+<li><a href="#orgheadline151">18.1. An Overview of C++ Input and Output</a></li>
+<li><a href="#orgheadline152">18.2. Output with cout</a></li>
+<li><a href="#orgheadline153">18.3. Input with cin</a></li>
+<li><a href="#orgheadline154">18.4. File Input and Output</a></li>
+<li><a href="#orgheadline155">18.5. Incore Formatting</a></li>
+<li><a href="#orgheadline156">18.6. What Now?</a></li>
 </ul>
 </li>
 </ul>
@@ -1386,8 +1386,8 @@ free<span style="color: #A6E22E;">(</span>p<span style="color: #A6E22E;">)</span
 
 
 
-<div id="outline-container-orgheadline148" class="outline-2">
-<h2 id="orgheadline148"><span class="section-number-2">17</span> THE string CLASS AND THE STANDARD TEMPLATE LIBRARY</h2>
+<div id="outline-container-orgheadline149" class="outline-2">
+<h2 id="orgheadline149"><span class="section-number-2">17</span> THE string CLASS AND THE STANDARD TEMPLATE LIBRARY</h2>
 <div class="outline-text-2" id="text-17">
 </div><div id="outline-container-orgheadline141" class="outline-3">
 <h3 id="orgheadline141"><span class="section-number-3">17.1</span> The string Class</h3>
@@ -1395,45 +1395,77 @@ free<span style="color: #A6E22E;">(</span>p<span style="color: #A6E22E;">)</span
 <div id="outline-container-orgheadline142" class="outline-3">
 <h3 id="orgheadline142"><span class="section-number-3">17.2</span> The auto_ptr Class</h3>
 </div>
-<div id="outline-container-orgheadline143" class="outline-3">
-<h3 id="orgheadline143"><span class="section-number-3">17.3</span> The STL</h3>
-</div>
 <div id="outline-container-orgheadline144" class="outline-3">
-<h3 id="orgheadline144"><span class="section-number-3">17.4</span> Generic Programming</h3>
+<h3 id="orgheadline144"><span class="section-number-3">17.3</span> The STL</h3>
+<div class="outline-text-3" id="text-17-3">
+</div><ol class="org-ol"><li><a id="orgheadline143"></a>vector<br  /><div class="outline-text-4" id="text-17-3-1">
+<ul class="org-ul">
+<li>initialising a vector:</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-cpp"><span style="color: #75715E;">// </span><span style="color: #75715E;">Initializing like arrays</span>
+<span style="color: #66D9EF;">vector</span><span style="color: #AE81FF;">&lt;</span><span style="color: #66D9EF;">int</span><span style="color: #AE81FF;">&gt;</span> <span style="color: #FD971F;">vect</span><span style="color: #AE81FF;">{</span> <span style="color: #AE81FF;">10</span>, <span style="color: #AE81FF;">20</span>, <span style="color: #AE81FF;">30</span> <span style="color: #AE81FF;">}</span>;
+<span style="color: #75715E;">// </span><span style="color: #75715E;">Initializing from array</span>
+<span style="color: #66D9EF;">int</span> <span style="color: #FD971F;">arr</span><span style="color: #AE81FF;">[]</span> = <span style="color: #AE81FF;">{</span> <span style="color: #AE81FF;">1</span>, <span style="color: #AE81FF;">2</span>, <span style="color: #AE81FF;">3</span> <span style="color: #AE81FF;">}</span>;
+<span style="color: #66D9EF;">int</span> <span style="color: #FD971F;">n</span> = <span style="color: #F92672;">sizeof</span><span style="color: #AE81FF;">(</span>arr<span style="color: #AE81FF;">)</span> / <span style="color: #F92672;">sizeof</span><span style="color: #AE81FF;">(</span>arr<span style="color: #66D9EF;">[</span><span style="color: #AE81FF;">0</span><span style="color: #66D9EF;">]</span><span style="color: #AE81FF;">)</span>;
+<span style="color: #66D9EF;">vector</span><span style="color: #AE81FF;">&lt;</span><span style="color: #66D9EF;">int</span><span style="color: #AE81FF;">&gt;</span> <span style="color: #A6E22E;">vect</span><span style="color: #AE81FF;">(</span>arr, arr + n<span style="color: #AE81FF;">)</span>;
+
+<span style="color: #75715E;">// </span><span style="color: #75715E;">Initializing by one by one pushing values</span>
+<span style="color: #66D9EF;">vector</span><span style="color: #AE81FF;">&lt;</span><span style="color: #66D9EF;">int</span><span style="color: #AE81FF;">&gt;</span> <span style="color: #FD971F;">vect</span>;
+
+vect.push_back<span style="color: #AE81FF;">(</span><span style="color: #AE81FF;">10</span><span style="color: #AE81FF;">)</span>;
+vect.push_back<span style="color: #AE81FF;">(</span><span style="color: #AE81FF;">20</span><span style="color: #AE81FF;">)</span>;
+vect.push_back<span style="color: #AE81FF;">(</span><span style="color: #AE81FF;">30</span><span style="color: #AE81FF;">)</span>;
+
+<span style="color: #F92672;">for</span> <span style="color: #AE81FF;">(</span><span style="color: #66D9EF;">int</span> <span style="color: #FD971F;">x</span> : vect<span style="color: #AE81FF;">)</span>
+    cout &lt;&lt; x &lt;&lt; <span style="color: #E6DB74;">" "</span>;
+
+<span style="color: #66D9EF;">int</span> <span style="color: #FD971F;">n</span> = <span style="color: #AE81FF;">3</span>;
+
+<span style="color: #75715E;">// </span><span style="color: #75715E;">Create a vector of size n with</span>
+<span style="color: #75715E;">// </span><span style="color: #75715E;">all values as 10.</span>
+<span style="color: #66D9EF;">vector</span><span style="color: #AE81FF;">&lt;</span><span style="color: #66D9EF;">int</span><span style="color: #AE81FF;">&gt;</span> <span style="color: #A6E22E;">vect</span><span style="color: #AE81FF;">(</span>n, <span style="color: #AE81FF;">10</span><span style="color: #AE81FF;">)</span>;
+</pre>
+</div>
+</div></li></ol>
 </div>
 <div id="outline-container-orgheadline145" class="outline-3">
-<h3 id="orgheadline145"><span class="section-number-3">17.5</span> Function Objects (aka Functors)</h3>
+<h3 id="orgheadline145"><span class="section-number-3">17.4</span> Generic Programming</h3>
 </div>
 <div id="outline-container-orgheadline146" class="outline-3">
-<h3 id="orgheadline146"><span class="section-number-3">17.6</span> Algorithms</h3>
+<h3 id="orgheadline146"><span class="section-number-3">17.5</span> Function Objects (aka Functors)</h3>
 </div>
 <div id="outline-container-orgheadline147" class="outline-3">
-<h3 id="orgheadline147"><span class="section-number-3">17.7</span> Other Libraries</h3>
+<h3 id="orgheadline147"><span class="section-number-3">17.6</span> Algorithms</h3>
+</div>
+<div id="outline-container-orgheadline148" class="outline-3">
+<h3 id="orgheadline148"><span class="section-number-3">17.7</span> Other Libraries</h3>
 </div>
 </div>
 
 
 
-<div id="outline-container-orgheadline156" class="outline-2">
-<h2 id="orgheadline156"><span class="section-number-2">18</span> INPUT, OUTPUT, AND FILES</h2>
+<div id="outline-container-orgheadline157" class="outline-2">
+<h2 id="orgheadline157"><span class="section-number-2">18</span> INPUT, OUTPUT, AND FILES</h2>
 <div class="outline-text-2" id="text-18">
-</div><div id="outline-container-orgheadline150" class="outline-3">
-<h3 id="orgheadline150"><span class="section-number-3">18.1</span> An Overview of C++ Input and Output</h3>
+</div><div id="outline-container-orgheadline151" class="outline-3">
+<h3 id="orgheadline151"><span class="section-number-3">18.1</span> An Overview of C++ Input and Output</h3>
 <div class="outline-text-3" id="text-18-1">
-</div><ol class="org-ol"><li><a id="orgheadline149"></a>print<br  /><div class="outline-text-4" id="text-18-1-1">
+</div><ol class="org-ol"><li><a id="orgheadline150"></a>print<br  /><div class="outline-text-4" id="text-18-1-1">
 <p>
 %&lt;flags&gt;&lt;field width&gt;&lt;.precision&gt;&lt;type&gt;&lt;format specifier&gt;
 </p>
 </div></li></ol>
 </div>
-<div id="outline-container-orgheadline151" class="outline-3">
-<h3 id="orgheadline151"><span class="section-number-3">18.2</span> Output with cout</h3>
-</div>
 <div id="outline-container-orgheadline152" class="outline-3">
-<h3 id="orgheadline152"><span class="section-number-3">18.3</span> Input with cin</h3>
+<h3 id="orgheadline152"><span class="section-number-3">18.2</span> Output with cout</h3>
 </div>
 <div id="outline-container-orgheadline153" class="outline-3">
-<h3 id="orgheadline153"><span class="section-number-3">18.4</span> File Input and Output</h3>
+<h3 id="orgheadline153"><span class="section-number-3">18.3</span> Input with cin</h3>
+</div>
+<div id="outline-container-orgheadline154" class="outline-3">
+<h3 id="orgheadline154"><span class="section-number-3">18.4</span> File Input and Output</h3>
 <div class="outline-text-3" id="text-18-4">
 <div class="org-src-container">
 
@@ -1443,8 +1475,8 @@ fcose<span style="color: #AE81FF;">(</span>fp<span style="color: #AE81FF;">)</sp
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline154" class="outline-3">
-<h3 id="orgheadline154"><span class="section-number-3">18.5</span> Incore Formatting</h3>
+<div id="outline-container-orgheadline155" class="outline-3">
+<h3 id="orgheadline155"><span class="section-number-3">18.5</span> Incore Formatting</h3>
 <div class="outline-text-3" id="text-18-5">
 <ul class="org-ul">
 <li>String functions are defined in &lt;string.h&gt;</li>
@@ -1461,8 +1493,8 @@ tolower(), isdigit(), etc.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline155" class="outline-3">
-<h3 id="orgheadline155"><span class="section-number-3">18.6</span> What Now?</h3>
+<div id="outline-container-orgheadline156" class="outline-3">
+<h3 id="orgheadline156"><span class="section-number-3">18.6</span> What Now?</h3>
 </div>
 </div>
 </div>

@@ -13,18 +13,19 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Python\u98ce\u683c\u89c4\u8303";
     var mkdocs_page_input_path = "python_style_rules.md";
-    var mkdocs_page_url = "/python_style_rules/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +39,7 @@
         <a href=".." class="icon icon-home"> Ipython notebooks</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -158,6 +159,11 @@
             <li class="toctree-l1">
 		
     <a class="" href="../optimization/">Optimization summary</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../PCA/">Principle Component Anlysis</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -683,8 +689,8 @@ Exceptions                     CapWords
 Functions                      lower_with_under()      _lower_with_under()
 Global/Class Constants         CAPS_WITH_UNDER         _CAPS_WITH_UNDER
 Global/Class Variables         lower_with_under        _lower_with_under
-Instance Variables             lower_with_under        _lower_with_under (protected) or <strong>lower_with_under (private)
-Method Names                   lower_with_under()      _lower_with_under() (protected) or </strong>lower_with_under() (private)
+Instance Variables             lower_with_under        _lower_with_under (protected) or __lower_with_under (private)
+Method Names                   lower_with_under()      _lower_with_under() (protected) or __lower_with_under() (private)
 Function/Method Parameters     lower_with_under
 Local Variables                lower_with_under
 ===========================    ====================    ======================================================================</p>
@@ -725,12 +731,12 @@ if __name__ == '__main__':
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
@@ -744,7 +750,9 @@ if __name__ == '__main__':
       
     </span>
 </div>
-    <script src="../js/theme.js"></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>
