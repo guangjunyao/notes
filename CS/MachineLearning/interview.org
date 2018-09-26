@@ -1,4 +1,17 @@
-
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t c:nil
+#+OPTIONS: creator:nil d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t
+#+OPTIONS: num:t p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t timestamp:t
+#+OPTIONS: title:t toc:t todo:t |:t
+#+TITLES: interview
+#+DATE: <2018-09-26 Wed>
+#+AUTHORS: weiwu
+#+EMAIL: victor.wuv@gmail.com
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 24.5.1 (Org mode 8.3.4)
+#+STARTUP: latexpreview
+#+SETUPFILE: ../../configOrg/level2.org
 * 逻辑斯特回归为什么要对特征进行离散化
   @严林，本题解析来源：https://www.zhihu.com/question/31989952
 
@@ -32,7 +45,47 @@
 可以检查预测变量的相关性结构。您也可以查看方差膨胀因子 (VIF)。VIF 用于在您的预测变量相关时，度量估计回归系数的方差增加的幅度。如果所有 VIF 都为 1，则不存在多重共线性，但如果有些 VIF 大于 1，则预测变量为相关。VIF 大于 5 时，该项的回归系数的估计结果不理想。
 
 ** 多重共线性的纠正方法
-严重多重共线性的可能解决办法：
 如果要对多项式进行拟合，请将预测变量值减去预测变量的均值。
-从模型中删除那些高度相关的预测变量。由于它们提供了冗余信息，因此删除它们通常不会显著减少 R2。考虑使用逐步回归、最佳子集回归或数据集的专门知识来删除这些变量。
-使用偏最小二乘或主成分分析。这些方法可以将预测变量的数量减少为更小的不相关分量集。
+
+- 从模型中删除那些高度相关的预测变量。由于它们提供了冗余信息，因此删除它们通常不会显著减少 R2。
+
+- Stepwise Regression
+考虑使用逐步回归、最佳子集回归或数据集的专门知识来删除这些变量。
+
+- 使用偏最小二乘或主成分分析。这些方法可以将预测变量的数量减少为更小的不相关分量集。
+- 增加样本容量
+
+* Newton's method
+is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function. It is one example of a root-finding algorithm.
+$$x:f(x)=0$$
+
+The method starts with a function f defined over the real numbers x, the function's derivative f ′, and an initial guess x0 for a root of the function f. If the function satisfies the assumptions made in the derivation of the formula and the initial guess is close, then a better approximation x1 is
+
+$$x_{1}=x_{0}-{\frac {f(x_{0})}{f'(x_{0})}}$$
+
+...
+
+$$x_{n+1}=x_{n}-{\frac {f(x_{n})}{f'(x_{n})}}$$
+
+* 中心极限定理
+采样的时候，随着采样数量的增加，采样的CDF会趋于某个分布，正态，或者其它。
+
+intuitive example: 弹珠在盒子里面的分布。
+
+* PCA
+- maximize the variance of compression.
+$$x=U\SigmaV$$
+first k columns of U.
+$$z=U_{reduce}^T*x$$
+- minimize the reconstruction error.
+
+* 判定模型和生成模型
+假设你现在有一个分类问题，x是特征，y是类标记。用生成模型学习一个联合概率分布P（x，y），而用判别模型学习一个条件概率分布P（y|x）。
+
+有监督机器学习方法可以分为生成方法和判别方法（常见的生成方法有LDA主题模型、朴素贝叶斯算法和隐式马尔科夫模型等，常见的判别方法有SVM、LR等），生成方法学习出的是生成模型，判别方法学习出的是判别模型。
+
+* activation functions
+[[./Images/activation_function.png]]
+
+* Backpropagation
+利用链式求导法则来更新权重，一次正向传播，一次反向传播，算误差和再更新权重。

@@ -252,7 +252,6 @@ svm_model.fit(training_X, training_y)
 predicts = svm_model.predict(test_X)
 from sklearn.metrics import accuracy_score
 accuracy_score(y_true, predicts)
-
 #+end_src
 * Week 8
 ** Unsupervised Learning

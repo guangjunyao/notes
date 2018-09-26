@@ -58,8 +58,8 @@ The size of each step is determined by the parameter α, which is called the lea
 - Algorithm:
 $$\Theta_j = \Theta_j + \Alpha\Derivative{J(\Theta_0,\Theta_1)}$$
 Update simutaneously:
-$$Temp_0 := \Theta_0 - \Alpha\Derivative{J(\Theta_0,\Theta_1)} $$
-$$Temp_1 := \Theta_1 - \Alpha\Derivative{J(\Theta_0,\Theta_1)} $$
+$$ Temp_0 := \Theta_0 - \Alpha\Derivative{J(\Theta_0,\Theta_1)} $$
+$$ Temp_1 := \Theta_1 - \Alpha\Derivative{J(\Theta_0,\Theta_1)} $$
 - normalization
 $$\theta_0 = \theta_0 - \alpha\partial{J(\theta)}{\theta}$$
 
