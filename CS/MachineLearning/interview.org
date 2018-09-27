@@ -89,3 +89,54 @@ $$z=U_{reduce}^T*x$$
 
 * Backpropagation
 利用链式求导法则来更新权重，一次正向传播，一次反向传播，算误差和再更新权重。
+
+* 朴素贝叶斯基本原理和预测过程
+https://en.wikipedia.org/wiki/Naive_Bayes_classifier
+
+Document classification
+Here is a worked example of naive Bayesian classification to the document classification problem. Consider the problem of classifying documents by their content, for example into spam and non-spam e-mails. Imagine that documents are drawn from a number of classes of documents which can be modeled as sets of words where the (independent) probability that the i-th word of a given document occurs in a document from class C can be written as
+
+{\displaystyle p(w_{i}\mid C)\,} {\displaystyle p(w_{i}\mid C)\,}
+(For this treatment, we simplify things further by assuming that words are randomly distributed in the document - that is, words are not dependent on the length of the document, position within the document with relation to other words, or other document-context.)
+
+Then the probability that a given document D contains all of the words {\displaystyle w_{i}} w_{i}, given a class C, is
+
+{\displaystyle p(D\mid C)=\prod _{i}p(w_{i}\mid C)\,} {\displaystyle p(D\mid C)=\prod _{i}p(w_{i}\mid C)\,}
+The question that we desire to answer is: "what is the probability that a given document D belongs to a given class C?" In other words, what is {\displaystyle p(C\mid D)\,} {\displaystyle p(C\mid D)\,}?
+
+Now by definition
+
+{\displaystyle p(D\mid C)={p(D\cap C) \over p(C)}} {\displaystyle p(D\mid C)={p(D\cap C) \over p(C)}}
+and
+
+{\displaystyle p(C\mid D)={p(D\cap C) \over p(D)}} {\displaystyle p(C\mid D)={p(D\cap C) \over p(D)}}
+Bayes' theorem manipulates these into a statement of probability in terms of likelihood.
+
+{\displaystyle p(C\mid D)={\frac {p(C)\,p(D\mid C)}{p(D)}}} {\displaystyle p(C\mid D)={\frac {p(C)\,p(D\mid C)}{p(D)}}}
+Assume for the moment that there are only two mutually exclusive classes, S and ¬S (e.g. spam and not spam), such that every element (email) is in either one or the other;
+
+{\displaystyle p(D\mid S)=\prod _{i}p(w_{i}\mid S)\,} {\displaystyle p(D\mid S)=\prod _{i}p(w_{i}\mid S)\,}
+and
+
+{\displaystyle p(D\mid \neg S)=\prod _{i}p(w_{i}\mid \neg S)\,} {\displaystyle p(D\mid \neg S)=\prod _{i}p(w_{i}\mid \neg S)\,}
+Using the Bayesian result above, we can write:
+
+{\displaystyle p(S\mid D)={p(S) \over p(D)}\,\prod _{i}p(w_{i}\mid S)} {\displaystyle p(S\mid D)={p(S) \over p(D)}\,\prod _{i}p(w_{i}\mid S)}
+{\displaystyle p(\neg S\mid D)={p(\neg S) \over p(D)}\,\prod _{i}p(w_{i}\mid \neg S)} {\displaystyle p(\neg S\mid D)={p(\neg S) \over p(D)}\,\prod _{i}p(w_{i}\mid \neg S)}
+Dividing one by the other gives:
+
+{\displaystyle {p(S\mid D) \over p(\neg S\mid D)}={p(S)\,\prod _{i}p(w_{i}\mid S) \over p(\neg S)\,\prod _{i}p(w_{i}\mid \neg S)}} {\displaystyle {p(S\mid D) \over p(\neg S\mid D)}={p(S)\,\prod _{i}p(w_{i}\mid S) \over p(\neg S)\,\prod _{i}p(w_{i}\mid \neg S)}}
+Which can be re-factored as:
+
+{\displaystyle {p(S\mid D) \over p(\neg S\mid D)}={p(S) \over p(\neg S)}\,\prod _{i}{p(w_{i}\mid S) \over p(w_{i}\mid \neg S)}} {\displaystyle {p(S\mid D) \over p(\neg S\mid D)}={p(S) \over p(\neg S)}\,\prod _{i}{p(w_{i}\mid S) \over p(w_{i}\mid \neg S)}}
+Thus, the probability ratio p(S | D) / p(¬S | D) can be expressed in terms of a series of likelihood ratios. The actual probability p(S | D) can be easily computed from log (p(S | D) / p(¬S | D)) based on the observation that p(S | D) + p(¬S | D) = 1.
+
+Taking the logarithm of all these ratios, we have:
+
+{\displaystyle \ln {p(S\mid D) \over p(\neg S\mid D)}=\ln {p(S) \over p(\neg S)}+\sum _{i}\ln {p(w_{i}\mid S) \over p(w_{i}\mid \neg S)}} {\displaystyle \ln {p(S\mid D) \over p(\neg S\mid D)}=\ln {p(S) \over p(\neg S)}+\sum _{i}\ln {p(w_{i}\mid S) \over p(w_{i}\mid \neg S)}}
+(This technique of "log-likelihood ratios" is a common technique in statistics. In the case of two mutually exclusive alternatives (such as this example), the conversion of a log-likelihood ratio to a probability takes the form of a sigmoid curve: see logit for details.)
+
+Finally, the document can be classified as follows. It is spam if {\displaystyle p(S\mid D)>p(\neg S\mid D)} {\displaystyle p(S\mid D)>p(\neg S\mid D)} (i. e., {\displaystyle \ln {p(S\mid D) \over p(\neg S\mid D)}>0} {\displaystyle \ln {p(S\mid D) \over p(\neg S\mid D)}>0}), otherwise it is not spam.
+
+* LR推导
+https://blog.csdn.net/puqutogether/article/details/43191099

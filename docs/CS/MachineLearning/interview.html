@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-09-25 Tue 11:23 -->
+<!-- 2018-09-27 Thu 22:08 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -94,6 +94,8 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="../../styles/demo/css/demo.css"/>
+<link href="https://fonts.proxy.ustclug.org/css?family=Roboto+Slab:400,700|Inconsolata:400,700" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -140,6 +142,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "left",
+        displayIndent: "5em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "left",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -147,20 +171,28 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline1">逻辑斯特回归为什么要对特征进行离散化</a></li>
-<li><a href="#orgheadline5">多重共线性</a>
+<li><a href="#orgheadline1">1. 逻辑斯特回归为什么要对特征进行离散化</a></li>
+<li><a href="#orgheadline5">2. 多重共线性</a>
 <ul>
-<li><a href="#orgheadline2">什么是多重共线性？</a></li>
-<li><a href="#orgheadline3">要度量多重共线性，</a></li>
-<li><a href="#orgheadline4">多重共线性的纠正方法</a></li>
+<li><a href="#orgheadline2">2.1. 什么是多重共线性？</a></li>
+<li><a href="#orgheadline3">2.2. 要度量多重共线性，</a></li>
+<li><a href="#orgheadline4">2.3. 多重共线性的纠正方法</a></li>
 </ul>
 </li>
+<li><a href="#orgheadline6">3. Newton's method</a></li>
+<li><a href="#orgheadline7">4. 中心极限定理</a></li>
+<li><a href="#orgheadline8">5. PCA</a></li>
+<li><a href="#orgheadline9">6. 判定模型和生成模型</a></li>
+<li><a href="#orgheadline10">7. activation functions</a></li>
+<li><a href="#orgheadline11">8. Backpropagation</a></li>
+<li><a href="#orgheadline12">9. 朴素贝叶斯基本原理和预测过程</a></li>
+<li><a href="#orgheadline13">10. LR推导</a></li>
 </ul>
 </div>
 </div>
 <div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1">逻辑斯特回归为什么要对特征进行离散化</h2>
-<div class="outline-text-2" id="text-orgheadline1">
+<h2 id="orgheadline1"><span class="section-number-2">1</span> 逻辑斯特回归为什么要对特征进行离散化</h2>
+<div class="outline-text-2" id="text-1">
 <p>
   @严林，本题解析来源：<a href="https://www.zhihu.com/question/31989952">https://www.zhihu.com/question/31989952</a>
 </p>
@@ -204,11 +236,11 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-orgheadline5" class="outline-2">
-<h2 id="orgheadline5">多重共线性</h2>
-<div class="outline-text-2" id="text-orgheadline5">
+<h2 id="orgheadline5"><span class="section-number-2">2</span> 多重共线性</h2>
+<div class="outline-text-2" id="text-2">
 </div><div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2">什么是多重共线性？</h3>
-<div class="outline-text-3" id="text-orgheadline2">
+<h3 id="orgheadline2"><span class="section-number-3">2.1</span> 什么是多重共线性？</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 回归中的多重共线性是一个当模型中一些预测变量与其他预测变量相关时发生的条件。严重的多重共线性可能会产生问题，因为它可以增大回归系数的方差，使它们变得不稳定。以下是不稳定系数导致的一些后果：
 即使预测变量和响应之间存在显著关系，系数也可能看起来并不显著。
@@ -219,8 +251,8 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3">要度量多重共线性，</h3>
-<div class="outline-text-3" id="text-orgheadline3">
+<h3 id="orgheadline3"><span class="section-number-3">2.2</span> 要度量多重共线性，</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 可以检查预测变量的相关性结构。您也可以查看方差膨胀因子 (VIF)。VIF 用于在您的预测变量相关时，度量估计回归系数的方差增加的幅度。如果所有 VIF 都为 1，则不存在多重共线性，但如果有些 VIF 大于 1，则预测变量为相关。VIF 大于 5 时，该项的回归系数的估计结果不理想。
 </p>
@@ -228,8 +260,8 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4">多重共线性的纠正方法</h3>
-<div class="outline-text-3" id="text-orgheadline4">
+<h3 id="orgheadline4"><span class="section-number-3">2.3</span> 多重共线性的纠正方法</h3>
+<div class="outline-text-3" id="text-2-3">
 <p>
 如果要对多项式进行拟合，请将预测变量值减去预测变量的均值。
 </p>
@@ -248,6 +280,190 @@ for the JavaScript code in this tag.
 <li>增加样本容量</li>
 </ul>
 </div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6"><span class="section-number-2">3</span> Newton's method</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function. It is one example of a root-finding algorithm.
+\[x:f(x)=0\]
+</p>
+
+<p>
+The method starts with a function f defined over the real numbers x, the function's derivative f ′, and an initial guess x0 for a root of the function f. If the function satisfies the assumptions made in the derivation of the formula and the initial guess is close, then a better approximation x1 is
+</p>
+
+<p>
+\[x_{1}=x_{0}-{\frac {f(x_{0})}{f'(x_{0})}}\]
+</p>
+
+<p>
+&#x2026;
+</p>
+
+<p>
+\[x_{n+1}=x_{n}-{\frac {f(x_{n})}{f'(x_{n})}}\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline7" class="outline-2">
+<h2 id="orgheadline7"><span class="section-number-2">4</span> 中心极限定理</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+采样的时候，随着采样数量的增加，采样的CDF会趋于某个分布，正态，或者其它。
+</p>
+
+<p>
+intuitive example: 弹珠在盒子里面的分布。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline8" class="outline-2">
+<h2 id="orgheadline8"><span class="section-number-2">5</span> PCA</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>maximize the variance of compression.</li>
+</ul>
+<p>
+\[x=U\SigmaV\]
+first k columns of U.
+\[z=U_{reduce}^T*x\]
+</p>
+<ul class="org-ul">
+<li>minimize the reconstruction error.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9"><span class="section-number-2">6</span> 判定模型和生成模型</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+假设你现在有一个分类问题，x是特征，y是类标记。用生成模型学习一个联合概率分布P（x，y），而用判别模型学习一个条件概率分布P（y|x）。
+</p>
+
+<p>
+有监督机器学习方法可以分为生成方法和判别方法（常见的生成方法有LDA主题模型、朴素贝叶斯算法和隐式马尔科夫模型等，常见的判别方法有SVM、LR等），生成方法学习出的是生成模型，判别方法学习出的是判别模型。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-2">
+<h2 id="orgheadline10"><span class="section-number-2">7</span> activation functions</h2>
+<div class="outline-text-2" id="text-7">
+
+<div class="figure">
+<p><img src="./Images/activation_function.png" alt="activation_function.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-2">
+<h2 id="orgheadline11"><span class="section-number-2">8</span> Backpropagation</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+利用链式求导法则来更新权重，一次正向传播，一次反向传播，算误差和再更新权重。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12"><span class="section-number-2">9</span> 朴素贝叶斯基本原理和预测过程</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+<a href="https://en.wikipedia.org/wiki/Naive_Bayes_classifier">https://en.wikipedia.org/wiki/Naive_Bayes_classifier</a>
+</p>
+
+<p>
+Document classification
+Here is a worked example of naive Bayesian classification to the document classification problem. Consider the problem of classifying documents by their content, for example into spam and non-spam e-mails. Imagine that documents are drawn from a number of classes of documents which can be modeled as sets of words where the (independent) probability that the i-th word of a given document occurs in a document from class C can be written as
+</p>
+
+<p>
+{\displaystyle p(w<sub>i</sub>\mid C)\,} {\displaystyle p(w<sub>i</sub>\mid C)\,}
+(For this treatment, we simplify things further by assuming that words are randomly distributed in the document - that is, words are not dependent on the length of the document, position within the document with relation to other words, or other document-context.)
+</p>
+
+<p>
+Then the probability that a given document D contains all of the words {\displaystyle w<sub>i</sub>} w<sub>i</sub>, given a class C, is
+</p>
+
+<p>
+{\displaystyle p(D\mid C)=&prod; _{i}p(w<sub>i</sub>\mid C)\,} {\displaystyle p(D\mid C)=&prod; _{i}p(w<sub>i</sub>\mid C)\,}
+The question that we desire to answer is: "what is the probability that a given document D belongs to a given class C?" In other words, what is {\displaystyle p(C\mid D)\,} {\displaystyle p(C\mid D)\,}?
+</p>
+
+<p>
+Now by definition
+</p>
+
+<p>
+{\displaystyle p(D\mid C)={p(D&cap; C) \over p(C)}} {\displaystyle p(D\mid C)={p(D&cap; C) \over p(C)}}
+and
+</p>
+
+<p>
+{\displaystyle p(C\mid D)={p(D&cap; C) \over p(D)}} {\displaystyle p(C\mid D)={p(D&cap; C) \over p(D)}}
+Bayes' theorem manipulates these into a statement of probability in terms of likelihood.
+</p>
+
+<p>
+{\displaystyle p(C\mid D)={\frac {p(C)\,p(D\mid C)}{p(D)}}} {\displaystyle p(C\mid D)={\frac {p(C)\,p(D\mid C)}{p(D)}}}
+Assume for the moment that there are only two mutually exclusive classes, S and ¬S (e.g. spam and not spam), such that every element (email) is in either one or the other;
+</p>
+
+<p>
+{\displaystyle p(D\mid S)=&prod; _{i}p(w<sub>i</sub>\mid S)\,} {\displaystyle p(D\mid S)=&prod; _{i}p(w<sub>i</sub>\mid S)\,}
+and
+</p>
+
+<p>
+{\displaystyle p(D\mid &not; S)=&prod; _{i}p(w<sub>i</sub>\mid &not; S)\,} {\displaystyle p(D\mid &not; S)=&prod; _{i}p(w<sub>i</sub>\mid &not; S)\,}
+Using the Bayesian result above, we can write:
+</p>
+
+<p>
+{\displaystyle p(S\mid D)={p(S) \over p(D)}\,&prod; _{i}p(w<sub>i</sub>\mid S)} {\displaystyle p(S\mid D)={p(S) \over p(D)}\,&prod; _{i}p(w<sub>i</sub>\mid S)}
+{\displaystyle p(&not; S\mid D)={p(&not; S) \over p(D)}\,&prod; _{i}p(w<sub>i</sub>\mid &not; S)} {\displaystyle p(&not; S\mid D)={p(&not; S) \over p(D)}\,&prod; _{i}p(w<sub>i</sub>\mid &not; S)}
+Dividing one by the other gives:
+</p>
+
+<p>
+{\displaystyle {p(S\mid D) \over p(&not; S\mid D)}={p(S)\,&prod; _{i}p(w<sub>i</sub>\mid S) \over p(&not; S)\,&prod; _{i}p(w<sub>i</sub>\mid &not; S)}} {\displaystyle {p(S\mid D) \over p(&not; S\mid D)}={p(S)\,&prod; _{i}p(w<sub>i</sub>\mid S) \over p(&not; S)\,&prod; _{i}p(w<sub>i</sub>\mid &not; S)}}
+Which can be re-factored as:
+</p>
+
+<p>
+{\displaystyle {p(S\mid D) \over p(&not; S\mid D)}={p(S) \over p(&not; S)}\,&prod; _{i}{p(w<sub>i</sub>\mid S) \over p(w<sub>i</sub>\mid &not; S)}} {\displaystyle {p(S\mid D) \over p(&not; S\mid D)}={p(S) \over p(&not; S)}\,&prod; _{i}{p(w<sub>i</sub>\mid S) \over p(w<sub>i</sub>\mid &not; S)}}
+Thus, the probability ratio p(S | D) / p(¬S | D) can be expressed in terms of a series of likelihood ratios. The actual probability p(S | D) can be easily computed from log (p(S | D) / p(¬S | D)) based on the observation that p(S | D) + p(¬S | D) = 1.
+</p>
+
+<p>
+Taking the logarithm of all these ratios, we have:
+</p>
+
+<p>
+{\displaystyle ln {p(S\mid D) \over p(&not; S\mid D)}=ln {p(S) \over p(&not; S)}+&sum; _{i}ln {p(w<sub>i</sub>\mid S) \over p(w<sub>i</sub>\mid &not; S)}} {\displaystyle ln {p(S\mid D) \over p(&not; S\mid D)}=ln {p(S) \over p(&not; S)}+&sum; _{i}ln {p(w<sub>i</sub>\mid S) \over p(w<sub>i</sub>\mid &not; S)}}
+(This technique of "log-likelihood ratios" is a common technique in statistics. In the case of two mutually exclusive alternatives (such as this example), the conversion of a log-likelihood ratio to a probability takes the form of a sigmoid curve: see logit for details.)
+</p>
+
+<p>
+Finally, the document can be classified as follows. It is spam if {\displaystyle p(S\mid D)&gt;p(&not; S\mid D)} {\displaystyle p(S\mid D)&gt;p(&not; S\mid D)} (i. e., {\displaystyle ln {p(S\mid D) \over p(&not; S\mid D)}&gt;0} {\displaystyle ln {p(S\mid D) \over p(&not; S\mid D)}&gt;0}), otherwise it is not spam.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13"><span class="section-number-2">10</span> LR推导</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<a href="https://blog.csdn.net/puqutogether/article/details/43191099">https://blog.csdn.net/puqutogether/article/details/43191099</a>
+</p>
 </div>
 </div>
 </div>

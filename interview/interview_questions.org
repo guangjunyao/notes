@@ -103,3 +103,10 @@
 [[file:./greatest_common_divisor.cpp][greatest common divisor]]
 
 [[file:./test.cpp][test]]
+** brute force
+*** Subsets
+[[file:./subsets_brute_force_1.cpp][Given a set of distinct integers, S, return all possible subsets.]]
+
+[[file:./subsets_brute_force_recursive.cpp][Given a set of distinct integers, S, return all possible subsets recursively.]]
+*** Permutations
+[[file:./next_permutation_std.cpp][Given a collection of numbers, return all possible permutations.]]

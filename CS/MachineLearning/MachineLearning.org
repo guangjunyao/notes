@@ -288,6 +288,21 @@ accuracy_score(y_true, predicts)
 ** Week 1/2
 *** Logistic Regression
 *** Regularization
+https://www.youtube.com/watch?v=u73PU6Qwl1I&index=40&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN&t=0s&ab_channel=ArtificialIntelligence-AllinOne
+A regularization term (or regularizer) {\displaystyle R(f)} R(f) is added to a loss function:
+
+$${\displaystyle \min _{f}\sum _{i=1}^{n}V(f(x_{i}),y_{i})+\lambda R(f)}$$
+**** problem of overfitting
+if we have too many features, the learned hypothesis may fit the training set very well, but fail to generalize to the new samples.
+- underfit, high bias
+- overfit, high variance
+- just right.
+
+**** addressing overfitting
+- reduce number of features.
+- regularization
+  - keep all the features, but reduce magnitutde value of parameters $\theta_j$.
+
 *** Classification
 **** Linear Discriminant Analysis
 

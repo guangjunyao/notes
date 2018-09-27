@@ -117,6 +117,29 @@ Variables declared constexpr or const, and whose value is fixed for the duration
 const int kDaysInAWeek = 7;
 #+end_src
 
+*** Const Member Functions
+Making an object const makessure that only so called 'const' member functions can be called for the const object.
+#+BEGIN_SRC cpp
+const Date dt; // Const date object
+const Point pt; // Const point object
+#+END_SRC
+Const member functions are functions that do not change the state of the object. Typical examples of const member functions are accessing or selector functions.
+#+BEGIN_SRC cpp
+class Date
+{public:
+int ret_day() const; // Constant member function
+int ret_month() const; // Constant member function
+};
+class Point
+{public:
+double ret_x() const;
+Point add(const Point& pt) const;
+};
+#+END_SRC
+So there are three possibilities for the const keyword:
+- const arguments; const relates to argument
+- const member function; const relates to state of object
+- const return types; the return type cannot be changed by the caller
 *** Function Names
 #+begin_src c++ :tangle yes
 AddTableEntry()
@@ -490,8 +513,143 @@ how does an object react to external events or messages?
 
 * WORKING WITH CLASSES
 ** Operator Overloading
+The syntax for an operator overload is:
+
+$<return_type> operator <op_name>(<argument_type>)$
 ** Time on Our Hands: Developing an Operator Overloading Example
+#+BEGIN_SRC cpp
+class Matrix
+{
+public:
+Matrix multiply(const Matrix& mat);
+Matrix operator*(const Matrix& mat); //Binary operato
+};
+#+END_SRC
+*** OVERLOADING UNARY OPERATORS
+The unary operators do not have an argument.
+#+BEGIN_SRC cpp
+class Matrix
+{
+public:
+...operator-();
+};
+-m1; // Stand alone operation changes m1
+m2 = m3 * -m1; // In calculation does not change m1
+#+END_SRC
+
+If we allow the client to use the operator as a stand-alone operator, the return type can be void or a
+reference to the object.
+In the second option the function must return a matrix, the changed matrix (preferable).
+*** Assignment operators are the operators which have a '=' in them.
+=, +=, -=, *=, &=, <<=, >>= etc..
+*** ASSIGNMENT VS. COPY CONSTRUCTOR
+The assignment operator and the copy constructor are two member functions with almost the same functionality they both copy data members of one object in the current. The difference between the two member functions is that the copy constructor is called when the object is created (the copy) and the assignment operator is called when the object that is destined to be the copy already exists.
+*** Objects Returning Themselves
+- Object can return it self (the current object)
+- Objects reference themselves by using the ‘this’ pointer
+- Can only be used inside member functions (for the current object)
+- Used as an 'ordinary' pointer to an object
+#+BEGIN_SRC c
+Point Point::operator = (const Point& source)
+{
+m_x = source.m_x;
+m_y = source.m_y;
+return *this; // Copy of current object is returned
+}
+#+END_SRC
+*** RETURNING REFERENCES
+By using reference as return values we prevent the system from creating copies of whatever is returned.
+#+BEGIN_SRC cpp
+Point& print(const Point& pt)
+{
+cout << pt.ret_x() << endl;
+cout << pt.ret_y() << endl;
+return pt; // No copy is created
+}
+void main()
+{
+Point pt;
+pt = print(pt); // pt is assigned what the print function
+// returns in this case pt itself
+}
+
+#+END_SRC
+Our previous assignment operator returned a copy of the current object we now how to prevent this
+copy process. We can let the assignment operator return not a copy but the original current object using
+a reference.
+
+#+BEGIN_SRC cpp
+Point& Point::operator=(const Point& pt2)
+{
+x = pt2.x;
+y = pt2.y;
+return *this;
+} // It is not mandatory to let an operator= return a reference to the current object it is however advisable to make sure no unnecessary copies are created.
+#+END_SRC
+*** Example Minimal Functionality
+#+BEGIN_SRC c
+class Point
+{
+public:
+Point(); // Default constructor
+~Point(); // Destructor
+Point(const Point& source); // Copy constructor
+Point& operator = (const Point& source); // Assignment operator
+};
+#+END_SRC
+*** Kinds of Operator Overloading
+- Mathematical: +, -, *, /
+- Array indexing: [ ] (1 dimensional), () (multidimensional)
+- Function call operator: () (looks just like a C function; called function object/functor)
+- Relational operators: <, <=, ==, !=, etc.
+- Input/output: <<, >>
+- Exotic operators: , % ^ (if you like…)
 ** Introducing Friends
+- These are functions (or classes) that can directly access the private members of a given class
+- Hardly ever use them (bad design), except…
+- Binary operators in which first operand has different type than second operand can be declared as friend
+- A friend function is NOT a member function
+
+a friend function is a global function and NOT a member function. The function can access all the
+members of the objects p1 and p2 but it is not a member function of the class Point. The function
+therefore can be placed in any source file, without using the scope resolution operator (::).
+#+BEGIN_SRC c
+class Point
+{
+private:
+double m_x;
+double m_y;
+friend void Display(const Point& pt);
+};
+void Display(const Point& pt)
+{
+cout << pt.m_x << pt.m_y; // Because it’s a friend function
+}
+#+END_SRC
+
+#+BEGIN_SRC cpp
+class B;
+class A
+{
+private:
+int a;
+public:
+friend class B;
+};
+class B
+{
+private:
+int b;
+public:
+void print(const A& obja);
+};
+void B::print(const A& obja)
+{
+cout << b;
+cout << obja.a;  // object a can accessed by B.
+}
+#+END_SRC
+
 ** Overloaded Operators: Member Versus Nonmember Functions
 ** More Overloading: A Vector Class
 ** Automatic Conversions and Type Casts for Classes
