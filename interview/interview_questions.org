@@ -110,3 +110,7 @@
 [[file:./subsets_brute_force_recursive.cpp][Given a set of distinct integers, S, return all possible subsets recursively.]]
 *** Permutations
 [[file:./next_permutation_std.cpp][Given a collection of numbers, return all possible permutations.]]
+** Stack and queue
+[[file:./knapping_1d.py][knap in 1d array]]
+
+[[file:./knap_1d.cpp][knap in 1d array non recursively]]
