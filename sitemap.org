@@ -69,7 +69,7 @@
         + [[file:CS/MachineLearning/nlp/NLPLibraries.html][NLPLibraries]]
         + [[file:NLP/knowledge_graph/event_graph/inflation.html][inflation]]
         + [[file:NLP/knowledge_graph/event_graph/bond.html][bond]]
-        + [[file:NLP/knowledge_graph/event_graph/knowledge_graph.html][financial knowledge graph]]
+        + [[file:NLP/knowledge_graph/event_graph/dependency_graph.html][financial knowledge graph]]
     + [[file:CS/MachineLearning/Tensorflow.org][Tensorflow]]
     + [[file:CS/MachineLearning/DeepLearning.org][DeepLearning]]
     + [[file:./Boosting.org][Boosting]]
