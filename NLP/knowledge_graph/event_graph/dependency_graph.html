@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id = "main" style="width:600px;height: 400px;"></div>
+    <div id = "main" style="width:800px;height: 600px;"></div>
     <script type="text/javascript">
         // 获取容器的id并赋值给变量myChart,初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -108,12 +108,12 @@
                     }
                 }
             },
-            // tooltip: {
+            <!--  tooltip: { -->
 
-                 //formatter: function (x) {
-                    //return x.data.name;//节点和边都显示name属性
-            //   }
-            //},
+            <!--      formatter: function (x) { -->
+            <!--         return x.data.name;//节点和边都显示name属性 -->
+            <!--    } -->
+            <!-- }, -->
             //自定义提示框
             // tooltip: {
             //     trigger: 'axis',
