@@ -31,6 +31,12 @@
 
 [[file:./detect_colinearity.py][detect colinearity]]
 
+[[file:./parsing_words.py][parsing words]]
+
+[[file:./market_equilibrium.py][market equilibrium]]
+
+
+[[file:./tetris.py][tetris]]
 * Turingideas
 [[file:./fibonacci.py][fibonacci]]
 
